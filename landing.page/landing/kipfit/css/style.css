@@ -3,8 +3,8 @@ body {
   color: #000000;
   background-color: #ffffff;
   overflow-x: hidden;
-  background-color: #0a1646;
-  color: #ffffff;
+  background-color: #F9F9F9;
+  color: #000000;
 }
 
 .layout_padding {
@@ -268,7 +268,7 @@ a:focus {
   z-index: -1; /* Places the video behind other content */
   opacity: 0.7; /* Adjust opacity as needed */
   filter: alpha(opacity=70); /* For older IE */
-  -webkit-filter: opacity(0.4); /* For modern browsers */
+  -webkit-filter: opacity(0.7); 
 }
 .slider_section {
   -webkit-box-flex: 1;
@@ -374,7 +374,7 @@ a:focus {
           align-items: center;
   border-radius: 15px;
   position: relative;
-  color: #ffffff;
+  color: #000000;
   overflow: hidden;
 }
 
@@ -411,7 +411,7 @@ a:focus {
   right: 10px;
   width: 35px;
   height: 35px;
-  background-color: #060a36;
+  background-color: #fff;
   border-radius: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -425,7 +425,7 @@ a:focus {
 }
 
 .product_section .product_container .box .detail-box {
-  background-color: #060a36;
+  background-color: #fff;
   width: 100%;
   padding: 15px;
   display: -webkit-box;
@@ -489,7 +489,7 @@ a:focus {
   display: inline-block;
   padding: 10px 30px;
   background-color: #1376b1;
-  color: #ffffff;
+  color: #000000;
   border-radius: 5px;
   text-transform: uppercase;
   font-size: 15px;
@@ -504,7 +504,7 @@ a:focus {
 }
 
 .about_section {
-  background-color: #060a36;
+  background-color: #fff;
 }
 
 .about_section .row {
@@ -518,7 +518,7 @@ a:focus {
 }
 
 .about_section .detail-box {
-  color: #ffffff;
+  color: #000000;
   margin: 45px 0;
 }
 
@@ -530,7 +530,7 @@ a:focus {
   display: inline-block;
   padding: 12px 35px;
   background-color: #1376b1;
-  color: #ffffff;
+  color: #000000;
   border-radius: 5px;
   text-transform: uppercase;
   font-size: 15px;
@@ -557,14 +557,14 @@ a:focus {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  color: #ffffff;
+  color: #000000;
   margin-top: 35px;
 }
 
 .why_us_section .box .img-box {
   width: 90px;
   height: 90px;
-  border: 5px solid #0a1646;
+  border: 5px solid #e7e7e7;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -577,7 +577,7 @@ a:focus {
   border-radius: 100%;
   margin-bottom: -37.5px;
   position: relative;
-  background-color: #1376b1;
+  background-color: #9b9a9a;
   -webkit-transition: all .3s;
   transition: all .3s;
 }
@@ -589,7 +589,7 @@ a:focus {
 }
 
 .why_us_section .box .detail-box {
-  background-color: #1376b1;
+  background-color: #fff;
   padding: 55px 20px 20px 20px;
   -webkit-transition: all .3s;
   transition: all .3s;
@@ -603,7 +603,7 @@ a:focus {
 }
 
 .why_us_section .box .detail-box a {
-  color: #ffffff;
+  color: #000000;
   text-transform: uppercase;
   font-weight: 600;
 }
@@ -615,7 +615,7 @@ a:focus {
 
 .subscribe_section {
   text-align: center;
-  background-color: #060a36;
+  background-color: #fff;
 }
 
 .subscribe_section .subscribe_form form {
@@ -634,29 +634,29 @@ a:focus {
 .subscribe_section .subscribe_form form input {
   width: 100%;
   height: 50px;
-  border: 1px solid #eeeff1;
+  border: 1px solid #aaaaac;
   border-radius: 5px;
   outline: none;
   padding-left: 25px;
   background-color: transparent;
   margin-top: 35px;
-  color: #fffefe;
+  color: #000000;
 }
 
 .subscribe_section .subscribe_form form input::-webkit-input-placeholder {
-  color: rgba(255, 254, 254, 0.8);
+  color: rgba(0, 0, 0, 0.8);
 }
 
 .subscribe_section .subscribe_form form input:-ms-input-placeholder {
-  color: rgba(255, 254, 254, 0.8);
+  color: rgba(0, 0, 0, 0.8);
 }
 
 .subscribe_section .subscribe_form form input::-ms-input-placeholder {
-  color: rgba(255, 254, 254, 0.8);
+  color: rgba(0, 0, 0, 0.8);
 }
 
 .subscribe_section .subscribe_form form input::placeholder {
-  color: rgba(255, 254, 254, 0.8);
+  color: rgba(0, 0, 0, 0.8);
 }
 
 .subscribe_section .subscribe_form form .btn-box {
@@ -674,12 +674,12 @@ a:focus {
 .subscribe_section .subscribe_form form .btn-box button {
   display: inline-block;
   padding: 10px 65px;
-  background-color: #ffffff;
+  background-color: #1376b1;
   color: #060a36;
   border-radius: 5px;
   text-transform: uppercase;
   font-size: 15px;
-  border: 1px solid #ffffff;
+  border: 1px solid #1376b1;
   -webkit-transition: all .3s;
   transition: all .3s;
   text-transform: uppercase;
@@ -687,19 +687,20 @@ a:focus {
 
 .subscribe_section .subscribe_form form .btn-box button:hover {
   background-color: transparent;
-  color: #ffffff;
+  color: #1376b1;
 }
 
 .client_section .client_container {
   margin: 0 auto;
   text-align: center;
-  color: #ffffff;
+  color: #000000;
   margin-top: 35px;
   margin-bottom: 35px;
 }
 
 .client_section .client_container .client_detail {
-  border: 1px dashed #ffffff;
+  border: 1px dashed #000000;
+  border-radius: 5px;
   padding: 25px 20px;
 }
 
@@ -749,7 +750,7 @@ a:focus {
   width: 15px;
   height: 15px;
   opacity: 1;
-  background-color: #ffffff;
+  background-color: #8a8888;
   border-radius: 15px;
   background-clip: unset;
   border: none;
@@ -767,7 +768,7 @@ a:focus {
 }
 /* info section */
 .info_section {
-  background-color: #060a36;
+  background-color: #fff;
 }
 
 .info_section h4 {
@@ -797,7 +798,7 @@ a:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: #ffffff;
+  color: #000000;
 }
 
 .info_section .contact_items a .img-box {
@@ -814,13 +815,13 @@ a:focus {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  border: 1px solid #eeeff1;
+  border: 1px solid #9e9ea0;
   border-radius: 100%;
   font-size: 20px;
 }
 
 .info_section .contact_items a h6 {
-  color: #ffffff;
+  color: #000000;
   margin: 0;
 }
 
@@ -851,7 +852,8 @@ a:focus {
   width: 35px;
   height: 35px;
   border-radius: 100%;
-  background-color: #ffffff;
+  border-color: #1376b1;
+  background-color: #cfcfcf;
   color: #060a36;
   font-size: 20px;
   margin: 0 5px;
@@ -863,12 +865,12 @@ a:focus {
 
 /* end info section */
 .footer_section {
-  background-color: #060a36;
+  background-color: #fff;
 }
 
 .footer_section p {
   border-top: 1px solid #616060;
-  color: #ffffff;
+  color: #000000;
   margin: 0 auto;
   text-align: center;
   padding: 20px 0;
