@@ -28,11 +28,193 @@
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
   <link href="css/responsive.css" rel="stylesheet">
+
+
+
+  <!-- Favicon icon -->
+	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+	<link href="vendor/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="/dashboard/kipfit/xhtml/css/style.css" rel="stylesheet">
+	<link href="../css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <div class="hero_area">
-    <header class="header_section">
+  <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+      <div class="sk-three-bounce">
+          <div class="sk-child sk-bounce1"></div>
+          <div class="sk-child sk-bounce2"></div>
+          <div class="sk-child sk-bounce3"></div>
+      </div>
+  </div>
+  <!--*******************
+      Preloader end
+  ********************-->
+  <div id="main-wrapper" class="hero_area">
+     <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header">
+          <a href="/landing.page/landing/kipfit/index.html" class="brand-logo">
+              <img class="logo-abbr" src="/dashboard/kipfit/xhtml/images/logo-kipfit.png" alt="">
+              <img class="logo-compact" src="/dashboard/kipfit/xhtml/images/logo-text (2).png" alt="">
+              <img class="brand-title" src="/dashboard/kipfit/xhtml/images/logo-text (2).png" alt="">
+          </a>
+
+          <div class="nav-control">
+              <div class="hamburger">
+                  <span class="line"></span><span class="line"></span><span class="line"></span>
+              </div>
+          </div>
+      </div>
+      <!--**********************************
+          Nav header end
+      ***********************************-->
+  
+  
+  
+      <!--**********************************
+          Header start
+      ***********************************-->
+        <header class="header">
+          <div class="header-content">
+              <nav class="navbar navbar-expand">
+                  <div class="collapse navbar-collapse justify-content-between">
+                      <div class="header-left">
+                          <div class="dashboard_bar">
+                          Home Page
+                          </div>
+                      </div>
+                        <ul class="navbar-nav header-right">
+                      <li class="nav-item">
+                        <form>
+                          <div class="input-group search-area d-lg-inline-flex d-none me-3">
+                            <span class="input-group-text" id="header-search">
+                              <button class="bg-transparent border-0">
+                                <i class="flaticon-381-search-2"></i>
+                              </button>
+                            </span>
+                            <input type="text" class="form-control" placeholder="Search here" aria-label="Username" aria-describedby="header-search">
+                          </div>
+                        </form>
+                      </li>
+                          <li class="nav-item dropdown header-profile">
+                              <a class="nav-link" href="/dashboard/kipfit/xhtml/app-profile.html" role="button" data-bs-toggle="dropdown">
+                                  <img src="/landing.page/landing/kipfit/images/avatar.jpg" width="20" alt="">
+                <div class="header-info">
+                  <span class="text-black"><strong>Bico Steve</strong></span>
+                  <p class="fs-12 mb-0">App Admin</p>
+                </div>
+                              </a>
+                              <div class="dropdown-menu dropdown-menu-end">
+                                  <a href="/dashboard/kipfit/xhtml/app-profile.html" class="dropdown-item ai-icon">
+                                      <svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" class="text-primary" width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                      <span class="ms-2">Profile </span>
+                                  </a>
+                                  <!-- <a href="email-inbox.html" class="dropdown-item ai-icon">
+                                      <svg id="icon-inbox" xmlns="http://www.w3.org/2000/svg" class="text-success" width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                      <span class="ms-2">Inbox </span>
+                                  </a> -->
+                                  <a href="/dashboard/kipfit/xhtml/page-login.html" class="dropdown-item ai-icon">
+                                      <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger" width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                                      <span class="ms-2">Logout </span>
+                                  </a>
+                              </div>
+                          </li>
+            <li class="nav-item dropdown notification_dropdown">
+                              <a class="nav-link bell dz-theme-mode" href="javascript:void(0);">
+                <i id="icon-light" class="fas fa-sun"></i>
+                                  <i id="icon-dark" class="fas fa-moon"></i>
+                              </a>
+            </li>
+                      </ul>
+                  </div>
+              </nav>
+          </div>
+      </header>
+      <!--**********************************
+          Header end ti-comment-alt
+      ***********************************-->
+<!--**********************************
+            Sidebar start
+        ***********************************-->
+        <div class="deznav">
+          <div class="deznav-scroll">
+      <ul class="metismenu" id="menu">
+                  <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+            <i class="flaticon-381-networking"></i>
+            <span class="nav-text">Dashboard</span>
+          </a>
+                  </li>
+        <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+            <i class="flaticon-381-television"></i>
+            <span class="nav-text">Apps</span>
+          </a>
+                  </li>
+                  <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+            <i class="flaticon-381-compact-disc-1"></i>
+            <span class="nav-text">Icons<span class="badge badge-danger badge-xs ms-1">NEW</span></span>
+          </a>
+                  </li>
+        <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+            <i class="flaticon-381-briefcase"></i>
+            <span class="nav-text">CMS<span class="badge badge-danger badge-xs ms-1">NEW</span></span>
+          </a>
+                  </li>
+                  <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+            <i class="flaticon-381-controls-3"></i>
+            <span class="nav-text">Charts</span>
+          </a>
+                  </li>
+                  <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+            <i class="flaticon-381-internet"></i>
+            <span class="nav-text">Bootstrap</span>
+          </a>
+                  </li>
+                  <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+            <i class="flaticon-381-heart"></i>
+            <span class="nav-text">Plugins</span>
+          </a>
+                  </li>
+                  <li><a href="widget-basic.html" class="ai-icon" aria-expanded="false">
+            <i class="flaticon-381-settings-2"></i>
+            <span class="nav-text">Widget</span>
+          </a>
+        </li>
+                  <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+            <i class="flaticon-381-notepad"></i>
+            <span class="nav-text">Forms</span>
+          </a>
+                  </li>
+                  <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+            <i class="flaticon-381-network"></i>
+            <span class="nav-text">Table</span>
+          </a>
+                  </li>
+                  <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+            <i class="flaticon-381-layer-1"></i>
+            <span class="nav-text">Pages</span>
+          </a>
+                  </li>
+              </ul>
+      <div class="add-menu-sidebar">
+        <img src="/dashboard/kipfit/xhtml/images/profile/gym-template.png" alt="" class="me-3" style="width: 4em; height: 4em;object-fit: fill;">
+        <a href="workoutplan.html" class="font-w500 mb-0">Create Workout Plan Now</a>
+      </div>
+      <div class="copyright">
+        <p><strong>Kip•Fit <br> Power•Motion•Transformation</strong> © 2024 All Rights Reserved</p>
+        <p>Made with <span class="heart"></span> by S.M.B</p>
+      </div>
+    </div>
+      </div>
+      <!--**********************************
+          Sidebar end
+      ***********************************-->
+
+  
+    <!-- <header class="header_section">
       <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
           <a class="navbar-brand" href="index.html">
@@ -56,7 +238,7 @@
                   <a class="nav-link" href="about.html">Videos</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="product.html">Products</a>
+                  <a class="nav-link" href="/dashboard/kipfit/xhtml/ecom-product-grid.html">Products</a>
                 </li>
                 <li class="nav-item">
                    <a class="nav-link" href="/dashboard/kipfit/xhtml/page-register.html">Sign-up</a>
@@ -74,7 +256,7 @@
           </div>
         </nav>
       </div>
-    </header>
+    </header> -->
    
     
     <section class="slider_section ">
@@ -682,10 +864,8 @@
                 Timely Delivery
               </h5>
               <p>
-                At Kip-Fit, we pride ourselves on delivering timely and efficient services to our valued clients. 
-                Our team is dedicated to ensuring that every workout session, nutrition plan, and fitness consultation is provided promptly without compromising on quality. 
-                We understand the importance of your time and fitness goals, which is why we strive to offer flexible scheduling options and quick responses to any inquiries. 
-                Experience the convenience and reliability of our timely services at Kip-Fit, where your fitness journey is our priority.
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. At aliquam ullam, sed 
+              porro aperiam reprehenderit praesentium labore?.
               </p>
             </div>
           </div>
@@ -923,6 +1103,11 @@
   <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.js"></script>
   <script type="text/javascript" src="js/custom.js"></script>
+  <script src="/dashboard/kipfit/xhtml/vendor/global/global.min.js"></script>
+	<script src="/dashboard/kipfit/xhtml/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
+	<script src="/dashboard/kipfit/xhtml/js/custom.min.js"></script>
+  <script src="/dashboard/kipfit/xhtml/js/deznav-init.js"></script>
+
  
 <include id="includedContent"></include>
   <script>
