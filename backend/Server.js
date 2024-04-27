@@ -4,6 +4,7 @@ const videoRoutes = require('./routes/videoRoutes');
 const productRoutes = require('./routes/productRoutes');
 
 
+
 const app = express();
 
 
@@ -20,6 +21,8 @@ const mongoose = require('mongoose');
 
 // Import routes
 const userRoutes = require('./routes/userRoutes');
+app.use(express.static('../dashboard/kipfit/public'));
+app.use('/api', userRoutes);
 // const videoRoutes = require('./routes/videoRoutes');
 // const productRoutes = require('./routes/productRoutes');
 
