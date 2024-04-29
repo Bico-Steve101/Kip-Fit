@@ -1,0 +1,891 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Title -->
+	<title>Kip•Fit  - Power • Motion • Transformation</title>
+
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="SteveRebrand">
+	<meta name="robots" content="">
+	<link rel="apple-touch-icon" sizes="180x180" href="/images//apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images//favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images//favicon-16x16.png">
+    <link rel="manifest" href="/images//site.webmanifest">
+    <link rel="mask-icon" href="/images//safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+	<meta name="format-detection" content="telephone=no">
+
+	<!-- Mobile Specific -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Favicon icon -->
+	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+	<link href="vendor/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="/vendor/chartist/css/chartist.min.css">
+    <link href="/css/style_dashboard.css" rel="stylesheet">
+	<link href="../css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+     <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header">
+            <a href="/" class="brand-logo">
+                <img class="logo-abbr" src="/images/logo-kipfit.png" alt="">
+                <img class="logo-compact" src="/images/logo-text (2).png" alt="">
+                <img class="brand-title" src="/images/logo-text (2).png" alt="">
+            </a>
+  
+            <div class="nav-control">
+                <div class="hamburger">
+                    <span class="line"></span><span class="line"></span><span class="line"></span>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+    
+        <!--**********************************
+            Header start
+        ***********************************-->
+          <header class="header">
+            <div class="header-content">
+                <nav class="navbar navbar-expand">
+                    <div class="collapse navbar-collapse justify-content-between">
+                        <div class="header-left">
+                            <div class="dashboard_bar">
+                            Home Page
+                            </div>
+                        </div>
+                          <ul class="navbar-nav header-right">
+                        <li class="nav-item">
+                          <form>
+                            <div class="input-group search-area d-lg-inline-flex d-none me-3">
+                              <span class="input-group-text" id="header-search">
+                                <button class="bg-transparent border-0">
+                                  <i class="flaticon-381-search-2"></i>
+                                </button>
+                              </span>
+                              <input type="text" class="form-control" placeholder="Search here" aria-label="Username" aria-describedby="header-search">
+                            </div>
+                          </form>
+                        </li>
+                            <li class="nav-item dropdown header-profile">
+                                <a class="nav-link" href="/profile" role="button" data-bs-toggle="dropdown">
+                                    <img src="/images/avatar.jpg" width="20" alt="">
+                  <div class="header-info">
+                    <span class="text-black"><strong>Bico Steve</strong></span>
+                    <p class="fs-12 mb-0">App Admin</p>
+                  </div>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                    <a href="/profile" class="dropdown-item ai-icon">
+                                        <svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" class="text-primary" width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                        <span class="ms-2">Profile </span>
+                                    </a>
+                                    <a href="/profile" class="dropdown-item ai-icon">
+                                        <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger" width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                                        <span class="ms-2">Logout </span>
+                                    </a>
+                                </div>
+                            </li>
+              <li class="nav-item dropdown notification_dropdown">
+                                <a class="nav-link bell dz-theme-mode" href="javascript:void(0);">
+                  <i id="icon-light" class="fas fa-sun"></i>
+                                    <i id="icon-dark" class="fas fa-moon"></i>
+                                </a>
+              </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+        <!--**********************************
+              Sidebar start
+          ***********************************-->
+          <div class="deznav">
+            <div class="deznav-scroll">
+         <ul class="metismenu" id="menu">
+                    <li><a class=" ai-icon" href="/" aria-expanded="false">
+              <i class="fa fa-home"></i>
+              <span class="nav-text">Home</span>
+            </a>
+                    </li>
+          <li><a class=" ai-icon" href="/profile" aria-expanded="false">
+              <i class="fa fa-user"></i>
+              <span class="nav-text">Profile</span>
+            </a>
+                    </li>
+                    <li><a class=" ai-icon" href="/product-grid" aria-expanded="false">
+              <i class="fa fa-cart-arrow-down"></i>
+              <span class="nav-text">Shop<span class="badge badge-danger badge-xs ms-1">NEW</span></span>
+            </a>
+                    </li>
+          <li><a class="ai-icon" href="/main-index" aria-expanded="false">
+              <i class="fa fa-video-camera"></i>
+              <span class="nav-text">Videos<span class="badge badge-danger badge-xs ms-1">NEW</span></span>
+            </a>
+                    </li>
+                    <li><a class=" ai-icon" href="/checkout" aria-expanded="false">
+              <i class="fa fa-check-square-o"></i>
+              <span class="nav-text">Checkout</span>
+            </a>
+                    </li>
+                    <li><a class=" ai-icon" href="/product-order" aria-expanded="false">
+                      <i class="fa fa-credit-card-alt"></i>
+                      <span class="nav-text">Checkout Status</span>
+                    </a>
+                    </li>
+                    <li><a class="ai-icon" href="/food-menu" aria-expanded="false">
+              <i class="fa fa-cutlery"></i>
+              <span class="nav-text">Food-Menu</span>
+            </a>
+                    </li>
+                    <li><a class="ai-icon" href="/calendar" aria-expanded="false">
+              <i class="fa fa-calendar"></i>
+              <span class="nav-text">Calendar</span>
+            </a>
+                    </li>
+                    <li><a href="/main-profile" class="ai-icon" aria-expanded="false">
+              <i class="fa fa-file-video-o"></i>
+              <span class="nav-text">Video Profile</span>
+            </a>
+          </li>
+                    <!-- <li><a class=" ai-icon" href="javascript:void()" aria-expanded="false">
+            </a>
+                    </li> -->
+                    <li><a class=" ai-icon" href="javascript:void()" aria-expanded="false">
+            </a>
+                    </li>
+                    <li><a class="ai-icon" href="javascript:void()" aria-expanded="false">
+            </a>
+                    </li>
+                </ul>
+        <div class="add-menu-sidebar">
+          <img src="/images/profile/gym-template.png" alt="" class="me-3" style="width: 4em; height: 4em;object-fit: fill;">
+          <a href="/calendar" class="font-w500 mb-0">Create Workout Plan Now</a>
+        </div>
+        <div class="copyright mb-n1">
+          <p><strong>Kip•Fit <br> Power•Motion•Transformation</strong> © 2024 All Rights Reserved</p>
+          <p>Made with <span class="heart"></span> by S.M.B</p>
+        </div>
+      </div>
+        </div>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+		<!-- Modal -->
+		<div class="modal fade" id="aAddDietMenus">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Diet Menus</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal">
+						</button>
+					</div>
+					<div class="modal-body">
+						<form>
+							<div class="form-group">
+								<label>Name</label>
+								<input type="text" class="form-control" placeholder="Nam..">
+							</div>
+							<div class="form-group">
+								<label>Description</label>
+								<input type="text" class="form-control" placeholder="Des..">
+							</div>
+							<div class="form-group">
+								<label>Ingredients</label>
+								<input type="text" class="form-control" placeholder="Ing..">
+							</div>
+							<div class="form-group">
+								<label>Time</label>
+								<input type="text" class="form-control" placeholder="Tim..">
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Save changes</button>
+					 </div>
+				</div>
+			</div>
+		</div>
+		<!--**********************************
+            Content body start
+        ***********************************-->
+         <div class="content-body default-height" style=" margin-left: -0.007rem;">
+            <!-- row -->
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xl-9 col-xxl-8">
+						<div class="row">	
+							<div class="col-xl-12">
+								<div class="card">
+									<div class="card-header d-block pb-0 border-0">
+										<div class="d-sm-flex flex-wrap align-items-center d-block mb-md-3 mb-0">
+											<div class="me-auto pe-3 mb-3">
+												<h4 class="text-black fs-20">Diet Menus</h4>
+												<p class="fs-13 mb-0">Lorem ipsum dolor sit amet, consectetur</p>
+											</div>
+											<form>
+												<div class="input-group mb-3 diet-search me-4">
+													<input type="text" class="form-control" placeholder="Search Menus here">
+													<span class="input-group-text bg-primary">
+														<button class=" border-0 bg-transparent" type="button"><i class=" text-white fa fa-search" aria-hidden="true"></i></button>
+													</span>
+												</div>
+											</form>
+											<a href="javascript:void(0);" class="btn rounded  btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+												<svg class="me-2" width="25" height="24" viewbox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M3.31615 6H14.4744C14.4744 6.53043 14.6882 7.03914 15.0686 7.41421C15.4491 7.78929 15.9651 8 16.5032 8H18.532C19.07 8 19.5861 7.78929 19.9665 7.41421C20.347 7.03914 20.5607 6.53043 20.5607 6H21.5751C21.8442 6 22.1022 5.89464 22.2924 5.70711C22.4827 5.51957 22.5895 5.26522 22.5895 5C22.5895 4.73478 22.4827 4.48043 22.2924 4.29289C22.1022 4.10536 21.8442 4 21.5751 4H20.5607C20.5607 3.46957 20.347 2.96086 19.9665 2.58579C19.5861 2.21071 19.07 2 18.532 2H16.5032C15.9651 2 15.4491 2.21071 15.0686 2.58579C14.6882 2.96086 14.4744 3.46957 14.4744 4H3.31615C3.04711 4 2.7891 4.10536 2.59887 4.29289C2.40863 4.48043 2.30176 4.73478 2.30176 5C2.30176 5.26522 2.40863 5.51957 2.59887 5.70711C2.7891 5.89464 3.04711 6 3.31615 6ZM16.5032 4H18.532V5V6H16.5032V4ZM21.5751 11H12.4456C12.4456 10.4696 12.2319 9.96086 11.8514 9.58579C11.471 9.21071 10.9549 9 10.4169 9H8.38809C7.85002 9 7.334 9.21071 6.95353 9.58579C6.57306 9.96086 6.35931 10.4696 6.35931 11H3.31615C3.04711 11 2.7891 11.1054 2.59887 11.2929C2.40863 11.4804 2.30176 11.7348 2.30176 12C2.30176 12.2652 2.40863 12.5196 2.59887 12.7071C2.7891 12.8946 3.04711 13 3.31615 13H6.35931C6.35931 13.5304 6.57306 14.0391 6.95353 14.4142C7.334 14.7893 7.85002 15 8.38809 15H10.4169C10.9549 15 11.471 14.7893 11.8514 14.4142C12.2319 14.0391 12.4456 13.5304 12.4456 13H21.5751C21.8442 13 22.1022 12.8946 22.2924 12.7071C22.4827 12.5196 22.5895 12.2652 22.5895 12C22.5895 11.7348 22.4827 11.4804 22.2924 11.2929C22.1022 11.1054 21.8442 11 21.5751 11ZM8.38809 13V11H10.4169V12V13H8.38809ZM21.5751 18H18.532C18.532 17.4696 18.3182 16.9609 17.9378 16.5858C17.5573 16.2107 17.0413 16 16.5032 16H14.4744C13.9364 16 13.4203 16.2107 13.0399 16.5858C12.6594 16.9609 12.4456 17.4696 12.4456 18H3.31615C3.04711 18 2.7891 18.1054 2.59887 18.2929C2.40863 18.4804 2.30176 18.7348 2.30176 19C2.30176 19.2652 2.40863 19.5196 2.59887 19.7071C2.7891 19.8946 3.04711 20 3.31615 20H12.4456C12.4456 20.5304 12.6594 21.0391 13.0399 21.4142C13.4203 21.7893 13.9364 22 14.4744 22H16.5032C17.0413 22 17.5573 21.7893 17.9378 21.4142C18.3182 21.0391 18.532 20.5304 18.532 20H21.5751C21.8442 20 22.1022 19.8946 22.2924 19.7071C22.4827 19.5196 22.5895 19.2652 22.5895 19C22.5895 18.7348 22.4827 18.4804 22.2924 18.2929C22.1022 18.1054 21.8442 18 21.5751 18ZM14.4744 20V18H16.5032V19V20H14.4744Z" fill="#fff"></path>
+												</svg>Filter
+											</a>
+										</div>
+										<nav>
+										  <div class="nav nav-tabs diet-tabs" id="nav-tab" role="tablist">
+											<button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Recomended for you</button>
+											<button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Salad</button>
+											<button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Breakfast</button>
+											<button class="nav-link" id="nav-lunch-tab" data-bs-toggle="tab" data-bs-target="#nav-lunch" type="button" role="tab" aria-controls="nav-lunch" aria-selected="false">Lunch</button>
+											
+										  </div>
+										</nav>
+										<div class="tab-content diet-content" id="nav-tabContent">
+										 	<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
+												<div class="card-body loadmore-content dz-scroll height750" id="DietMenusContent">
+													<div class="media border-bottom mb-3 pb-3 d-lg-flex d-block menu-list">
+														<a href="ecom-product-detail.html"><img class="rounded me-3 mb-md-0 mb-3" src="images/menus/5.png" alt="" width="120"></a>
+														<div class="food-default-flex col-lg-8 ps-0">
+															<h6 class="fs-16 font-w600"><a href="ecom-product-detail.html" class="text-black">Papaya Fruit for Vitamin C</a></h6>
+															<p class="fs-14">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
+															<div class="d-flex flex-wrap align-items-center">
+																<div class="d-flex mb-sm-2 mb-3 pe-3 me-auto align-items-center">
+																	<img src="/landing.page/landing/kipfit/images/avatar.jpg" alt="" width="30" class="rounded-circle me-2">
+																	<span class="fs-14 text-black font-w500">Bico Steve</span>
+																</div>
+																<ul class="d-flex flex-wrap mb-sm-0 mb-2">
+																	<li class="mb-2 me-4 text-nowrap"><i class="las la-clock scale5 me-2"></i><span class="fs-14 text-black text-nowrap font-w500">4-6 mins </span></li>
+																	<li class="mb-2 me-4 text-nowrap"><i class="las la-prescription-bottle scale5 me-2"></i><span class="text-nowrap fs-14 text-black font-w500">5 Ingridients</span></li>
+																	<li class="text-nowrap mb-2"><i class="fa-regular fa-star me-2 scale3 text-warning" aria-hidden="true"></i><span class="text-nowrap fs-14 text-black font-w500">568 Reviews</span></li>
+																</ul>
+															</div>
+														</div>
+														<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#aAddDietMenus" class="btn btn-primary light btn-md ms-auto"><i class="fa fa-plus scale5 me-3"></i>Add Menu</a>
+													</div>
+													<div class="media border-bottom mb-3 pb-3 d-lg-flex d-block menu-list">
+														<a href="ecom-product-detail.html"><img class="rounded me-3 mb-md-0 mb-3" src="images/menus/6.png" alt="" width="120"></a>
+														<div class=" food-default-flex col-lg-8 ps-0">
+															<h6 class="fs-16 font-w600"><a href="ecom-product-detail.html" class="text-black">Vitamin C Vegetables</a></h6>
+															<p class="fs-14">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
+															<div class="d-flex flex-wrap align-items-center">
+																<div class="d-flex mb-sm-2 mb-3 pe-3 me-auto align-items-center">
+																	<img src="/landing.page/landing/kipfit/images/avatar.jpg" alt="" width="30" class="rounded-circle me-2">
+																	<span class="fs-14 text-black font-w500">Bico Steve</span>
+																</div>
+																<ul class="d-flex flex-wrap mb-sm-0 mb-2">
+																	<li class="mb-2 me-4 text-nowrap"><i class="las la-clock scale5 me-2"></i><span class="fs-14 text-black text-nowrap font-w500">4-6 mins </span></li>
+																	<li class="mb-2 me-4 text-nowrap"><i class="las la-prescription-bottle scale5 me-2"></i><span class="text-nowrap fs-14 text-black font-w500">5 Ingridients</span></li>
+																	<li class="text-nowrap mb-2"><i class="fa-regular fa-star me-2 scale3 text-warning" aria-hidden="true"></i><span class="text-nowrap fs-14 text-black font-w500">568 Reviews</span></li>
+																</ul>
+															</div>
+														</div>
+														<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#aAddDietMenus" class="btn btn-primary light btn-md ms-auto"><i class="fa fa-plus scale5 me-3"></i>Add Menu</a>
+													</div>
+													<div class="media border-bottom mb-3 pb-3 d-lg-flex d-block menu-list">
+														<a href="ecom-product-detail.html"><img class="rounded me-3 mb-md-0 mb-3" src="images/menus/7.png" alt="" width="120"></a>
+														<div class="food-default-flex col-lg-8 ps-0">
+															<h6 class="fs-16 font-w600"><a href="ecom-product-detail.html" class="text-black">Fresh or Frozen (No Sugar Added) Fruits</a></h6>
+															<p class="fs-14">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
+															<div class="d-flex flex-wrap align-items-center">
+																<div class="d-flex mb-sm-2 mb-3 pe-3 me-auto align-items-center">
+																	<img src="/landing.page/landing/kipfit/images/avatar.jpg" alt="" width="30" class="rounded-circle me-2">
+																	<span class="fs-14 text-black font-w500">Bico Steve</span>
+																</div>
+																<ul class="d-flex flex-wrap mb-sm-0 mb-2">
+																	<li class="mb-2 me-4 text-nowrap"><i class="las la-clock scale5 me-2"></i><span class="fs-14 text-black text-nowrap font-w500">4-6 mins </span></li>
+																	<li class="mb-2 me-4 text-nowrap"><i class="las la-prescription-bottle scale5 me-2"></i><span class="text-nowrap fs-14 text-black font-w500">5 Ingridients</span></li>
+																	<li class="text-nowrap mb-2"><i class="fa-regular fa-star me-2 scale3 text-warning" aria-hidden="true"></i><span class="text-nowrap fs-14 text-black font-w500">568 Reviews</span></li>
+																</ul>
+															</div>
+														</div>
+														<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#aAddDietMenus" class="btn btn-primary light btn-md ms-auto"><i class="fa fa-plus scale5 me-3"></i>Add Menu</a>
+													</div>
+													<div class="media border-bottom mb-3 pb-3 d-lg-flex d-block menu-list">
+														<a href="ecom-product-detail.html"><img class="rounded me-3 mb-md-0 mb-3" src="images/menus/4.png" alt="" width="120"></a>
+														<div class="food-default-flex col-lg-8 ps-0">
+															<h6 class="fs-16 font-w600"><a href="ecom-product-detail.html" class="text-black">Fresh Blueberry & Strawberry Dice </a></h6>
+															<p class="fs-14">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
+															<div class="d-flex flex-wrap align-items-center">
+																<div class="d-flex mb-sm-2 mb-3 pe-3 me-auto align-items-center">
+																	<img src="/landing.page/landing/kipfit/images/avatar.jpg" alt="" width="30" class="rounded-circle me-2">
+																	<span class="fs-14 text-black font-w500">Bico Steve</span>
+																</div>
+																<ul class="d-flex flex-wrap mb-sm-0 mb-2">
+																	<li class="mb-2 me-4 text-nowrap"><i class="las la-clock scale5 me-2"></i><span class="fs-14 text-black text-nowrap font-w500">4-6 mins </span></li>
+																	<li class="mb-2 me-4 text-nowrap"><i class="las la-prescription-bottle scale5 me-2"></i><span class="text-nowrap fs-14 text-black font-w500">5 Ingridients</span></li>
+																	<li class="text-nowrap mb-2"><i class="fa-regular fa-star me-2 scale3 text-warning" aria-hidden="true"></i><span class="text-nowrap fs-14 text-black font-w500">568 Reviews</span></li>
+																</ul>
+															</div>
+														</div>
+														<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#aAddDietMenus" class="btn btn-primary light btn-md ms-auto"><i class="fa fa-plus scale5 me-3"></i>Add Menu</a>
+													</div>
+													<div class="media border-bottom mb-3 pb-3 d-lg-flex d-block menu-list">
+														<a href="ecom-product-detail.html"><img class="rounded me-3 mb-md-0 mb-3" src="images/menus/7.png" alt="" width="120"></a>
+														<div class="food-default-flex col-lg-8 ps-0">
+															<h6 class="fs-16 font-w600"><a href="ecom-product-detail.html" class="text-black">Fresh or Frozen (No Sugar Added) Fruits</a></h6>
+															<p class="fs-14">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
+															<div class="d-flex flex-wrap align-items-center">
+																<div class="d-flex mb-sm-2 mb-3 pe-3 me-auto align-items-center">
+																	<img src="/landing.page/landing/kipfit/images/avatar.jpg" alt="" width="30" class="rounded-circle me-2">
+																	<span class="fs-14 text-black font-w500">Bico Steve</span>
+																</div>
+																<ul class="d-flex flex-wrap mb-sm-0 mb-2">
+																	<li class="mb-2 me-4 text-nowrap"><i class="las la-clock scale5 me-2"></i><span class="fs-14 text-black text-nowrap font-w500">4-6 mins </span></li>
+																	<li class="mb-2 me-4 text-nowrap"><i class="las la-prescription-bottle scale5 me-2"></i><span class="text-nowrap fs-14 text-black font-w500">5 Ingridients</span></li>
+																	<li class="text-nowrap mb-2"><i class="fa-regular fa-star me-2 scale3 text-warning" aria-hidden="true"></i><span class="text-nowrap fs-14 text-black font-w500">568 Reviews</span></li>
+																</ul>
+															</div>
+														</div>
+														<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#aAddDietMenus" class="btn btn-primary light btn-md ms-auto"><i class="fa fa-plus scale5 me-3"></i>Add Menu</a>
+													</div>
+												</div>
+												<div class="card-footer style-1 text-center border-0 pt-0 pb-4">
+													<a class="text-primary dz-load-more fa fa-chevron-down" id="DietMenus" href="javascript:void(0);" rel="ajax/food-menu-list.html">
+													</a>
+												</div>
+											</div>
+											
+											<!-- salad -->
+										  	<div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
+												<div class="card-body loadmore-content dz-scroll height750" id="DietMenus1Content">
+													<div class="media border-bottom mb-3 pb-3 d-lg-flex d-block menu-list">
+														<a href="ecom-product-detail.html"><img class="rounded me-3 mb-md-0 mb-3" src="images/menus/5.png" alt="" width="120"></a>
+														<div class="food-default-flex col-lg-8 ps-0">
+															<h6 class="fs-16 font-w600"><a href="ecom-product-detail.html" class="text-black">Papaya Fruit for Vitamin C</a></h6>
+															<p class="fs-14">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
+															<div class="d-flex flex-wrap align-items-center">
+																<div class="d-flex mb-sm-2 mb-3 pe-3 me-auto align-items-center">
+																	<img src="/landing.page/landing/kipfit/images/avatar.jpg" alt="" width="30" class="rounded-circle me-2">
+																	<span class="fs-14 text-black font-w500">Bico Steve</span>
+																</div>
+																<ul class="d-flex flex-wrap mb-sm-0 mb-2">
+																	<li class="mb-2 me-4 text-nowrap"><i class="las la-clock scale5 me-2"></i><span class="fs-14 text-black text-nowrap font-w500">4-6 mins </span></li>
+																	<li class="mb-2 me-4 text-nowrap"><i class="las la-prescription-bottle scale5 me-2"></i><span class="text-nowrap fs-14 text-black font-w500">5 Ingridients</span></li>
+																	<li class="text-nowrap mb-2"><i class="fa-regular fa-star me-2 scale3 text-warning" aria-hidden="true"></i><span class="text-nowrap fs-14 text-black font-w500">568 Reviews</span></li>
+																</ul>
+															</div>
+														</div>
+														<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#aAddDietMenus" class="btn btn-primary light btn-md ms-auto"><i class="fa fa-plus scale5 me-3"></i>Add Menu</a>
+													</div>
+													<div class="media border-bottom mb-3 pb-3 d-lg-flex d-block menu-list">
+														<a href="ecom-product-detail.html"><img class="rounded me-3 mb-md-0 mb-3" src="images/menus/6.png" alt="" width="120"></a>
+														<div class=" food-default-flex col-lg-8 ps-0">
+															<h6 class="fs-16 font-w600"><a href="ecom-product-detail.html" class="text-black">Vitamin C Vegetables</a></h6>
+															<p class="fs-14">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
+															<div class="d-flex flex-wrap align-items-center">
+																<div class="d-flex mb-sm-2 mb-3 pe-3 me-auto align-items-center">
+																	<img src="/landing.page/landing/kipfit/images/avatar.jpg" alt="" width="30" class="rounded-circle me-2">
+																	<span class="fs-14 text-black font-w500">Bico Steve</span>
+																</div>
+																<ul class="d-flex flex-wrap mb-sm-0 mb-2">
+																	<li class="mb-2 me-4 text-nowrap"><i class="las la-clock scale5 me-2"></i><span class="fs-14 text-black text-nowrap font-w500">4-6 mins </span></li>
+																	<li class="mb-2 me-4 text-nowrap"><i class="las la-prescription-bottle scale5 me-2"></i><span class="text-nowrap fs-14 text-black font-w500">5 Ingridients</span></li>
+																	<li class="text-nowrap mb-2"><i class="fa-regular fa-star me-2 scale3 text-warning" aria-hidden="true"></i><span class="text-nowrap fs-14 text-black font-w500">568 Reviews</span></li>
+																</ul>
+															</div>
+														</div>
+														<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#aAddDietMenus" class="btn btn-primary light btn-md ms-auto"><i class="fa fa-plus scale5 me-3"></i>Add Menu</a>
+													</div>
+													<div class="media border-bottom mb-3 pb-3 d-lg-flex d-block menu-list">
+														<a href="ecom-product-detail.html"><img class="rounded me-3 mb-md-0 mb-3" src="images/menus/7.png" alt="" width="120"></a>
+														<div class="food-default-flex col-lg-8 ps-0">
+															<h6 class="fs-16 font-w600"><a href="ecom-product-detail.html" class="text-black">Fresh or Frozen (No Sugar Added) Fruits</a></h6>
+															<p class="fs-14">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
+															<div class="d-flex flex-wrap align-items-center">
+																<div class="d-flex mb-sm-2 mb-3 pe-3 me-auto align-items-center">
+																	<img src="/landing.page/landing/kipfit/images/avatar.jpg" alt="" width="30" class="rounded-circle me-2">
+																	<span class="fs-14 text-black font-w500">Bico STeve</span>
+																</div>
+																<ul class="d-flex flex-wrap mb-sm-0 mb-2">
+																	<li class="mb-2 me-4 text-nowrap"><i class="las la-clock scale5 me-2"></i><span class="fs-14 text-black text-nowrap font-w500">4-6 mins </span></li>
+																	<li class="mb-2 me-4 text-nowrap"><i class="las la-prescription-bottle scale5 me-2"></i><span class="text-nowrap fs-14 text-black font-w500">5 Ingridients</span></li>
+																	<li class="text-nowrap mb-2"><i class="fa-regular fa-star me-2 scale3 text-warning" aria-hidden="true"></i><span class="text-nowrap fs-14 text-black font-w500">568 Reviews</span></li>
+																</ul>
+															</div>
+														</div>
+														<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#aAddDietMenus" class="btn btn-primary light btn-md ms-auto"><i class="fa fa-plus scale5 me-3"></i>Add Menu</a>
+													</div>
+													<div class="media border-bottom mb-3 pb-3 d-lg-flex d-block menu-list">
+														<a href="ecom-product-detail.html"><img class="rounded me-3 mb-md-0 mb-3" src="images/menus/4.png" alt="" width="120"></a>
+														<div class="food-default-flex col-lg-8 ps-0">
+															<h6 class="fs-16 font-w600"><a href="ecom-product-detail.html" class="text-black">Fresh Blueberry & Strawberry Dice </a></h6>
+															<p class="fs-14">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
+															<div class="d-flex flex-wrap align-items-center">
+																<div class="d-flex mb-sm-2 mb-3 pe-3 me-auto align-items-center">
+																	<img src="/landing.page/landing/kipfit/images/avatar.jpg" alt="" width="30" class="rounded-circle me-2">
+																	<span class="fs-14 text-black font-w500">Bico Steve</span>
+																</div>
+																<ul class="d-flex flex-wrap mb-sm-0 mb-2">
+																	<li class="mb-2 me-4 text-nowrap"><i class="las la-clock scale5 me-2"></i><span class="fs-14 text-black text-nowrap font-w500">4-6 mins </span></li>
+																	<li class="mb-2 me-4 text-nowrap"><i class="las la-prescription-bottle scale5 me-2"></i><span class="text-nowrap fs-14 text-black font-w500">5 Ingridients</span></li>
+																	<li class="text-nowrap mb-2"><i class="fa-regular fa-star me-2 scale3 text-warning" aria-hidden="true"></i><span class="text-nowrap fs-14 text-black font-w500">568 Reviews</span></li>
+																</ul>
+															</div>
+														</div>
+														<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#aAddDietMenus" class="btn btn-primary light btn-md ms-auto"><i class="fa fa-plus scale5 me-3"></i>Add Menu</a>
+													</div>
+													<div class="media border-bottom mb-3 pb-3 d-lg-flex d-block menu-list">
+														<a href="ecom-product-detail.html"><img class="rounded me-3 mb-md-0 mb-3" src="images/menus/7.png" alt="" width="120"></a>
+														<div class="food-default-flex col-lg-8 ps-0">
+															<h6 class="fs-16 font-w600"><a href="ecom-product-detail.html" class="text-black">Fresh or Frozen (No Sugar Added) Fruits</a></h6>
+															<p class="fs-14">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
+															<div class="d-flex flex-wrap align-items-center">
+																<div class="d-flex mb-sm-2 mb-3 pe-3 me-auto align-items-center">
+																	<img src="/landing.page/landing/kipfit/images/avatar.jpg" alt="" width="30" class="rounded-circle me-2">
+																	<span class="fs-14 text-black font-w500">Bico Steve</span>
+																</div>
+																<ul class="d-flex flex-wrap mb-sm-0 mb-2">
+																	<li class="mb-2 me-4 text-nowrap"><i class="las la-clock scale5 me-2"></i><span class="fs-14 text-black text-nowrap font-w500">4-6 mins </span></li>
+																	<li class="mb-2 me-4 text-nowrap"><i class="las la-prescription-bottle scale5 me-2"></i><span class="text-nowrap fs-14 text-black font-w500">5 Ingridients</span></li>
+																	<li class="text-nowrap mb-2"><i class="fa-regular fa-star me-2 scale3 text-warning" aria-hidden="true"></i><span class="text-nowrap fs-14 text-black font-w500">568 Reviews</span></li>
+																</ul>
+															</div>
+														</div>
+														<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#aAddDietMenus" class="btn btn-primary light btn-md ms-auto"><i class="fa fa-plus scale5 me-3"></i>Add Menu</a>
+													</div>
+												</div>
+												<div class="card-footer style-1 text-center border-0 pt-0 pb-4">
+													<a class="text-primary dz-load-more fa fa-chevron-down" id="DietMenus1" href="javascript:void(0);" rel="ajax/food-menu-list-1.html">
+													</a>
+												</div>
+										  	</div>
+										  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
+											<div class="card-body loadmore-content dz-scroll height750" id="DietMenus2Content">
+													<div class="media border-bottom mb-3 pb-3 d-lg-flex d-block menu-list">
+														<a href="ecom-product-detail.html"><img class="rounded me-3 mb-md-0 mb-3" src="images/menus/5.png" alt="" width="120"></a>
+														<div class="food-default-flex col-lg-8 ps-0">
+															<h6 class="fs-16 font-w600"><a href="ecom-product-detail.html" class="text-black">Papaya Fruit for Vitamin C</a></h6>
+															<p class="fs-14">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
+															<div class="d-flex flex-wrap align-items-center">
+																<div class="d-flex mb-sm-2 mb-3 pe-3 me-auto align-items-center">
+																	<img src="/landing.page/landing/kipfit/images/avatar.jpg" alt="" width="30" class="rounded-circle me-2">
+																	<span class="fs-14 text-black font-w500">Bico Steve</span>
+																</div>
+																<ul class="d-flex flex-wrap mb-sm-0 mb-2">
+																	<li class="mb-2 me-4 text-nowrap"><i class="las la-clock scale5 me-2"></i><span class="fs-14 text-black text-nowrap font-w500">4-6 mins </span></li>
+																	<li class="mb-2 me-4 text-nowrap"><i class="las la-prescription-bottle scale5 me-2"></i><span class="text-nowrap fs-14 text-black font-w500">5 Ingridients</span></li>
+																	<li class="text-nowrap mb-2"><i class="fa-regular fa-star me-2 scale3 text-warning" aria-hidden="true"></i><span class="text-nowrap fs-14 text-black font-w500">568 Reviews</span></li>
+																</ul>
+															</div>
+														</div>
+														<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#aAddDietMenus" class="btn btn-primary light btn-md ms-auto"><i class="fa fa-plus scale5 me-3"></i>Add Menu</a>
+													</div>
+													<div class="media border-bottom mb-3 pb-3 d-lg-flex d-block menu-list">
+														<a href="ecom-product-detail.html"><img class="rounded me-3 mb-md-0 mb-3" src="images/menus/6.png" alt="" width="120"></a>
+														<div class=" food-default-flex col-lg-8 ps-0">
+															<h6 class="fs-16 font-w600"><a href="ecom-product-detail.html" class="text-black">Vitamin C Vegetables</a></h6>
+															<p class="fs-14">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
+															<div class="d-flex flex-wrap align-items-center">
+																<div class="d-flex mb-sm-2 mb-3 pe-3 me-auto align-items-center">
+																	<img src="/landing.page/landing/kipfit/images/avatar.jpg" alt="" width="30" class="rounded-circle me-2">
+																	<span class="fs-14 text-black font-w500">Bico Steve</span>
+																</div>
+																<ul class="d-flex flex-wrap mb-sm-0 mb-2">
+																	<li class="mb-2 me-4 text-nowrap"><i class="las la-clock scale5 me-2"></i><span class="fs-14 text-black text-nowrap font-w500">4-6 mins </span></li>
+																	<li class="mb-2 me-4 text-nowrap"><i class="las la-prescription-bottle scale5 me-2"></i><span class="text-nowrap fs-14 text-black font-w500">5 Ingridients</span></li>
+																	<li class="text-nowrap mb-2"><i class="fa-regular fa-star me-2 scale3 text-warning" aria-hidden="true"></i><span class="text-nowrap fs-14 text-black font-w500">568 Reviews</span></li>
+																</ul>
+															</div>
+														</div>
+														<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#aAddDietMenus" class="btn btn-primary light btn-md ms-auto"><i class="fa fa-plus scale5 me-3"></i>Add Menu</a>
+													</div>
+													<div class="media border-bottom mb-3 pb-3 d-lg-flex d-block menu-list">
+														<a href="ecom-product-detail.html"><img class="rounded me-3 mb-md-0 mb-3" src="images/menus/7.png" alt="" width="120"></a>
+														<div class="food-default-flex col-lg-8 ps-0">
+															<h6 class="fs-16 font-w600"><a href="ecom-product-detail.html" class="text-black">Fresh or Frozen (No Sugar Added) Fruits</a></h6>
+															<p class="fs-14">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
+															<div class="d-flex flex-wrap align-items-center">
+																<div class="d-flex mb-sm-2 mb-3 pe-3 me-auto align-items-center">
+																	<img src="/landing.page/landing/kipfit/images/avatar.jpg" alt="" width="30" class="rounded-circle me-2">
+																	<span class="fs-14 text-black font-w500">Bico Steve</span>
+																</div>
+																<ul class="d-flex flex-wrap mb-sm-0 mb-2">
+																	<li class="mb-2 me-4 text-nowrap"><i class="las la-clock scale5 me-2"></i><span class="fs-14 text-black text-nowrap font-w500">4-6 mins </span></li>
+																	<li class="mb-2 me-4 text-nowrap"><i class="las la-prescription-bottle scale5 me-2"></i><span class="text-nowrap fs-14 text-black font-w500">5 Ingridients</span></li>
+																	<li class="text-nowrap mb-2"><i class="fa-regular fa-star me-2 scale3 text-warning" aria-hidden="true"></i><span class="text-nowrap fs-14 text-black font-w500">568 Reviews</span></li>
+																</ul>
+															</div>
+														</div>
+														<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#aAddDietMenus" class="btn btn-primary light btn-md ms-auto"><i class="fa fa-plus scale5 me-3"></i>Add Menu</a>
+													</div>
+													<div class="media border-bottom mb-3 pb-3 d-lg-flex d-block menu-list">
+														<a href="ecom-product-detail.html"><img class="rounded me-3 mb-md-0 mb-3" src="images/menus/4.png" alt="" width="120"></a>
+														<div class="food-default-flex col-lg-8 ps-0">
+															<h6 class="fs-16 font-w600"><a href="ecom-product-detail.html" class="text-black">Fresh Blueberry & Strawberry Dice </a></h6>
+															<p class="fs-14">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
+															<div class="d-flex flex-wrap align-items-center">
+																<div class="d-flex mb-sm-2 mb-3 pe-3 me-auto align-items-center">
+																	<img src="/landing.page/landing/kipfit/images/avatar.jpg" alt="" width="30" class="rounded-circle me-2">
+																	<span class="fs-14 text-black font-w500">Bico Steve</span>
+																</div>
+																<ul class="d-flex flex-wrap mb-sm-0 mb-2">
+																	<li class="mb-2 me-4 text-nowrap"><i class="las la-clock scale5 me-2"></i><span class="fs-14 text-black text-nowrap font-w500">4-6 mins </span></li>
+																	<li class="mb-2 me-4 text-nowrap"><i class="las la-prescription-bottle scale5 me-2"></i><span class="text-nowrap fs-14 text-black font-w500">5 Ingridients</span></li>
+																	<li class="text-nowrap mb-2"><i class="fa-regular fa-star me-2 scale3 text-warning" aria-hidden="true"></i><span class="text-nowrap fs-14 text-black font-w500">568 Reviews</span></li>
+																</ul>
+															</div>
+														</div>
+														<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#aAddDietMenus" class="btn btn-primary light btn-md ms-auto"><i class="fa fa-plus scale5 me-3"></i>Add Menu</a>
+													</div>
+													<div class="media border-bottom mb-3 pb-3 d-lg-flex d-block menu-list">
+														<a href="ecom-product-detail.html"><img class="rounded me-3 mb-md-0 mb-3" src="images/menus/7.png" alt="" width="120"></a>
+														<div class="food-default-flex col-lg-8 ps-0">
+															<h6 class="fs-16 font-w600"><a href="ecom-product-detail.html" class="text-black">Fresh or Frozen (No Sugar Added) Fruits</a></h6>
+															<p class="fs-14">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
+															<div class="d-flex flex-wrap align-items-center">
+																<div class="d-flex mb-sm-2 mb-3 pe-3 me-auto align-items-center">
+																	<img src="/landing.page/landing/kipfit/images/avatar.jpg" alt="" width="30" class="rounded-circle me-2">
+																	<span class="fs-14 text-black font-w500">Bico Steve</span>
+																</div>
+																<ul class="d-flex flex-wrap mb-sm-0 mb-2">
+																	<li class="mb-2 me-4 text-nowrap"><i class="las la-clock scale5 me-2"></i><span class="fs-14 text-black text-nowrap font-w500">4-6 mins </span></li>
+																	<li class="mb-2 me-4 text-nowrap"><i class="las la-prescription-bottle scale5 me-2"></i><span class="text-nowrap fs-14 text-black font-w500">5 Ingridients</span></li>
+																	<li class="text-nowrap mb-2"><i class="fa-regular fa-star me-2 scale3 text-warning" aria-hidden="true"></i><span class="text-nowrap fs-14 text-black font-w500">568 Reviews</span></li>
+																</ul>
+															</div>
+														</div>
+														<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#aAddDietMenus" class="btn btn-primary light btn-md ms-auto"><i class="fa fa-plus scale5 me-3"></i>Add Menu</a>
+													</div>
+												</div>
+												<div class="card-footer style-1 text-center border-0 pt-0 pb-4">
+													<a class="text-primary dz-load-more fa fa-chevron-down" id="DietMenus2" href="javascript:void(0);" rel="ajax/food-menu-list-2.html">
+													</a>
+												</div>
+										  </div>
+										  <div class="tab-pane fade" id="nav-lunch" role="tabpanel" aria-labelledby="nav-lunch-tab" tabindex="0">
+											<div class="card-body loadmore-content dz-scroll height750" id="DietMenus3Content">
+													<div class="media border-bottom mb-3 pb-3 d-lg-flex d-block menu-list">
+														<a href="ecom-product-detail.html"><img class="rounded me-3 mb-md-0 mb-3" src="images/menus/5.png" alt="" width="120"></a>
+														<div class="food-default-flex col-lg-8 ps-0">
+															<h6 class="fs-16 font-w600"><a href="ecom-product-detail.html" class="text-black">Papaya Fruit for Vitamin C</a></h6>
+															<p class="fs-14">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
+															<div class="d-flex flex-wrap align-items-center">
+																<div class="d-flex mb-sm-2 mb-3 pe-3 me-auto align-items-center">
+																	<img src="/landing.page/landing/kipfit/images/avatar.jpg" alt="" width="30" class="rounded-circle me-2">
+																	<span class="fs-14 text-black font-w500">Bico Steve</span>
+																</div>
+																<ul class="d-flex flex-wrap mb-sm-0 mb-2">
+																	<li class="mb-2 me-4 text-nowrap"><i class="las la-clock scale5 me-2"></i><span class="fs-14 text-black text-nowrap font-w500">4-6 mins </span></li>
+																	<li class="mb-2 me-4 text-nowrap"><i class="las la-prescription-bottle scale5 me-2"></i><span class="text-nowrap fs-14 text-black font-w500">5 Ingridients</span></li>
+																	<li class="text-nowrap mb-2"><i class="fa-regular fa-star me-2 scale3 text-warning" aria-hidden="true"></i><span class="text-nowrap fs-14 text-black font-w500">568 Reviews</span></li>
+																</ul>
+															</div>
+														</div>
+														<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#aAddDietMenus" class="btn btn-primary light btn-md ms-auto"><i class="fa fa-plus scale5 me-3"></i>Add Menu</a>
+													</div>
+													<div class="media border-bottom mb-3 pb-3 d-lg-flex d-block menu-list">
+														<a href="ecom-product-detail.html"><img class="rounded me-3 mb-md-0 mb-3" src="images/menus/6.png" alt="" width="120"></a>
+														<div class=" food-default-flex col-lg-8 ps-0">
+															<h6 class="fs-16 font-w600"><a href="ecom-product-detail.html" class="text-black">Vitamin C Vegetables</a></h6>
+															<p class="fs-14">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
+															<div class="d-flex flex-wrap align-items-center">
+																<div class="d-flex mb-sm-2 mb-3 pe-3 me-auto align-items-center">
+																	<img src="/landing.page/landing/kipfit/images/avatar.jpg" alt="" width="30" class="rounded-circle me-2">
+																	<span class="fs-14 text-black font-w500">Bico Steve</span>
+																</div>
+																<ul class="d-flex flex-wrap mb-sm-0 mb-2">
+																	<li class="mb-2 me-4 text-nowrap"><i class="las la-clock scale5 me-2"></i><span class="fs-14 text-black text-nowrap font-w500">4-6 mins </span></li>
+																	<li class="mb-2 me-4 text-nowrap"><i class="las la-prescription-bottle scale5 me-2"></i><span class="text-nowrap fs-14 text-black font-w500">5 Ingridients</span></li>
+																	<li class="text-nowrap mb-2"><i class="fa-regular fa-star me-2 scale3 text-warning" aria-hidden="true"></i><span class="text-nowrap fs-14 text-black font-w500">568 Reviews</span></li>
+																</ul>
+															</div>
+														</div>
+														<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#aAddDietMenus" class="btn btn-primary light btn-md ms-auto"><i class="fa fa-plus scale5 me-3"></i>Add Menu</a>
+													</div>
+													<div class="media border-bottom mb-3 pb-3 d-lg-flex d-block menu-list">
+														<a href="ecom-product-detail.html"><img class="rounded me-3 mb-md-0 mb-3" src="images/menus/7.png" alt="" width="120"></a>
+														<div class="food-default-flex col-lg-8 ps-0">
+															<h6 class="fs-16 font-w600"><a href="ecom-product-detail.html" class="text-black">Fresh or Frozen (No Sugar Added) Fruits</a></h6>
+															<p class="fs-14">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
+															<div class="d-flex flex-wrap align-items-center">
+																<div class="d-flex mb-sm-2 mb-3 pe-3 me-auto align-items-center">
+																	<img src="/landing.page/landing/kipfit/images/avatar.jpg" alt="" width="30" class="rounded-circle me-2">
+																	<span class="fs-14 text-black font-w500">Bico Steve</span>
+																</div>
+																<ul class="d-flex flex-wrap mb-sm-0 mb-2">
+																	<li class="mb-2 me-4 text-nowrap"><i class="las la-clock scale5 me-2"></i><span class="fs-14 text-black text-nowrap font-w500">4-6 mins </span></li>
+																	<li class="mb-2 me-4 text-nowrap"><i class="las la-prescription-bottle scale5 me-2"></i><span class="text-nowrap fs-14 text-black font-w500">5 Ingridients</span></li>
+																	<li class="text-nowrap mb-2"><i class="fa-regular fa-star me-2 scale3 text-warning" aria-hidden="true"></i><span class="text-nowrap fs-14 text-black font-w500">568 Reviews</span></li>
+																</ul>
+															</div>
+														</div>
+														<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#aAddDietMenus" class="btn btn-primary light btn-md ms-auto"><i class="fa fa-plus scale5 me-3"></i>Add Menu</a>
+													</div>
+													<div class="media border-bottom mb-3 pb-3 d-lg-flex d-block menu-list">
+														<a href="ecom-product-detail.html"><img class="rounded me-3 mb-md-0 mb-3" src="images/menus/4.png" alt="" width="120"></a>
+														<div class="food-default-flex col-lg-8 ps-0">
+															<h6 class="fs-16 font-w600"><a href="ecom-product-detail.html" class="text-black">Fresh Blueberry & Strawberry Dice </a></h6>
+															<p class="fs-14">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
+															<div class="d-flex flex-wrap align-items-center">
+																<div class="d-flex mb-sm-2 mb-3 pe-3 me-auto align-items-center">
+																	<img src="/landing.page/landing/kipfit/images/avatar.jpg" alt="" width="30" class="rounded-circle me-2">
+																	<span class="fs-14 text-black font-w500">Bico Steve</span>
+																</div>
+																<ul class="d-flex flex-wrap mb-sm-0 mb-2">
+																	<li class="mb-2 me-4 text-nowrap"><i class="las la-clock scale5 me-2"></i><span class="fs-14 text-black text-nowrap font-w500">4-6 mins </span></li>
+																	<li class="mb-2 me-4 text-nowrap"><i class="las la-prescription-bottle scale5 me-2"></i><span class="text-nowrap fs-14 text-black font-w500">5 Ingridients</span></li>
+																	<li class="text-nowrap mb-2"><i class="fa-regular fa-star me-2 scale3 text-warning" aria-hidden="true"></i><span class="text-nowrap fs-14 text-black font-w500">568 Reviews</span></li>
+																</ul>
+															</div>
+														</div>
+														<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#aAddDietMenus" class="btn btn-primary light btn-md ms-auto"><i class="fa fa-plus scale5 me-3"></i>Add Menu</a>
+													</div>
+													<div class="media border-bottom mb-3 pb-3 d-lg-flex d-block menu-list">
+														<a href="ecom-product-detail.html"><img class="rounded me-3 mb-md-0 mb-3" src="images/menus/7.png" alt="" width="120"></a>
+														<div class="food-default-flex col-lg-8 ps-0">
+															<h6 class="fs-16 font-w600"><a href="ecom-product-detail.html" class="text-black">Fresh or Frozen (No Sugar Added) Fruits</a></h6>
+															<p class="fs-14">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
+															<div class="d-flex flex-wrap align-items-center">
+																<div class="d-flex mb-sm-2 mb-3 pe-3 me-auto align-items-center">
+																	<img src="/landing.page/landing/kipfit/images/avatar.jpg" alt="" width="30" class="rounded-circle me-2">
+																	<span class="fs-14 text-black font-w500">Bico Steve</span>
+																</div>
+																<ul class="d-flex flex-wrap mb-sm-0 mb-2">
+																	<li class="mb-2 me-4 text-nowrap"><i class="las la-clock scale5 me-2"></i><span class="fs-14 text-black text-nowrap font-w500">4-6 mins </span></li>
+																	<li class="mb-2 me-4 text-nowrap"><i class="las la-prescription-bottle scale5 me-2"></i><span class="text-nowrap fs-14 text-black font-w500">5 Ingridients</span></li>
+																	<li class="text-nowrap mb-2"><i class="fa-regular fa-star me-2 scale3 text-warning" aria-hidden="true"></i><span class="text-nowrap fs-14 text-black font-w500">568 Reviews</span></li>
+																</ul>
+															</div>
+														</div>
+														<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#aAddDietMenus" class="btn btn-primary light btn-md ms-auto"><i class="fa fa-plus scale5 me-3"></i>Add Menu</a>
+													</div>
+												</div>
+												<div class="card-footer style-1 text-center border-0 pt-0 pb-4">
+													<a class="text-primary dz-load-more fa fa-chevron-down" id="DietMenus3" href="javascript:void(0);" rel="ajax/food-menu-list-3.html">
+													</a>
+												</div>
+										  </div>
+										</div>
+									</div>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-3 col-xxl-4">
+						<div class="row">
+							<div class="col-xl-12 col-md-6">
+								<div class="card">
+									<div class="card-header border-0">
+										<div class="me-auto pe-3">
+											<h4 class="text-black fs-20">Current Diet Menu</h4>
+											<p class="fs-13 mb-0">Lorem ipsum dolor sit ame</p>
+										</div>
+										<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#aAddDietMenus" class="plus-icon"><i class="las la-plus"></i></a>
+									</div>
+									<div class="card-body pb-3">
+										<div class="media mb-3">
+											<a href="ecom-product-detail.html"><img src="images/menus/8.png" alt="" class="rounded me-3" width="86"></a>
+											<div class="media-body">
+												<h6 class="fs-16 font-w500"><a href="ecom-product-detail.html" class="text-black">Hearty Italian-Style White Bean Soup</a></h6>
+												<span class="fs-14">by Andrew</span>
+											</div>
+										</div>
+										<ul class="m-md-auto mt-2 pe-4">
+											<li class="mb-2 text-nowrap"><i class="las la-clock scale5 me-3"></i><span class="fs-14 text-black text-nowrap font-w500">4-6 mins </span></li>
+											<li class="mb-2 text-nowrap"><i class="las la-calendar-alt scale5 me-3"></i><span class="fs-14 text-black  font-w500">Breakfast (Monday, Tuesday)</span></li>
+											<li class="mb-2 text-nowrap"><i class="las la-prescription-bottle scale5 me-3"></i><span class="text-nowrap fs-14 text-primary font-w500">8 Ingridients</span></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="col-xl-12 col-md-6">
+								<div class="card">
+									<div class="card-header d-sm-flex d-block border-0 pb-4">
+										<div class="me-auto pe-3">
+											<h4 class="text-black fs-20">Trending Ingridients</h4>
+											<p class="fs-13 mb-0">Lorem ipsum dolor sit amet, consectetur</p>
+										</div>
+									</div>
+									<div class="card-body loadmore-content dz-scroll pb-0 pt-0 height320" id="TrendingIngridientsContent">
+										<div class="media border-bottom py-3">
+											<a href="ecom-product-detail.html"><img src="images/menus/9.png" alt="" class="rounded me-3" width="50"></a>
+											<div class="pe-3 me-auto media-body">
+												<h6 class="fs-16 font-w600 mb-0"><a href="ecom-product-detail.html" class="text-black">Strawberry Fruit</a></h6>
+												<span class="fs-12">Vitamin A, B, C</span>
+											</div>
+											<div class="text-center">
+												<span class="d-block">
+													<svg width="19" height="9" viewbox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M9 0L0 9H18L9 0Z" fill="#0B2A97"></path>
+													</svg>
+												</span>
+												<span class="d-block fs-16 text-black font-w600">#1</span>
+											</div>
+										</div>
+										<div class="media border-bottom py-3">
+											<a href="ecom-product-detail.html"><img src="images/menus/10.png" alt="" class="rounded me-3" width="50"></a>
+											<div class="pe-3 me-auto media-body">
+												<h6 class="fs-16 font-w600 mb-0"><a href="ecom-product-detail.html" class="text-black">Bananas Fruit</a></h6>
+												<span class="fs-12">Vitamin A, B, C</span>
+											</div>
+											<div class="text-center">
+												<span class="d-block">
+													<svg width="19" height="9" viewbox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M9 0L0 9H18L9 0Z" fill="#0B2A97"></path>
+													</svg>
+												</span>
+												<span class="d-block fs-16 text-black font-w600">#2</span>
+											</div>
+										</div>
+										<div class="media border-bottom py-3">
+											<a href="ecom-product-detail.html"><img src="images/menus/11.png" alt="" class="rounded me-3" width="50"></a>
+											<div class="pe-3 me-auto media-body">
+												<h6 class="fs-16 font-w600 mb-0"><a href="ecom-product-detail.html" class="text-black">Orange Fruit</a></h6>
+												<span class="fs-12">Vitamin A, B, C</span>
+											</div>
+											<div class="text-center">
+												<span class="d-block">
+													<svg width="19" height="9" viewbox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M9 9.00006L18 6.10352e-05H9L0 6.10352e-05L9 9.00006Z" fill="#C51E1E"></path>
+													</svg>
+												</span>
+												<span class="d-block fs-16 text-black font-w600">#3</span>
+											</div>
+										</div>
+										<div class="media border-bottom py-3">
+											<a href="ecom-product-detail.html"><img src="images/menus/12.png" alt="" class="rounded me-3" width="50"></a>
+											<div class="pe-3 me-auto media-body">
+												<h6 class="fs-16 font-w600 mb-0"><a href="ecom-product-detail.html" class="text-black">Grapes Fruit</a></h6>
+												<span class="fs-12">Vitamin A, B, C</span>
+											</div>
+											<div class="text-center">
+												<span class="d-block">
+													<svg width="19" height="9" viewbox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M9 0L0 9H18L9 0Z" fill="#0B2A97"></path>
+													</svg>
+												</span>
+												<span class="d-block fs-16 text-black font-w600">#4</span>
+											</div>
+										</div>
+									</div>
+									<div class="card-footer text-center border-0 pt-3 pb-4">
+										<a class="text-primary dz-load-more" id="TrendingIngridients" rel="ajax/trending-ingridients.html" href="javascript:void(0);">View more</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+            </div>
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+		
+		<!-- Modal Box Strat -->
+		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<h1 class="modal-title fs-5" id="exampleModalLabel">Filter Details</h1>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			  </div>
+			  <div class="modal-body">
+				<div class="row">
+					<form>
+						<div class="col-xl-12">
+							<div class="mb-3">
+							  <label for="exampleFormControlInput1" class="form-label">Diet Menus</label>
+							  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Papaya Fruit for Vitamin C">
+							</div>
+							<div class="mb-3">
+							  <label class="form-label">Diet Categories</label>
+							  <select class="form-control default-select">
+									<option selected="">Salad</option>
+									<option>Breakfast</option>
+									<option>Lunch</option>
+									<option>Salad</option>
+								</select>
+							</div>
+						</div>
+					</form>
+				</div>
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Save changes</button>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<!-- Modal Box End -->
+
+        <!--**********************************
+            Footer start
+        ***********************************-->
+		<footer class="footer">
+            <div class="copyright">
+                  <p>
+					&copy; <span id="displayYear"></span> All Rights Reserved By
+            		<a href="/">Kip•Fit</a>
+				</p>
+            </div>
+        </footer>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+
+		<!--**********************************
+           Support ticket button start
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button end
+        ***********************************-->
+
+
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+	<script src="vendor/global/global.min.js"></script>
+	<script src="vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
+	<script src="vendor/chart-js/chart.bundle.min.js"></script>
+	<script src="js/custom.min.js"></script>
+	<script src="js/deznav-init.js"></script>
+</body>
+</html>

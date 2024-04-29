@@ -1,0 +1,880 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Title -->
+    <title>Kip•Fit - Power • Motion • Transformation</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="smb">
+    <meta name="robots" content="">
+
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images//favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images//favicon-16x16.png">
+    <link rel="manifest" href="/images//site.webmanifest">
+    <link rel="mask-icon" href="/images//safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#000101">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/fontawesome.min.css">
+
+    <!-- Mobile Specific -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon icon -->
+    <link href="/vendor/fullcalendar/css/fullcalendar.min.css" rel="stylesheet">
+    <link href="/vendor/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="/css/style_dashboard.css" rel="stylesheet">
+    <link
+        href="../css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
+    </div>
+
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header">
+            <a href="/" class="brand-logo">
+                <img class="logo-abbr" src="/images/logo-kipfit.png" alt="">
+                <img class="logo-compact" src="/images/logo-text (2).png" alt="">
+                <img class="brand-title" src="/images/logo-text (2).png" alt="">
+            </a>
+
+            <div class="nav-control">
+                <div class="hamburger">
+                    <span class="line"></span><span class="line"></span><span class="line"></span>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+
+        <!--**********************************
+            Header start
+        ***********************************-->
+        <header class="header">
+            <div class="header-content">
+                <nav class="navbar navbar-expand">
+                    <div class="collapse navbar-collapse justify-content-between">
+                        <div class="header-left">
+                            <div class="dashboard_bar">
+                                Home Page
+                            </div>
+                        </div>
+                        <ul class="navbar-nav header-right">
+                            <li class="nav-item">
+                                <form>
+                                    <div class="input-group search-area d-lg-inline-flex d-none me-3">
+                                        <span class="input-group-text" id="header-search">
+                                            <button class="bg-transparent border-0">
+                                                <i class="flaticon-381-search-2"></i>
+                                            </button>
+                                        </span>
+                                        <input type="text" class="form-control" placeholder="Search here"
+                                            aria-label="Username" aria-describedby="header-search">
+                                    </div>
+                                </form>
+                            </li>
+                            <li class="nav-item dropdown header-profile">
+                                <a class="nav-link" href="/profile" role="button" data-bs-toggle="dropdown">
+                                    <img src="/images/avatar.jpg" width="20" alt="">
+                                    <div class="header-info">
+                                        <span class="text-black"><strong>Bico Steve</strong></span>
+                                        <p class="fs-12 mb-0">App Admin</p>
+                                    </div>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                    <a href="/profile" class="dropdown-item ai-icon">
+                                        <svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" class="text-primary"
+                                            width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                            <circle cx="12" cy="7" r="4"></circle>
+                                        </svg>
+                                        <span class="ms-2">Profile </span>
+                                    </a>
+                                    <a href="/profile" class="dropdown-item ai-icon">
+                                        <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger"
+                                            width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                                            <polyline points="16 17 21 12 16 7"></polyline>
+                                            <line x1="21" y1="12" x2="9" y2="12"></line>
+                                        </svg>
+                                        <span class="ms-2">Logout </span>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown notification_dropdown">
+                                <a class="nav-link bell dz-theme-mode" href="javascript:void(0);">
+                                    <i id="icon-light" class="fas fa-sun"></i>
+                                    <i id="icon-dark" class="fas fa-moon"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+        <!--**********************************
+              Sidebar start
+          ***********************************-->
+        <div class="deznav">
+            <div class="deznav-scroll">
+                <ul class="metismenu" id="menu">
+                    <li><a class=" ai-icon" href="/" aria-expanded="false">
+                            <i class="fa fa-home"></i>
+                            <span class="nav-text">Home</span>
+                        </a>
+                    </li>
+                    <li><a class=" ai-icon" href="/profile" aria-expanded="false">
+                            <i class="fa fa-user"></i>
+                            <span class="nav-text">Profile</span>
+                        </a>
+                    </li>
+                    <li><a class=" ai-icon" href="/product-grid" aria-expanded="false">
+                            <i class="fa fa-cart-arrow-down"></i>
+                            <span class="nav-text">Shop<span class="badge badge-danger badge-xs ms-1">NEW</span></span>
+                        </a>
+                    </li>
+                    <li><a class="ai-icon" href="/main-index" aria-expanded="false">
+                            <i class="fa fa-video-camera"></i>
+                            <span class="nav-text">Videos<span
+                                    class="badge badge-danger badge-xs ms-1">NEW</span></span>
+                        </a>
+                    </li>
+                    <li><a class=" ai-icon" href="/checkout" aria-expanded="false">
+                            <i class="fa fa-check-square-o"></i>
+                            <span class="nav-text">Checkout</span>
+                        </a>
+                    </li>
+                    <li><a class=" ai-icon" href="/product-order" aria-expanded="false">
+                            <i class="fa fa-credit-card-alt"></i>
+                            <span class="nav-text">Checkout Status</span>
+                        </a>
+                    </li>
+                    <li><a class="ai-icon" href="/food-menu" aria-expanded="false">
+                            <i class="fa fa-cutlery"></i>
+                            <span class="nav-text">Food-Menu</span>
+                        </a>
+                    </li>
+                    <li><a class="ai-icon" href="/calendar" aria-expanded="false">
+                            <i class="fa fa-calendar"></i>
+                            <span class="nav-text">Calendar</span>
+                        </a>
+                    </li>
+                    <li><a href="/main-profile" class="ai-icon" aria-expanded="false">
+                            <i class="fa fa-file-video-o"></i>
+                            <span class="nav-text">Video Profile</span>
+                        </a>
+                    </li>
+                    <!-- <li><a class=" ai-icon" href="javascript:void()" aria-expanded="false">
+            </a>
+                    </li> -->
+                    <li><a class=" ai-icon" href="javascript:void()" aria-expanded="false">
+                        </a>
+                    </li>
+                    <li><a class="ai-icon" href="javascript:void()" aria-expanded="false">
+                        </a>
+                    </li>
+                </ul>
+                <div class="add-menu-sidebar">
+                    <img src="/images/profile/gym-template.png" alt="" class="me-3"
+                        style="width: 4em; height: 4em;object-fit: fill;">
+                    <a href="/calendar" class="font-w500 mb-0">Create Workout Plan Now</a>
+                </div>
+                <div class="copyright mb-n1">
+                    <p><strong>Kip•Fit <br> Power•Motion•Transformation</strong> © 2024 All Rights Reserved</p>
+                    <p>Made with <span class="heart"></span> by S.M.B</p>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <header class="header">
+            <div class="header-content">
+                <nav class="navbar navbar-expand">
+                    <div class="collapse navbar-collapse justify-content-between">
+                        <div class="header-left">
+                            <div class="dashboard_bar">
+                                Profile
+                            </div>
+                        </div>
+                        <ul class="navbar-nav header-right">
+                            <li class="nav-item dropdown header-profile">
+                                <a class="nav-link" href="javascript:void(0)" role="button" data-bs-toggle="dropdown">
+                                    <img src="/images/avatar.jpg" width="20" alt="">
+                                    <div class="header-info">
+                                        <span class="text-black"><strong>Bico Steve</strong></span>
+                                        <p class="fs-12 mb-0">App Admin</p>
+                                    </div>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                    <a href="/profile" class="dropdown-item ai-icon">
+                                        <svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" class="text-primary"
+                                            width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                            <circle cx="12" cy="7" r="4"></circle>
+                                        </svg>
+                                        <span class="ms-2">Profile </span>
+                                    </a>
+                                    <a href="/login" class="dropdown-item ai-icon">
+                                        <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger"
+                                            width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                                            <polyline points="16 17 21 12 16 7"></polyline>
+                                            <line x1="21" y1="12" x2="9" y2="12"></line>
+                                        </svg>
+                                        <span class="ms-2">Logout </span>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown notification_dropdown">
+                                <a class="nav-link bell dz-theme-mode" href="javascript:void(0);">
+                                    <i id="icon-light" class="fas fa-sun"></i>
+                                    <i id="icon-dark" class="fas fa-moon"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body default-height" style=" margin-left: -0.007rem;">
+            <div class="container-fluid">
+                <div class="page-titles">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">App</a></li>
+                        <li class="breadcrumb-item active"><a href="javascript:void(0)">Profile</a></li>
+                    </ol>
+                </div>
+                <!-- row -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="profile card card-body px-3 pt-3 pb-0">
+                            <div class="profile-head">
+                                <div class="photo-content">
+                                    <div class="cover-photo"></div>
+                                </div>
+                                <div class="profile-info">
+                                    <div class="profile-photo">
+                                        <img src="/images/avatar.jpg" class="img-fluid rounded-circle" alt="">
+                                    </div>
+                                    <div class="profile-details">
+                                        <div class="profile-name px-3 pt-2">
+                                            <h4 class="text-primary mb-0">Bico Steve</h4>
+                                            <p>Software Developer</p>
+                                        </div>
+                                        <div class="profile-email px-2 pt-2">
+                                            <h4 class="text-muted mb-0">info@bico-steve.com</h4>
+                                            <p>Email</p>
+                                        </div>
+                                        <div class="dropdown ms-auto">
+                                            <a href="#" class="btn btn-primary light sharp" data-bs-toggle="dropdown"
+                                                aria-expanded="true"><svg xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink" width="18px"
+                                                    height="18px" viewbox="0 0 24 24" version="1.1">
+                                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                        <rect x="0" y="0" width="24" height="24"></rect>
+                                                        <circle fill="#000000" cx="5" cy="12" r="2"></circle>
+                                                        <circle fill="#000000" cx="12" cy="12" r="2"></circle>
+                                                        <circle fill="#000000" cx="19" cy="12" r="2"></circle>
+                                                    </g>
+                                                </svg></a>
+                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                <li class="dropdown-item"><a href="javascript:void(0);"><i
+                                                            class="fa fa-user-circle text-primary me-2"></i> View
+                                                        profile</a></li>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-4">
+                        <div class="card h-auto">
+                            <div class="card-body">
+                                <div class="profile-statistics mb-5">
+                                    <div class="text-center">
+                                        <div class="mt-4">
+                                            <a href="javascript:void()" class="btn btn-primary mb-1"
+                                                data-bs-toggle="modal" data-bs-target="#sendMessageModal">Add
+                                                Highlight</a>
+                                        </div>
+                                    </div>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="sendMessageModal">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title">Add HighLight</h5>
+                                                    <button type="button" class="btn-close"
+                                                        data-bs-dismiss="modal"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form class="comment-form">
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <div class="form-group">
+                                                                    <label
+                                                                        class="text-black font-w600">HighLight</label>
+                                                                    <textarea rows="8" class="form-control"
+                                                                        name="comment" placeholder="Comment"></textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-12">
+                                                                <div class="form-group mb-0">
+                                                                    <input type="submit" value="Post Comment"
+                                                                        class="submit btn btn-primary" name="submit">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="profile-blog mb-5">
+                                    <h4 class="text-primary d-inline">Today Highlights</h4><a href="javascript:void()"
+                                        class="pull-right f-s-16">More</a>
+                                    <img src="/images/profile/fitness-stats.jpg" alt=""
+                                        class="img-fluid mt-4 mb-4 rounded w-100"
+                                        style="height: 10em; object-fit: fill;">
+                                    <h4><a href="post-details.html" class="text-black">Darwin Creative Agency Theme</a>
+                                    </h4>
+                                    <p class="mb-0">A small river named Duden flows by their place and supplies it with
+                                        the necessary regelialia. It is a paradisematic country, in which roasted parts
+                                        of sentences fly into your mouth.</p>
+                                </div>
+                                <div class="profile-blog mb-5">
+                                    <h4 class="text-primary d-inline">Today Highlights</h4><a href="javascript:void()"
+                                        class="pull-right f-s-16">More</a>
+                                    <img src="/images/profile/fitness-stats.jpg" alt=""
+                                        class="img-fluid mt-4 mb-4 rounded w-100"
+                                        style="height: 10em; object-fit: fill;">
+                                    <h4><a href="post-details.html" class="text-black">My Fitness Journey</a></h4>
+                                    <p class="mb-0">A small river named Duden flows by their place and supplies it with
+                                        the necessary regelialia. It is a paradisematic country, in which roasted parts
+                                        of sentences fly into your mouth.</p>
+                                </div>
+                                <div class="profile-blog mb-5">
+                                    <h4 class="text-primary d-inline">Current Gym Discovery</h4><a
+                                        href="javascript:void()" class="pull-right f-s-16">More</a>
+                                    <img src="/images/profile/fitness-stats.jpg" alt=""
+                                        class="img-fluid mt-4 mb-4 rounded w-100"
+                                        style="height: 10em; object-fit: fill;">
+                                    <h4><a href="post-details.html" class="text-black">Darwin Creative Agency Theme</a>
+                                    </h4>
+                                    <p class="mb-0">A small river named Duden flows by their place and supplies it with
+                                        the necessary regelialia. It is a paradisematic country, in which roasted parts
+                                        of sentences fly into your mouth.</p>
+                                </div>
+                                <div class="profile-news">
+                                    <h4 class="text-primary d-inline">Our Latest Posts</h4>
+                                    <div class="media pt-3 pb-3">
+                                        <img src="/images/profile/gym-template.png" alt="image" class="me-3 rounded"
+                                            width="75">
+                                        <div class="media-body">
+                                            <h5 class="m-b-5"><a href="post-details.html" class="text-black">Transform
+                                                    Yourself, New Video.</a></h5>
+                                            <p class="mb-0 line-para-height fs-15">I shared this on my fb wall a few
+                                                months back, and I thought.</p>
+                                        </div>
+                                    </div>
+                                    <div class="media pt-3 pb-3">
+                                        <img src="/images/profile/gym-template.png" alt="image" class="me-3 rounded"
+                                            width="75">
+                                        <div class="media-body">
+                                            <h5 class="m-b-5"><a href="post-details.html" class="text-black">Be
+                                                    Disciplined, Ignite Potential, Achieve.</a></h5>
+                                            <p class="mb-0 line-para-height fs-15">I shared this on my twitter wall a
+                                                few months back, and I thought.</p>
+                                        </div>
+                                    </div>
+                                    <div class="media pt-3 ">
+                                        <img src="/images/profile/gym-template.png" alt="image" class="me-3 rounded"
+                                            width="75">
+                                        <div class="media-body">
+                                            <h5 class="m-b-5"><a href="post-details.html" class="text-black">Strength,
+                                                    Endurance, Progress"</a></h5>
+                                            <p class="mb-0 line-para-height fs-15">I shared this on my insta wall a few
+                                                months back, and I thought.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-n3 h-auto">
+                            <div class="widget-stat card">
+                                <div class="card-body p-4">
+                                    <div class="media ai-icon">
+                                        <span class="me-3 bgl-warning text-warning">
+                                            <svg id="icon-orders" xmlns="http://www.w3.org/2000/svg" width="30"
+                                                height="30" viewbox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                class="feather feather-file-text">
+                                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z">
+                                                </path>
+                                                <polyline points="14 2 14 8 20 8"></polyline>
+                                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                                <polyline points="10 9 9 9 8 9"></polyline>
+                                            </svg>
+                                        </span>
+                                        <div class="media-body">
+                                            <p class="mb-1">Gym</p>
+                                            <h4 class="mb-0">2570</h4>
+                                            <span class="badge badge-warning">+24 Days</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="h-auto mt-n3">
+                            <div class="widget-stat  card bg-primary">
+                                <div class="card-body p-4">
+                                    <div class="media ai-icon">
+                                        <span class="me-3 bgl-warning text-warning">
+                                            <svg id="icon-orders" xmlns="http://www.w3.org/2000/svg" width="30"
+                                                height="30" viewbox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                class="feather feather-file-text">
+                                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z">
+                                                </path>
+                                                <polyline points="14 2 14 8 20 8"></polyline>
+                                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                                <polyline points="10 9 9 9 8 9"></polyline>
+                                            </svg>
+                                        </span>
+                                        <div class="media-body text-white">
+                                            <p class="mb-1 ">Package</p>
+                                            <h4 class="mb-0 text-white">2570</h4>
+                                            <span class="badge badge-warning">Second</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-8">
+                        <div class="card h-auto">
+                            <div class="card-body">
+                                <div class="profile-tab">
+                                    <div class="custom-tab-1">
+                                        <ul class="nav nav-tabs">
+                                            <li class="nav-item"><a href="#my-posts" data-bs-toggle="tab"
+                                                    class="nav-link active show">Posts</a>
+                                            </li>
+                                            <li class="nav-item"><a href="#about-me" data-bs-toggle="tab"
+                                                    class="nav-link">About Me</a>
+                                            </li>
+                                            <li class="nav-item"><a href="#profile-settings" data-bs-toggle="tab"
+                                                    class="nav-link">Setting</a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content">
+                                            <div id="my-posts" class="tab-pane fade active show">
+                                                <div class="my-post-content pt-3">
+                                                    <div class="post-input">
+                                                        <textarea name="textarea" id="textarea" cols="30" rows="5"
+                                                            class="form-control bg-transparent"
+                                                            placeholder="Please type what you want...."></textarea>
+                                                        <a href="javascript:void()" class="btn btn-primary light px-3"
+                                                            data-bs-toggle="modal" data-bs-target="#linkModal"><i
+                                                                class="fa fa-link"></i> </a>
+                                                        <!-- Modal -->
+                                                        <div class="modal fade" id="linkModal">
+                                                            <div class="modal-dialog modal-dialog-centered"
+                                                                role="document">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title">Social Links</h5>
+                                                                        <button type="button" class="btn-close"
+                                                                            data-bs-dismiss="modal">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <a class="btn-social facebook"
+                                                                            href="javascript:void(0)"><i
+                                                                                class="fab fa-facebook-f"></i></a>
+                                                                        <a class="btn-social google-plus"
+                                                                            href="javascript:void(0)"><i
+                                                                                class="fab fa-google-plus-g"></i></a>
+                                                                        <a class="btn-social linkedin"
+                                                                            href="javascript:void(0)"><i
+                                                                                class="fab fa-linkedin-in"></i></a>
+                                                                        <a class="btn-social instagram"
+                                                                            href="javascript:void(0)"><i
+                                                                                class="fab fa-instagram"></i></a>
+                                                                        <a class="btn-social twitter"
+                                                                            href="javascript:void(0)"><i
+                                                                                class="fab fa-twitter"></i></a>
+                                                                        <a class="btn-social youtube"
+                                                                            href="javascript:void(0)"><i
+                                                                                class="fab fa-youtube"></i></a>
+                                                                        <a class="btn-social whatsapp"
+                                                                            href="javascript:void(0)"><i
+                                                                                class="fab fa-whatsapp"></i></a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <a href="javascript:void()"
+                                                            class="btn btn-primary light me-1 px-3"
+                                                            data-bs-toggle="modal" data-bs-target="#cameraModal"><i
+                                                                class="fa fa-camera"></i> </a>
+                                                        <!-- Modal -->
+                                                        <div class="modal fade" id="cameraModal">
+                                                            <div class="modal-dialog modal-dialog-centered"
+                                                                role="document">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title">Upload images</h5>
+                                                                        <button type="button" class="btn-close"
+                                                                            data-bs-dismiss="modal">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <div class="input-group mb-3 flex-nowrap">
+                                                                            <span
+                                                                                class="input-group-text rounded-sm">Upload</span>
+                                                                            <div
+                                                                                class="form-file border-left-end overflow-hidden">
+                                                                                <input type="file"
+                                                                                    class="form-file-input form-control">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <a href="javascript:void()" class="btn btn-primary"
+                                                            data-bs-toggle="modal" data-bs-target="#postModal">Post</a>
+                                                        <!-- Modal -->
+                                                        <div class="modal fade" id="postModal">
+                                                            <div class="modal-dialog modal-dialog-centered"
+                                                                role="document">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title">Post</h5>
+                                                                        <button type="button" class="btn-close"
+                                                                            data-bs-dismiss="modal">
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <textarea name="textarea" id="textarea2"
+                                                                            cols="30" rows="5"
+                                                                            class="form-control bg-transparent"
+                                                                            placeholder="Please type what you want...."></textarea>
+                                                                        <a class="btn btn-primary"
+                                                                            href="javascript:void(0)">Post</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="profile-uoloaded-post border-bottom-1 pb-5">
+                                                        <img src="/images/profile/running.png" alt=""
+                                                            class="img-fluid rounded">
+                                                        <a class="post-title" href="post-details.html">
+                                                            <h3 class="text-black">Empower Your Fitness Journey Today.
+                                                            </h3>
+                                                        </a>
+                                                        <p>A wonderful serenity has take possession of my entire soul
+                                                            like these sweet morning of spare which enjoy whole heart.A
+                                                            wonderful serenity has take possession of my entire soul
+                                                            like these sweet morning
+                                                            of spare which enjoy whole heart.</p>
+                                                        <button class="btn btn-primary me-2"><span class="me-2"><i
+                                                                    class="fa fa-heart"></i></span>Like</button>
+                                                        <button class="btn btn-secondary" data-bs-toggle="modal"
+                                                            data-bs-target="#replyModal"><span class="me-2"><i
+                                                                    class="fa fa-reply"></i></span>Reply</button>
+                                                    </div>
+                                                    <div class="profile-uoloaded-post border-bottom-1 pb-5">
+                                                        <img src="/images/profile/running.png" alt=""
+                                                            class="img-fluid rounded">
+                                                        <a class="post-title" href="post-details.html">
+                                                            <h3 class="text-black">Unlocking Your Fitness Journey's
+                                                                Details.</h3>
+                                                        </a>
+                                                        <p>A wonderful serenity has take possession of my entire soul
+                                                            like these sweet morning of spare which enjoy whole heart.A
+                                                            wonderful serenity has take possession of my entire soul
+                                                            like these sweet morning
+                                                            of spare which enjoy whole heart.</p>
+                                                        <button class="btn btn-primary me-2"><span class="me-2"><i
+                                                                    class="fa fa-heart"></i></span>Like</button>
+                                                        <button class="btn btn-secondary" data-bs-toggle="modal"
+                                                            data-bs-target="#replyModal"><span class="me-2"><i
+                                                                    class="fa fa-reply"></i></span>Reply</button>
+                                                    </div>
+                                                    <div class="profile-uoloaded-post pb-3">
+                                                        <img src="/images/profile/running.png" alt=""
+                                                            class="img-fluid rounded">
+                                                        <a class="post-title" href="post-details.html">
+                                                            <h3 class="text-black">Exploring Gym Essentials and Updates.
+                                                            </h3>
+                                                        </a>
+                                                        <p>A wonderful serenity has take possession of my entire soul
+                                                            like these sweet morning of spare which enjoy whole heart.A
+                                                            wonderful serenity has take possession of my entire soul
+                                                            like these sweet morning
+                                                            of spare which enjoy whole heart.</p>
+                                                        <button class="btn btn-primary me-2"><span class="me-2"><i
+                                                                    class="fa fa-heart"></i></span>Like</button>
+                                                        <button class="btn btn-secondary" data-bs-toggle="modal"
+                                                            data-bs-target="#replyModal"><span class="me-2"><i
+                                                                    class="fa fa-reply"></i></span>Reply</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="about-me" class="tab-pane fade">
+                                                <div class="profile-about-me">
+                                                    <div class="pt-4 border-bottom-1 pb-3">
+                                                        <h4 class="text-primary">About Me</h4>
+                                                        <p class="mb-2">A wonderful serenity has taken possession of my
+                                                            entire soul, like these sweet mornings of spring which I
+                                                            enjoy with my whole heart. I am alone, and feel the charm of
+                                                            existence was created for the bliss of souls like mine.I am
+                                                            so happy, my dear friend, so absorbed in the exquisite sense
+                                                            of mere tranquil existence, that I neglect my talents.</p>
+                                                        <p>A collection of textile samples lay spread out on the table -
+                                                            Samsa was a travelling salesman - and above it there hung a
+                                                            picture that he had recently cut out of an illustrated
+                                                            magazine and housed in a nice, gilded frame.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="profile-skills mb-5">
+                                                    <h4 class="text-primary mb-2">Skills</h4>
+                                                    <a href="javascript:void()"
+                                                        class="btn btn-primary light btn-xs mb-1">Web</a>
+                                                    <a href="javascript:void()"
+                                                        class="btn btn-primary light btn-xs mb-1">Backend</a>
+                                                    <a href="javascript:void()"
+                                                        class="btn btn-primary light btn-xs mb-1">Data</a>
+                                                    <a href="javascript:void()"
+                                                        class="btn btn-primary light btn-xs mb-1">Ai</a>
+                                                    <a href="javascript:void()"
+                                                        class="btn btn-primary light btn-xs mb-1">Game</a>
+                                                    <a href="javascript:void()"
+                                                        class="btn btn-primary light btn-xs mb-1">Crypto</a>
+                                                </div>
+                                                <div class="profile-lang  mb-5">
+                                                    <h4 class="text-primary mb-2">Language</h4>
+                                                    <a href="javascript:void()" class="text-muted pe-3 f-s-16"><i
+                                                            class="flag-icon flag-icon-us"></i> English</a>
+                                                    <a href="javascript:void()" class="text-muted pe-3 f-s-16"><i
+                                                            class="flag-icon flag-icon-fr"></i> French</a>
+                                                    <a href="javascript:void()" class="text-muted pe-3 f-s-16"><i
+                                                            class="flag-icon flag-icon-bd"></i> Bangla</a>
+                                                </div>
+                                                <div class="profile-personal-info">
+                                                    <h4 class="text-primary mb-4">Personal Information</h4>
+                                                    <div class="row mb-2">
+                                                        <div class="col-sm-3 col-5">
+                                                            <h5 class="f-w-500">Name <span class="pull-right">:</span>
+                                                            </h5>
+                                                        </div>
+                                                        <div class="col-sm-9 col-7"><span>John Doe</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-2">
+                                                        <div class="col-sm-3 col-5">
+                                                            <h5 class="f-w-500">Email <span class="pull-right">:</span>
+                                                            </h5>
+                                                        </div>
+                                                        <div class="col-sm-9 col-7"><span>example@example.com</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-2">
+                                                        <div class="col-sm-3 col-5">
+                                                            <h5 class="f-w-500">Availability <span
+                                                                    class="pull-right">:</span></h5>
+                                                        </div>
+                                                        <div class="col-sm-9 col-7"><span>Full Time (Free Lancer)</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-2">
+                                                        <div class="col-sm-3 col-5">
+                                                            <h5 class="f-w-500">Age <span class="pull-right">:</span>
+                                                            </h5>
+                                                        </div>
+                                                        <div class="col-sm-9 col-7"><span>27</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-2">
+                                                        <div class="col-sm-3 col-5">
+                                                            <h5 class="f-w-500">Location <span
+                                                                    class="pull-right">:</span></h5>
+                                                        </div>
+                                                        <div class="col-sm-9 col-7"><span>Nairobi-Karen,
+                                                                Kenya</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-2">
+                                                        <div class="col-sm-3 col-5">
+                                                            <h5 class="f-w-500">Year Experience <span
+                                                                    class="pull-right">:</span></h5>
+                                                        </div>
+                                                        <div class="col-sm-9 col-7"><span>07 Year Experiences</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="profile-settings" class="tab-pane fade">
+                                                <div class="pt-3">
+                                                    <div class="settings-form">
+                                                        <h4 class="text-primary">Account Setting</h4>
+                                                        <form>
+                                                            <div class="row">
+                                                                <div class="form-group col-md-6">
+                                                                    <label>Email</label>
+                                                                    <input type="email" placeholder="Email"
+                                                                        class="form-control">
+                                                                </div>
+                                                                <div class="form-group col-md-6">
+                                                                    <label>Password</label>
+                                                                    <input type="password" placeholder="Password"
+                                                                        class="form-control">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Address</label>
+                                                                <input type="text" placeholder="1234 Main St"
+                                                                    class="form-control">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Address 2</label>
+                                                                <input type="text"
+                                                                    placeholder="Apartment, studio, or floor"
+                                                                    class="form-control">
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="form-group col-md-6">
+                                                                    <label>City</label>
+                                                                    <input type="text" class="form-control">
+                                                                </div>
+                                                                <div class="form-group col-md-4">
+                                                                    <label>State</label>
+                                                                    <select class="form-control default-select"
+                                                                        id="inputState">
+                                                                        <option selected="">Choose...</option>
+                                                                        <option>Option 1</option>
+                                                                        <option>Option 2</option>
+                                                                        <option>Option 3</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group col-md-2">
+                                                                    <label>Zip</label>
+                                                                    <input type="text" class="form-control">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <div class="form-check custom-checkbox">
+                                                                    <input type="checkbox" class="form-check-input"
+                                                                        id="gridCheck">
+                                                                    <label class="form-check-label" for="gridCheck">
+                                                                        Check me out</label>
+                                                                </div>
+                                                            </div>
+                                                            <button class="btn btn-primary" type="submit">Sign
+                                                                in</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="replyModal">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title">Post Reply</h5>
+                                                    <button type="button" class="btn-close"
+                                                        data-bs-dismiss="modal"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form>
+                                                        <textarea class="form-control" rows="4">Message</textarea>
+                                                    </form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger light"
+                                                        data-bs-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-primary">Reply</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="copyright">
+                <p>
+                    &copy; <span id="displayYear"></span> All Rights Reserved By
+                    <a href="/">Kip•Fit</a>
+                </p>
+            </div>
+        </footer>
+
+
+
+    </div>
+
+    <script src="/vendor/global/global.min.js"></script>
+    <script src="/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
+    <script src="/vendor/lightgallery/dist/lightgallery.min.js"></script>
+    <script src="/vendor/lightgallery/dist/plugins/thumbnail/lg-thumbnail.min.js"></script>
+    <script src="/vendor/lightgallery/dist/plugins/zoom/lg-zoom.min.js"></script>
+    <script src="/js/custom.min.js"></script>
+    <script src="/js/deznav-init.js"></script>
+</body>
+
+</html>
