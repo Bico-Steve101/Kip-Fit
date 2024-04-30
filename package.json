@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@ngrok/ngrok": "^1.2.0",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "cryptojs": "^2.5.3",
@@ -9,5 +10,15 @@
     "nodemon": "^3.1.0",
     "pg": "^8.11.5",
     "router": "^1.3.8"
-  }
+  },
+  "name": "template-kipfit",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
