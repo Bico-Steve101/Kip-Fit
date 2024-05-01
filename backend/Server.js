@@ -116,9 +116,9 @@ app.get('/main-privacy', (req, res) => {
 app.get('/main-profile', (req, res) => {
     res.sendFile(path.join(__dirname, '/pages/dashboard/kipfit/main/profile.html'));
 });
-app.get('/*',function(req,res){
-    res.sendFile(path.join(__dirname,'/pages/dashboard/kipfit/index.html'))
-});
+// app.get('/*',function(req,res){
+//     res.sendFile(path.join(__dirname,'/pages/dashboard/kipfit/index.html'))
+// });
 
 const PORT = process.env.PORT || 5000;
 
@@ -127,5 +127,5 @@ app.listen(PORT, () => {
 });
 
 // Get your endpoint online
-ngrok.connect({ addr: PORT, authtoken: '2fotKxHCsy42Bw8D3hEZb56kQuB_3eb38ULL5bDSrRkvyYZJt'})
-	.then(listener => console.log(`Ingress established at: ${listener.url()}`));
+// ngrok.connect({ addr: PORT, authtoken: '2fotKxHCsy42Bw8D3hEZb56kQuB_3eb38ULL5bDSrRkvyYZJt'})
+// 	.then(listener => console.log(`Ingress established at: ${listener.url()}`));

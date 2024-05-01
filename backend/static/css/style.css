@@ -361,7 +361,6 @@ a:focus {
 }
 
 .product_section .product_container .box {
-  margin-top: 25px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -405,6 +404,15 @@ a:focus {
   min-height: 100%;
 }
 
+.image-about{
+  display: block;
+  margin-left: 3m;
+}
+
+.no-round{
+  width: 100%!important;
+  margin-left: 1px!important;
+}
 .product_section .product_container .box .p_cart {
   position: absolute;
   top: 10px;
