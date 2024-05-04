@@ -1,19 +1,18 @@
 const express = require('express');
 const cors = require('cors');
-const path = require('path'); // Import the path module
+const path = require('path'); 
+const collection = require('./config');
 const videoRoutes = require('./routes/videoRoutes');
 const productRoutes = require('./routes/productRoutes');
 const userRoutes = require('./routes/userRoutes');
 const app = express();
-const http = require('http');
 const ngrok = require('@ngrok/ngrok');
 
-const mongoose = require('mongoose');
 
 app.use(express.static('../dashboard/kipfit/public'));
 app.use('/api', userRoutes);
 
-app.use(cors());
+app.use(cors());  
 app.use(express.json());
 
 // Serve static files
