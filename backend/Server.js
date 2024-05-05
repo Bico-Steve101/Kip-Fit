@@ -1,12 +1,18 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path'); 
-const collection = require('./config');
-const videoRoutes = require('./routes/videoRoutes');
+const bcrypt = require('bcrypt');
 const productRoutes = require('./routes/productRoutes');
 const userRoutes = require('./routes/userRoutes');
 const app = express();
 const ngrok = require('@ngrok/ngrok');
+
+//connection to config file
+const { getDb } = require('./config');
+
+//converting data to json
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 
 app.use(express.static('../dashboard/kipfit/public'));
@@ -115,10 +121,34 @@ app.get('/main-privacy', (req, res) => {
 app.get('/main-profile', (req, res) => {
     res.sendFile(path.join(__dirname, '/pages/dashboard/kipfit/main/profile.html'));
 });
-// app.get('/*',function(req,res){
-//     res.sendFile(path.join(__dirname,'/pages/dashboard/kipfit/index.html'))
-// });
 
+// APIs
+app.post('/register', async (req, res) => {
+    try {
+      const db = await getDb();
+      const { username, email, password } = req.body;
+  
+      // Check if the user already exists
+      const user = await db.collection('users').findOne({ username });
+      if (user) {
+        return res.redirect('/register?message=User already exists&type=error');
+    }
+  
+      // Hash the password
+      const hashedPassword = await bcrypt.hash(password, 10);
+  
+      // Insert the new user into the database
+      await db.collection('users').insertOne({ username, email, password: hashedPassword });
+  
+      res.redirect('/register?message=User registered successfully&type=success');
+    } catch (err) {
+      console.error(err);
+      res.redirect('/register?message=Server error&type=error');
+    }
+  });
+  
+
+//port connection
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {

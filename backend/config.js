@@ -1,29 +1,46 @@
-const mongoose = require('mongoose');
+const MongoClient = require('mongodb').MongoClient;
 
-// MongoDB Atlas connection URI
-const connect = mongoose.connect("mongodb://atlas-sql-6636abcbb5cffe729d9ece2a-zgl9e.a.query.mongodb.net/Kip-Fit?ssl=true&authSource=admin")
-// Connect to MongoDB Atlas
-connect.then(() => {
-    console.log('Connected to MongoDB Atlas');
-})
-.catch(() => {
-    console.log('Failed to connect to MongoDB Atlas');
-});
+// Connection URL
+const username = encodeURIComponent('BicoSteve');
+const password = encodeURIComponent('8405@Muganda');
+const clusterUrl = 'kipfit.wi5fflx.mongodb.net';
+const authMechanism = 'DEFAULT';
 
+const url = `mongodb+srv://${username}:${password}@${clusterUrl}/?authMechanism=${authMechanism}`;
 
-//The schemas
-const LoginSchema = new mongoose.Schema({
-    email: {
-        type: String,
-        required: true
-    },
-    password: {
-        type: String,
-        required: true
+// Database Name
+const dbName = 'KipFit';
+
+// Create a new MongoClient
+const client = new MongoClient(url);
+
+let db;
+
+// Use connect method to connect to the server
+async function connect() {
+  await client.connect();
+  console.log("Connected successfully to server");
+  db = client.db(dbName);
+}
+
+connect();
+
+function getDb() {
+  return new Promise((resolve, reject) => {
+    if (db) {
+      resolve(db);
+    } else {
+      client.connect(err => {
+        if (err) {
+          reject('Failed to connect to the MongoDB server. Error:', err);
+        } else {
+          console.log("Connected successfully to server");
+          db = client.db(dbName);
+          resolve(db);
+        }
+      });
     }
-});
+  });
+}
 
-//collection Models
-const collection = mongoose.model('Kip-Fit', LoginSchema);
-
-module.exports = collection;
+module.exports = { getDb };

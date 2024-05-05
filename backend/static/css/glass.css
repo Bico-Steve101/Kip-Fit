@@ -6,3 +6,6 @@
 label,a,p{
     color: #3d4465;
 }
+.alert{
+    display: none;
+}

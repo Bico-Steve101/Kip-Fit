@@ -62,84 +62,161 @@
       background-size: cover;
     "
   >
+  
     <div class="authincation h-100">
       <div class="container h-100">
         <div class="row justify-content-center h-100 align-items-center">
-          <div class="col-md-6">
-            <div class="authincation-content glass-app">
-              <div class="row no-gutters">
-                <div class="col-xl-12">
-                  <div class="auth-form">
-                    <div class="text-center mb-3">
-                      <a href="index.html"
-                        ><img
-                          src="images/logo-kipfit.png"
-                          alt=""
-                          style="width: em; height: 6em"
-                      /></a>
+        <div  class="col-xl-11 m-3 w-50  ">
+            <div id="success-message" class="alert alert-success left-icon-big alert-dismissible fade show">
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                </button>
+                <div class="media">
+                    <div class="alert-left-icon-big">
+                        <span><i class="mdi mdi-check-circle-outline"></i></span>
                     </div>
-                    <h4 class="text-center mb-4">Sign up your account</h4>
-                    <form action="/">
-                      <div class="form-group">
-                        <label class="mb-1 form-label">Username</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder="username"
-                        />
-                      </div>
-                      <div class="form-group">
-                        <label class="mb-1 form-label">Email</label>
-                        <input
-                          type="email"
-                          class="form-control"
-                          placeholder="you@example.com"
-                        />
-                      </div>
-                      <div class="mb-4 position-relative">
-                        <label class="mb-1 form-label">Password</label>
-                        <input
-                          type="password"
-                          id="dz-password"
-                          class="form-control"
-                          value="123456"
-                        />
-                        <span class="show-pass eye">
-                          <i class="fa fa-eye-slash"></i>
-                          <i class="fa fa-eye"></i>
-                        </span>
-                      </div>
-                      <div class="text-center mt-4">
-                        <button
-                          type="submit"
-                          class="btn btn-primary light btn-block"
-                        >
-                          Sign me up
-                        </button>
-                      </div>
-                    </form>
-                    <div class="new-account mt-3">
-                      <p>
-                        Already have an account?
-                        <a class="text-primary" href="/login">Sign in</a>
-                      </p>
+                    <div class="media-body">
+                        <h5 class="mt-1 mb-2">Congratulations!</h5>
+                        <p class="mb-0">You have successfully created a account.</p>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div  class="col-xl-11 m-3 w-50 ">
+          <div id="error-message"  class="alert alert-danger left-icon-big alert-dismissible fade show">
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+              </button>
+              <div class="media">
+                  <div class="alert-left-icon-big">
+                      <span><i class="mdi mdi-alert"></i></span>
+                  </div>
+                  <div class="media-body">
+                      <h5 class="mt-1 mb-2">Loading failed!</h5>
+                      <p class="mb-0">Their was a server error</p>
+                  </div>
+              </div>
+          </div>
+        </div>
+        <div class="col-xl-6 m-3 w-50">
+          <div  id="warning-message" class="alert alert-warning left-icon-big alert-dismissible fade show">
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+              </button>
+              <div class="media">
+                  <div class="alert-left-icon-big">
+                      <span><i class="mdi mdi-help-circle-outline"></i></span>
+                  </div>
+                  <div class="media-body">
+                      <h5 class="mt-1 mb-2">Pending!</h5>
+                      <p class="mb-0">User already exists.</p>
+                  </div>
+              </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="authincation-content glass-app">
+            <div class="row no-gutters">
+              <div class="col-xl-12">
+                <div class="auth-form">
+                  <div class="text-center mb-3">
+                    <a href="index.html"
+                      ><img
+                        src="images/logo-kipfit.png"
+                        alt=""
+                        style="width: em; height: 6em"
+                    /></a>
+                  </div>
+                  <h4 class="text-center mb-4">Sign up your account</h4>
+                  <form action="/register" method="post">
+                    <div class="form-group">
+                      <label class="mb-1 form-label">Username</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="username"
+                        id="username"
+                        name="username"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label class="mb-1 form-label">Email</label>
+                      <input
+                        type="email"
+                        class="form-control"
+                        placeholder="you@example.com"
+                        id="email"
+                        name="email"
+                      />
+                    </div>
+                    <div class="mb-4 position-relative">
+                      <label class="mb-1 form-label">Password</label>
+                      <input
+                        type="password"
+                        id="password"
+                        class="form-control"
+                        name="password"
+                      />
+                      <span class="show-pass eye">
+                        <i class="fa fa-eye-slash"></i>
+                        <i class="fa fa-eye"></i>
+                      </span>
+                    </div>
+                    <div class="text-center mt-4">
+                      <button
+                        type="submit"
+                        class="btn btn-primary light btn-block"
+                      >
+                        Sign me up
+                      </button>
+                    </div>
+                  </form>
+                  <div class="new-account mt-3">
+                    <p>
+                      Already have an account?
+                      <a class="text-primary" href="/login">Sign in</a>
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        </div>
       </div>
     </div>
 
     <!--**********************************
-	Scripts
-***********************************-->
+    Scripts
+    ***********************************-->
     <!-- Required vendors -->
     <script src="/vendor/global/global.min.js"></script>
     <script src="/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
     <script src="/js/custom.min.js"></script>
     <script src="/js/deznav-init.js"></script>
+
+    <script>
+      const showPass = document.querySelector(".show-pass");
+      const password = document.querySelector("#password");
+
+      showPass.addEventListener("click", function () {
+        if (password.type === "password") {
+          password.type = "text";
+        } else {
+          password.type = "password";
+        }
+      });
+    </script>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+
+      // Get the message and type parameters
+      const message = params.get('message');
+      const type = params.get('type');
+
+      // If there's a message, display it
+      if (message && type) {
+        const messageDiv = document.getElementById(`${type}-message`);
+        messageDiv.style.display = 'block';
+        messageDiv.querySelector('.mb-0').textContent = message;
+      }
+    </script>
   </body>
 </html>
