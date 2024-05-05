@@ -90,7 +90,7 @@
                       <span><i class="mdi mdi-alert"></i></span>
                   </div>
                   <div class="media-body">
-                      <h5 class="mt-1 mb-2">Loading failed!</h5>
+                      <h5 class="mt-1 mb-2">Failed to register!</h5>
                       <p class="mb-0">Their was a server error</p>
                   </div>
               </div>
@@ -105,7 +105,7 @@
                       <span><i class="mdi mdi-help-circle-outline"></i></span>
                   </div>
                   <div class="media-body">
-                      <h5 class="mt-1 mb-2">Pending!</h5>
+                      <h5 class="mt-1 mb-2">Failed to register!!</h5>
                       <p class="mb-0">User already exists.</p>
                   </div>
               </div>
@@ -206,17 +206,25 @@
     </script>
     <script>
       const params = new URLSearchParams(window.location.search);
-
-      // Get the message and type parameters
+    
+      // Get the message, type, and redirect parameters
       const message = params.get('message');
       const type = params.get('type');
-
+      const redirect = params.get('redirect');
+    
       // If there's a message, display it
       if (message && type) {
         const messageDiv = document.getElementById(`${type}-message`);
         messageDiv.style.display = 'block';
         messageDiv.querySelector('.mb-0').textContent = message;
       }
+      // If there's a redirect URL and the type is success, redirect after 4 seconds
+      if (redirect && type === 'success') {
+        setTimeout(() => {
+          window.location.href = '/';
+        }, 4000);  
+      }
     </script>
+    
   </body>
 </html>

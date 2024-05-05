@@ -1,33 +1,27 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path'); 
-const bcrypt = require('bcrypt');
-const productRoutes = require('./routes/productRoutes');
-const userRoutes = require('./routes/userRoutes');
 const app = express();
-const ngrok = require('@ngrok/ngrok');
 
-//connection to config file
-const { getDb } = require('./config');
+// Import routes
+const loginRoutes = require('./src/routes/login');
+const registerRoutes = require('./src/routes/register');
 
-//converting data to json
+// Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-
-app.use(express.static('../dashboard/kipfit/public'));
-app.use('/api', userRoutes);
-
 app.use(cors());  
-app.use(express.json());
+app.use(express.static('static'));
 
 // Serve static files
 app.use(express.static('static'));
 
-// Routes
+// Serve static files for pages
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '/pages/dashboard/kipfit/index.html'));
 });
+
+
 app.get('/calendar', (req, res) => {
     res.sendFile(path.join(__dirname, '/pages/dashboard/kipfit/xhtml/app-calender.html'));
 });
@@ -123,30 +117,10 @@ app.get('/main-profile', (req, res) => {
 });
 
 // APIs
-app.post('/register', async (req, res) => {
-    try {
-      const db = await getDb();
-      const { username, email, password } = req.body;
-  
-      // Check if the user already exists
-      const user = await db.collection('users').findOne({ username });
-      if (user) {
-        return res.redirect('/register?message=User already exists&type=error');
-    }
-  
-      // Hash the password
-      const hashedPassword = await bcrypt.hash(password, 10);
-  
-      // Insert the new user into the database
-      await db.collection('users').insertOne({ username, email, password: hashedPassword });
-  
-      res.redirect('/register?message=User registered successfully&type=success');
-    } catch (err) {
-      console.error(err);
-      res.redirect('/register?message=Server error&type=error');
-    }
-  });
-  
+app.post('/login', loginRoutes);
+app.post('/register', registerRoutes);
+
+
 
 //port connection
 const PORT = process.env.PORT || 5000;

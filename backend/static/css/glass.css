@@ -9,3 +9,6 @@ label,a,p{
 .alert{
     display: none;
 }
+.form-control{
+    color: #3d4465 !important;
+}
