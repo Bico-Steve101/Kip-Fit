@@ -3,18 +3,20 @@ const cors = require('cors');
 const path = require('path'); 
 const app = express();
 
-// Import routes
-const loginRoutes = require('./src/routes/login');
-const registerRoutes = require('./src/routes/register');
-
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());  
-app.use(express.static('static'));
 
 // Serve static files
 app.use(express.static('static'));
+
+// Import routes
+const loginRoutes = require('./src/routes/login');
+const registerRoutes = require('./src/routes/register');
+const profileRoutes = require('./src/routes/profile');
+
+
 
 // Serve static files for pages
 app.get('/', (req, res) => {
@@ -119,6 +121,7 @@ app.get('/main-profile', (req, res) => {
 // APIs
 app.post('/login', loginRoutes);
 app.post('/register', registerRoutes);
+app.use('/profile', profileRoutes);
 
 
 
