@@ -19,7 +19,7 @@ const invoiceRoutes = require('./src/routes/invoice');
 const calendarRoutes = require ('./src/routes/calendar');
 const forgotPasswordRoutes = require ('./src/routes/forget-password');
 const lockScreenRoutes = require ('./src/routes/lock-screen');
-
+const foodMenuRoutes = require ('./src/routes/food-menu')
 
 
 // Serve static files for pages
@@ -130,7 +130,7 @@ app.use('/invoice', invoiceRoutes);
 app.use ('/forgot-password', forgotPasswordRoutes)
 app.use ('/lock-screen', lockScreenRoutes)
 app.use ('/calendar', calendarRoutes)
-
+app.use ('/food-menu', foodMenuRoutes)
 
 //port connection
 const PORT = process.env.PORT || 5000;
