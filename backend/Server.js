@@ -15,6 +15,10 @@ app.use(express.static('static'));
 const loginRoutes = require('./src/routes/login');
 const registerRoutes = require('./src/routes/register');
 const profileRoutes = require('./src/routes/profile');
+const invoiceRoutes = require('./src/routes/invoice');
+const calendarRoutes = require ('./src/routes/calendar');
+const forgotPasswordRoutes = require ('./src/routes/forget-password');
+const lockScreenRoutes = require ('./src/routes/lock-screen');
 
 
 
@@ -122,7 +126,10 @@ app.get('/main-profile', (req, res) => {
 app.post('/login', loginRoutes);
 app.post('/register', registerRoutes);
 app.use('/profile', profileRoutes);
-
+app.use('/invoice', invoiceRoutes);
+app.use ('/forgot-password', forgotPasswordRoutes)
+app.use ('/lock-screen', lockScreenRoutes)
+app.use ('/calendar', calendarRoutes)
 
 
 //port connection
