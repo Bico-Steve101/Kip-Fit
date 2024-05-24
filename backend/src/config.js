@@ -10,7 +10,7 @@ const { MongoClient, ServerApiVersion } = require('mongodb');
 //const authMechanism = 'DEFAULT';
 
 //const url = `mongodb+srv://${username}:${password}@${clusterUrl}/?authMechanism=${authMechanism}`;
-const uri = "mongodb+srv://tEDK2aeOBsDAgei7>@cluster0.sjc1pul.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const uri = "mongodb+srv://21s01acs014:tEDK2aeOBsDAgei7@cluster0.sjc1pul.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 // Database Name
 const dbName = 'KIPFIT';
