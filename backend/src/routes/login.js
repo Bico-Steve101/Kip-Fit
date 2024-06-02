@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
@@ -11,7 +12,8 @@ router.post('/login', async (req, res) => {
         const { email, password, remember } = req.body; 
 
         // Checking if the user exists
-        const user = await db.collection('users').findOne({ email });
+        const userResult = await db.query('SELECT * FROM users WHERE email = $1', [email]);
+        const user = userResult.rows[0];
         if (!user) {
             return res.redirect('/login?message=User does not exist&type=error');
         }
@@ -27,16 +29,9 @@ router.post('/login', async (req, res) => {
         if (remember) {
             accessTokenExpiration = '30d'; 
         }
-        const accessToken = jwt.sign({ userId: user._id }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: accessTokenExpiration });
-
-        // Generating Refresh Token
-        const refreshToken = jwt.sign({ userId: user._id }, process.env.REFRESH_TOKEN_SECRET);
-
-        // Storing Refresh Token in Database or Cookie 
-        if (remember) {
-            // Storing refresh token in a persistent storage (30days expiry)
-            res.cookie('refreshToken', refreshToken, { httpOnly: true, maxAge: 30 * 24 * 60 * 60 * 1000 }); 
-        }
+        const accessToken = jwt.sign({ userId: user.id }, process.env.JWT_SECRET, { expiresIn: accessTokenExpiration });
+        
+        console.log('JWT_SECRET:', process.env.JWT_SECRET);
 
         // Setting Access Token in Cookie
         res.cookie('accessToken', accessToken, { httpOnly: true });
@@ -44,8 +39,8 @@ router.post('/login', async (req, res) => {
         // Redirecting with success message
         res.redirect('/?message=Login successful. Redirecting...&type=success');
     } catch (err) {
-        console.error(err);
-        res.redirect('/?message=Server error&type=error');
+        console.error('Error during login:', err);
+        res.redirect('/login?message=Server error&type=error');
     }
 });
 

@@ -67,7 +67,9 @@ a:hover,
 a:focus {
   color: initial;
 }
-
+.hover-blur:hover{
+  opacity: 0.6 !important;
+}
 .btn,
 .btn:focus {
   outline: none !important;

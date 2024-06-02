@@ -1,47 +1,16 @@
 require('dotenv').config();
-const MongoClient = require('mongodb').MongoClient;
+const { Pool } = require('pg');
 
-// Connection URL
-const username = encodeURIComponent(process.env.DB_USERNAME);
-const password = encodeURIComponent(process.env.DB_PASSWORD);
-const clusterUrl = 'kipfit.wi5fflx.mongodb.net';
-const authMechanism = 'DEFAULT';
+// Connection details
+const pool = new Pool({
+  user: process.env.DB_USERNAME,
+  host: process.env.DB_HOST || 'localhost', // Default to localhost if not provided
+  database: 'KipFit',
+  password: process.env.DB_PASSWORD,
+  port: process.env.DB_PORT || 5432, // Default to 5432 if not provided
+  max: 10, // Maximum number of clients in the pool
+  idleTimeoutMillis: 30000, // How long a client is allowed to remain idle before being closed
+});
 
-const url = `mongodb+srv://${username}:${password}@${clusterUrl}/?authMechanism=${authMechanism}`;
-
-// Database Name
-const dbName = 'KipFit';
-
-// Create a new MongoClient
-const client = new MongoClient(url);
-
-let db;
-
-// Use connect method to connect to the server
-async function connect() {
-  await client.connect();
-  console.log("Connected successfully to server");
-  db = client.db(dbName);
-}
-
-connect();
-
-function getDb() {
-  return new Promise((resolve, reject) => {
-    if (db) {
-      resolve(db);
-    } else {
-      client.connect(err => {
-        if (err) {
-          reject('Failed to connect to the MongoDB server. Error:', err);
-        } else {
-          console.log("Connected successfully to server");
-          db = client.db(dbName);
-          resolve(db);
-        }
-      });
-    }
-  });
-}
-
-module.exports = { getDb };
+// Export the pool
+module.exports = pool;

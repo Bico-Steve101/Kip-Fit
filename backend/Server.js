@@ -1,27 +1,89 @@
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const path = require('path'); 
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
+const jwt = require('jsonwebtoken');
+const csurf = require('csurf');
+const pool = require('./src/config'); // Using the pool directly
+const getUserInfo = require('./src/routes/user'); // Import the function
+
 const app = express();
 
-// Middleware
+// Middleware setup
 app.use(express.json());
+app.use(cookieParser());
+app.use(session({secret: process.env.JWT_SECRET, saveUninitialized: true, resave: true}));
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());  
+app.use(cors());
+
+// EJS setup
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
+// CSRF protection setup
+const csrfProtection = csurf({ cookie: true });
+app.use(csrfProtection);
 
 // Serve static files
-app.use(express.static('static'));
+app.use(express.static('./backend/static'));
+
+// User authentication for views
+app.use((req, res, next) => {
+    res.locals.authenticated = req.cookies.accessToken ? true : false;
+    res.locals._csrf = req.csrfToken();// Add CSRF token to locals
+    next();
+});
+
+// User authentication middleware
+app.use(async (req, res, next) => {
+    let userId;
+    const accessToken = req.cookies.accessToken;
+    if (accessToken) {
+        try {
+            const decodedToken = jwt.verify(accessToken, process.env.JWT_SECRET);
+            userId = decodedToken.userId;
+        } catch (err) {
+            if (err instanceof jwt.TokenExpiredError) {
+                res.clearCookie('accessToken');
+            } else {
+                console.error('Invalid access token:', err);
+            }
+        }
+    }
+    const userInfo = userId ? await getUserInfo(userId) : null;
+    if (userInfo) {
+        req.userInfo = userInfo;
+    }
+    next();
+});
+
 
 // Import routes
-const loginRoutes = require('./src/routes/login');
 const registerRoutes = require('./src/routes/register');
+const loginRoutes = require('./src/routes/login');
+const indexPageRoutes = require('./src/routes/index-page');
 const profileRoutes = require('./src/routes/profile');
+const logoutRoute = require('./src/routes/logout');
+const createProductRoutes = require('./src/routes/create_product');
+const productDetailRoutes = require('./src/routes/product-detail');
+const shopRoutes = require('./src/routes/shop');
 
-
+// APIs
+app.post('/register', registerRoutes);
+app.post('/login', loginRoutes);
+app.use('/profile', profileRoutes);
+app.use('/', indexPageRoutes);
+app.use(logoutRoute);
+app.use(createProductRoutes);
+app.use(productDetailRoutes);
+app.use(shopRoutes);
 
 // Serve static files for pages
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '/pages/dashboard/kipfit/index.html'));
-});
+// app.get('/', (req, res) => {
+//     res.sendFile(path.join(__dirname, '/pages/dashboard/kipfit/index.ejs'));
+// });
 
 
 app.get('/calendar', (req, res) => {
@@ -39,8 +101,11 @@ app.get('/customer', (req, res) => {
 app.get('/invoice', (req, res) => {
     res.sendFile(path.join(__dirname, '/pages/dashboard/kipfit/xhtml/ecom-invoice.html'));
 });
-app.get('/product-detail', (req, res) => {
-    res.sendFile(path.join(__dirname, '/pages/dashboard/kipfit/xhtml/ecom-product-detail.html'));
+// app.get('/product-detail', (req, res) => {
+//     res.sendFile(path.join(__dirname, '/pages/dashboard/kipfit/xhtml/ecom-product-detail.html'));
+// });
+app.get('/add-products', (req, res) => {
+    res.sendFile(path.join(__dirname, '/pages/dashboard/kipfit/main/add-product.html'));
 });
 app.get('/product-grid', (req, res) => {
     res.sendFile(path.join(__dirname, '/pages/dashboard/kipfit/xhtml/ecom-product-grid.html'));
@@ -117,12 +182,6 @@ app.get('/main-privacy', (req, res) => {
 app.get('/main-profile', (req, res) => {
     res.sendFile(path.join(__dirname, '/pages/dashboard/kipfit/main/profile.html'));
 });
-
-// APIs
-app.post('/login', loginRoutes);
-app.post('/register', registerRoutes);
-app.use('/profile', profileRoutes);
-
 
 
 //port connection
