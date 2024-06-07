@@ -1,4 +1,4 @@
-const pool = require('../config');
+const { pool } = require('../config');
 const NodeCache = require('node-cache');
 
 // Initialize cache with a TTL (time to live) of 60 seconds for users

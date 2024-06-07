@@ -415,6 +415,9 @@ a:focus {
   width: 100%!important;
   margin-left: 1px!important;
 }
+.p_cart{
+  cursor:pointer;
+}
 .product_section .product_container .box .p_cart {
   position: absolute;
   top: 10px;

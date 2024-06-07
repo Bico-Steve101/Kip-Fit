@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const jwt = require('jsonwebtoken');
 const NodeCache = require('node-cache');
-const pool = require('../config'); // Using the pool directly
+const { pool } = require('../config');
 
 // Initialize cache with a TTL (time to live) of 60 seconds for users and 300 seconds for products
 const userCache = new NodeCache({ stdTTL: 60 });

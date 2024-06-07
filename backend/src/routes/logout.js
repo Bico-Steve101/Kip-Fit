@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 // Logout route
-router.get('/logout', (req, res) => {
+router.get('/', (req, res) => {
     try {
         // Clear the access token cookie
         res.clearCookie('accessToken');

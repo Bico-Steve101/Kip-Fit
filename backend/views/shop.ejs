@@ -31,7 +31,7 @@
       sizes="16x16"
       href="/static/images/favicon-16x16.png"
     />
-    <link rel="manifest" href="/images//site.webmanifest" />
+    <link rel="manifest" href="/images/site.webmanifest" />
     <link
       rel="mask-icon"
       href="/images/safari-pinned-tab.svg"
@@ -39,11 +39,6 @@
     />
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#000101" />
-
-    <link
-      href="../../css?family=Poppins:400,600,700&display=swap"
-      rel="stylesheet"
-    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -51,8 +46,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="/static/css/bootstrap.css" />
-    <link rel="stylesheet" href="/css/slick-theme.css" />
+    <link rel="stylesheet" href="/css/bootstrap.css" />
     <link href="/css/font-awesome.min.css" rel="stylesheet" />
     <link href="/css/style_dashboard.css" rel="stylesheet" />
     <link href="/css/style.css" rel="stylesheet" />
@@ -63,11 +57,16 @@
       href="/vendor/bootstrap-select/css/bootstrap-select.min.css"
       rel="stylesheet"
     />
-    <link
-      href="../css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    
+    <!-- preload images -->
+    <% products.forEach(product => { %>
+      <% if (product.image_one) { %> <link rel="preload" href="<%= product.image_one %>" as="image"> <% } %>
+      <% if (product.image_two) { %> <link rel="preload" href="<%= product.image_two %>" as="image"> <% } %>
+      <% if (product.image_three) { %> <link rel="preload" href="<%= product.image_three %>" as="image"> <% } %>
+      <% if (product.image_four) { %> <link rel="preload" href="<%= product.image_four %>" as="image"> <% } %>
+    <% }); %>
+    
   </head>
 
   <body>
@@ -348,7 +347,7 @@
               <div class="heading_container heading_center">
                 <h2>Products</h2>
               </div>
-              <div id="notification" style="position: fixed; top: 20px; right: 20px; display: none; background: green; color: white; padding: 10px; border-radius: 5px;">
+              <div id="notification" style="position: fixed; top: 20%; right: 5%; display: none; background: green; color: white; padding: 10px; border-radius: 5px;">
                 Product added to cart successfully!
               </div>
               <div class="product_container">
@@ -361,13 +360,12 @@
                                       <div class="new-arrival-product box">
                                           <div class="image-bg w-100">
                                               <!-- Product image -->
-                                              <form action="/add-to-cart" method="post" class="p_cart hover-blur add-to-cart-form" data-product-id="<%= product.id %>">
-                                                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-                                                <input type="hidden" name="productId" value="<%= product.id %>">
-                                                <button type="submit" style="display: none;">
+                                              <form action="/add-to-cart" method="post" class="p_cart hover-blur add-to-cart-form" data-product-code="<%= product.product_code %>">
+                                                <input type="hidden" name="productCode" value="<%= product.product_code %>">
+                                                <button type="submit" style="border: none; background: none;">
+                                                  <i class="fa fa-cart-plus" aria-hidden="true"></i>
                                                 </button>
-                                                <i class="fa fa-cart-plus" aria-hidden="true"></i>
-                                              </form>
+                                              </form>                                              
                                               <a href="/product-detail/<%= product.uuid %>">
                                                   <div class="img-box-testt">
                                                       <img
@@ -464,37 +462,9 @@
     <script src="/js/custom.min.js"></script>
     <script src="/js/deznav-init.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-          document.querySelectorAll('.add-to-cart-form').forEach(form => {
-              form.addEventListener('submit', async (e) => {
-                  e.preventDefault();
-                  const productId = form.querySelector('input[name="productId"]').value;
-                  const csrfToken = form.querySelector('input[name="_csrf"]').value;
-  
-                  try {
-                      const response = await fetch('/add-to-cart', {
-                          method: 'POST',
-                          headers: {
-                              'Content-Type': 'application/json',
-                              'CSRF-Token': csrfToken 
-                          },
-                          body: JSON.stringify({ productId })
-                      });
-  
-                      if (response.ok) {
-                          toastr.success('Product added to cart successfully!');
-                      } else {
-                          toastr.error('Failed to add product to cart');
-                      }
-                  } catch (err) {
-                      console.error('Error:', err);
-                      toastr.error('Server error');
-                  }
-              });
-          });
-      });
-  </script>
-  
+    <script src="/js/preload.js"></script>
+    <script src="/js/add-cart.js"></script>
+      
+                    
   </body>
 </html>

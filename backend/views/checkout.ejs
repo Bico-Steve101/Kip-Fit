@@ -1,0 +1,828 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Title -->
+	<title>Kip•Fit  - Power • Motion • Transformation</title>
+
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="SteveRebrand">
+	<meta name="robots" content="">
+	<link rel="apple-touch-icon" sizes="180x180" href="/images//apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images//favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images//favicon-16x16.png">
+    <link rel="manifest" href="/images//site.webmanifest">
+    <link rel="mask-icon" href="/images//safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+	<meta name="format-detection" content="telephone=no">
+
+	<!-- Mobile Specific -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Favicon icon -->
+	<link href="/vendor/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4/animate.min.css" />
+    <link href="/css/style_dashboard.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet" />
+	<link href="../css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+     <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header">
+            <a href="/" class="brand-logo">
+                <img class="logo-abbr" src="/images/logo-kipfit.png" alt="">
+                <img class="logo-compact" src="/images/logo-text (2).png" alt="">
+                <img class="brand-title" src="/images/logo-text (2).png" alt="">
+            </a>
+  
+            <div class="nav-control">
+                <div class="hamburger">
+                    <span class="line"></span><span class="line"></span><span class="line"></span>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+    
+        <!--**********************************
+            Header start
+        ***********************************-->
+          <header class="header">
+            <div class="header-content">
+                <nav class="navbar navbar-expand">
+                    <div class="collapse navbar-collapse justify-content-between">
+                        <div class="header-left">
+                            <div class="dashboard_bar">
+                            Home Page
+                            </div>
+                        </div>
+                          <ul class="navbar-nav header-right">
+                        <li class="nav-item">
+                          <form>
+                            <div class="input-group search-area d-lg-inline-flex d-none me-3">
+                              <span class="input-group-text" id="header-search">
+                                <button class="bg-transparent border-0">
+                                  <i class="flaticon-381-search-2"></i>
+                                </button>
+                              </span>
+                              <input type="text" class="form-control" placeholder="Search here" aria-label="Username" aria-describedby="header-search">
+                            </div>
+                          </form>
+                        </li>
+                            <li class="nav-item dropdown header-profile">
+                                <a class="nav-link" href="/profile" role="button" data-bs-toggle="dropdown">
+                                    <img src="/images/avatar.jpg" width="20" alt="">
+                                    <div class="header-info">
+                                        <span class="text-black"><strong>Bico Steve</strong></span>
+                                        <p class="fs-12 mb-0">App Admin</p>
+                                    </div>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                    <a href="/profile" class="dropdown-item ai-icon">
+                                        <svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" class="text-primary" width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                        <span class="ms-2">Profile </span>
+                                    </a>
+                                    <a href="/profile" class="dropdown-item ai-icon">
+                                        <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger" width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                                        <span class="ms-2">Logout </span>
+                                    </a>
+                                </div>
+                            </li>
+              <li class="nav-item dropdown notification_dropdown">
+                                <a class="nav-link bell dz-theme-mode" href="javascript:void(0);">
+                  <i id="icon-light" class="fas fa-sun"></i>
+                                    <i id="icon-dark" class="fas fa-moon"></i>
+                                </a>
+              </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+        <!--**********************************
+              Sidebar start
+          ***********************************-->
+          <div class="deznav">
+            <div class="deznav-scroll">
+         <ul class="metismenu" id="menu">
+                    <li><a class=" ai-icon" href="/" aria-expanded="false">
+              <i class="fa fa-home"></i>
+              <span class="nav-text">Home</span>
+            </a>
+                    </li>
+          <li><a class=" ai-icon" href="/profile" aria-expanded="false">
+              <i class="fa fa-user"></i>
+              <span class="nav-text">Profile</span>
+            </a>
+                    </li>
+                    <li><a class=" ai-icon" href="/product-grid" aria-expanded="false">
+              <i class="fa fa-cart-arrow-down"></i>
+              <span class="nav-text">Shop<span class="badge badge-danger badge-xs ms-1">NEW</span></span>
+            </a>
+                    </li>
+          <li><a class="ai-icon" href="/main-index" aria-expanded="false">
+              <i class="fa fa-video-camera"></i>
+              <span class="nav-text">Videos<span class="badge badge-danger badge-xs ms-1">NEW</span></span>
+            </a>
+                    </li>
+                    <li><a class=" ai-icon" href="/checkout" aria-expanded="false">
+              <i class="fa fa-check-square"></i>
+              <span class="nav-text">Checkout</span>
+            </a>
+                    </li>
+                    <li><a class=" ai-icon" href="/product-order" aria-expanded="false">
+                      <i class="fa fa-credit-card-alt"></i>
+                      <span class="nav-text">Checkout Status</span>
+                    </a>
+                    </li>
+                    <li><a class="ai-icon" href="/food-menu" aria-expanded="false">
+              <i class="fa fa-cutlery"></i>
+              <span class="nav-text">Food-Menu</span>
+            </a>
+                    </li>
+                    <li><a class="ai-icon" href="/calendar" aria-expanded="false">
+              <i class="fa fa-calendar"></i>
+              <span class="nav-text">Calendar</span>
+            </a>
+                    </li>
+                    <li><a href="/main-profile" class="ai-icon" aria-expanded="false">
+              <i class="fa fa-file-video"></i>
+              <span class="nav-text">Video Profile</span>
+            </a>
+          </li>
+                    <!-- <li><a class=" ai-icon" href="javascript:void()" aria-expanded="false">
+            </a>
+                    </li> -->
+                    <li><a class=" ai-icon" href="javascript:void()" aria-expanded="false">
+            </a>
+                    </li>
+                    <li><a class="ai-icon" href="javascript:void()" aria-expanded="false">
+            </a>
+                    </li>
+                </ul>
+        <div class="add-menu-sidebar">
+          <img src="/images/profile/gym-template.png" alt="" class="me-3" style="width: 4em; height: 4em;object-fit: fill;">
+          <a href="/calendar" class="font-w500 mb-0">Create Workout Plan Now</a>
+        </div>
+        <div class="copyright mb-n1">
+          <p><strong>Kip•Fit <br> Power•Motion•Transformation</strong> © 2024 All Rights Reserved</p>
+          <p>Made with <span class="heart"></span> by S.M.B</p>
+        </div>
+      </div>
+        </div>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+         <div class="content-body default-height" style=" margin-left: -0.007rem;">
+            <div class="container-fluid">
+				<div class="row page-titles">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="javascript:void(0)">Shop</a></li>
+						<li class="breadcrumb-item active"><a href="javascript:void(0)">Checkout</a></li>
+					</ol>
+                </div>
+				
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-lg-4 order-lg-2 mb-4">
+                                        <h4 class="d-flex justify-content-between align-items-center mb-3">
+                                            <span class="text-black">Your cart</span>
+                                            <span class="badge item-count badge-primary badge-pill"><%= items.length %></span>
+                                        </h4>
+                                        <ul class="list-group mb-3" id="cart-items">
+                                            <% items.forEach(item => { %>
+                                                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                                                    <div>
+                                                        <h6 class="my-0 cart-item-title"><%= item.title %></h6>
+                                                        <small class="text-muted">Brief description</small> <br>
+                                                        <small class="text-muted">KES <%= Number(item.price).toFixed(2) %></small>
+                                                    </div>
+                                                    <span class="text-muted w-25">
+                                                        <h6 class="my-0">Quantity</h6>
+                                                        <input id="quantity-input" max="10" min="1" type="number" name="quantity" class="form-control input-btn input-number w-70" value="<%= item.quantity %>">
+                                                    </span>
+                                                    <button data-product-code="<%= item.product_code %>" class="btn btn-primary btn-sm content-icon mt-3 remove-item">
+                                                        <i class="fa fa-times"></i>
+                                                    </button>
+                                                </li>
+                                            <% }); %>
+                                            <li class="list-group-item d-flex justify-content-between">
+                                                <span>Total (KES)</span>
+                                                <strong id="total-price">KES <%= Number(totalPrice).toFixed(2) %></strong>
+                                            </li>
+                                        </ul>
+                                
+                                        <form action="/checkout" method="post">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" placeholder="Promo code">
+                                                <button type="submit" class="input-group-text">Redeem</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="col-lg-8 order-lg-1">
+                                        <form id="checkout-form">
+                                            <h4 class="mb-3">Billing address</h4>
+                                            <div class="row">
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="firstName" class="form-label">First name</label>
+                                                    <input type="text" class="form-control" name="firstName" id="firstName" placeholder="" required>
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="lastName" class="form-label">Last name</label>
+                                                    <input type="text" class="form-control" name="lastName" id="lastName" placeholder="" required>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="username" class="form-label">Username</label>
+                                                <div class="input-group" bis_skin_checked="1">
+                                                    <span class="input-group-text">@</span>
+                                                    <input type="text" class="form-control border-s-1" name="username" id="username" placeholder="Username" required="">
+                                                    <div class="invalid-feedback" style="width: 100%;" bis_skin_checked="1">
+                                                        Your username is required.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="email" class="form-label">Email <span class="text-muted">(Optional)</span></label>
+                                                <input type="email" name="email" class="form-control" id="email" placeholder="you@example.com">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="address" class="form-label">Address</label>
+                                                <input type="text" class="form-control" name="address" id="address" placeholder="1234 Main St" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="address2" class="form-label">Address 2 <span class="text-muted">(Optional)</span></label>
+                                                <input type="text" class="form-control" name="address2" id="address2" placeholder="Apartment or suite">
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-5 mb-3">
+                                                    <label for="country" class="form-label">Country</label>
+                                                    <select class="custom-select d-block w-100" name="country" id="country" required>
+                                                        <option value="">Choose...</option>
+                                                        <option>United States</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-4 mb-3">
+                                                    <label for="state" class="form-label">State</label>
+                                                    <select class="custom-select d-block w-100" name="state" id="state" required>
+                                                        <option value="">Choose...</option>
+                                                        <option>California</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-3 mb-3">
+                                                    <label for="zip" class="form-label">Zip</label>
+                                                    <input type="text" class="form-control" name="zip" id="zip" placeholder="" required>
+                                                </div>
+                                            </div>
+                                            <h4 class="mb-3">Payment</h4>
+                                            <div class="d-block my-3">
+                                                <div class="form-check custom-radio mb-2">
+                                                    <input id="credit" name="paymentMethod" type="radio" class="form-check-input" value="credit" checked >
+                                                    <label class="form-check-label" for="credit">Credit card</label>
+                                                </div>
+                                                <div class="form-check custom-radio mb-2">
+                                                    <input id="M-pesa" name="paymentMethod" type="radio" class="form-check-input" value="M-pesa" >
+                                                    <label class="form-check-label" for="M-pesa">M-pesa</label>
+                                                </div>
+                                                <div class="form-check custom-radio mb-2">
+                                                    <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" value="paypal" >
+                                                    <label class="form-check-label" for="paypal">Paypal</label>
+                                                </div>
+                                            </div>
+                                            <div id="credit-card-fields" class="payment-method-fields">
+                                                <div class="row">
+                                                    <div class="col-md-6 mb-3">
+                                                        <label for="ccName" class="form-label">Name on card</label>
+                                                        <input type="text" name="ccName" class="form-control" id="ccName" placeholder="" >
+                                                        <small class="text-muted">Full name as displayed on card</small>
+                                                    </div>
+                                                    <div class="col-md-6 mb-3">
+                                                        <label for="ccNumber" class="form-label">Credit card number</label>
+                                                        <input type="text" name="ccNumber" class="form-control" id="ccNumber" placeholder="" >
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-3 mb-3">
+                                                        <label for="ccExpiration" class="form-label">Expiration</label>
+                                                        <input type="text" name="ccExpiration" class="form-control" id="ccExpiration" placeholder="" >
+                                                    </div>
+                                                    <div class="col-md-3 mb-3">
+                                                        <label for="ccCVV" class="form-label">CVV</label>
+                                                        <input type="text" name="ccCVV" class="form-control" id="ccCVV" placeholder="" >
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="mpesa-fields" class="payment-method-fields" style="display: none;">
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="mpesaPhoneNumber" class="form-label">Phone Number</label>
+                                                    <input type="text" name="mpesaPhoneNumber" class="form-control" id="mpesaPhoneNumber" placeholder="" >
+                                                </div>
+                                            </div>
+                                            <div id="paypal-fields" class="payment-method-fields" style="display: none;">
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="paypalEmail" class="form-label">Email Address</label>
+                                                    <input type="email" name="paypalEmail" class="form-control" id="paypalEmail" placeholder="" >
+                                                </div>
+                                            </div>
+                                            <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+
+
+        <!--**********************************
+            Footer start
+        ***********************************-->
+		<footer class="footer">
+            <div class="copyright">
+                  <p>
+					&copy; <span id="displayYear"></span> All Rights Reserved By
+            		<a href="/">Kip•Fit</a>
+				</p>
+            </div>
+        </footer>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button start
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button end
+        ***********************************-->
+
+
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="/vendor/global/global.min.js"></script>
+	<script src="/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
+	<script src="/js/custom.min.js"></script>
+	<script src="/js/deznav-init.js"></script>
+    <script>
+        // Variables passed from Express route
+        const cartItems = <%- JSON.stringify(items) %>;
+        const cartTotalPrice = <%- JSON.stringify(totalPrice) %>;
+        
+        // Initialize SweetAlert with Bootstrap styling
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+                confirmButton: "btn btn-success me-3",
+                cancelButton: "btn btn-danger"
+            },
+            buttonsStyling: false
+        });
+        
+        // Function to hide all payment method fields
+        function hideAllPaymentMethodFields() {
+            document.querySelectorAll('.payment-method-fields').forEach(field => {
+                field.style.display = 'none';
+            });
+        }
+        
+        // Event listener for payment method changes
+        document.querySelectorAll('input[name="paymentMethod"]').forEach(input => {
+            input.addEventListener('change', function() {
+                hideAllPaymentMethodFields();
+        
+                if (this.id === 'credit') {
+                    document.getElementById('credit-card-fields').style.display = 'block';
+                    // Add required attribute to credit card fields
+                    document.getElementById('ccName').required = true;
+                    document.getElementById('ccNumber').required = true;
+                    document.getElementById('ccExpiration').required = true;
+                    document.getElementById('ccCVV').required = true;
+                } else if (this.id === 'M-pesa') {
+                    document.getElementById('mpesa-fields').style.display = 'block';
+                    // Add required attribute to M-Pesa phone number field
+                    document.getElementById('mpesaPhoneNumber').required = true;
+                } else if (this.id === 'paypal') {
+                    document.getElementById('paypal-fields').style.display = 'block';
+                    // Add required attribute to PayPal email field
+                    document.getElementById('paypalEmail').required = true;
+                }
+            });
+        });
+        
+        // Form submission event listener
+        document.getElementById('checkout-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+        
+            const formData = new FormData(this);
+            const selectedPaymentMethod = formData.get('paymentMethod');
+            let paymentData = {};
+        
+            // Capture payment details based on selected payment method
+            if (selectedPaymentMethod === 'credit') {
+                paymentData = {
+                    paymentMethod: 'credit',
+                    ccName: formData.get('ccName'),
+                    ccNumber: formData.get('ccNumber'),
+                    ccExpiration: formData.get('ccExpiration'),
+                    ccCVV: formData.get('ccCVV')
+                };
+            } else if (selectedPaymentMethod === 'M-pesa') {
+                const phoneNumber = formData.get('mpesaPhoneNumber');
+                const formattedPhoneNumber = formatPhoneNumber(phoneNumber);
+                paymentData = {
+                    paymentMethod: 'M-pesa',
+                    mpesaPhoneNumber: formattedPhoneNumber
+                };
+            } else if (selectedPaymentMethod === 'paypal') {
+                paymentData = {
+                    paymentMethod: 'paypal',
+                    paypalEmail: formData.get('paypalEmail')
+                };
+            }
+        
+            // Use cartItems and cartTotalPrice directly
+            const items = cartItems.map(item => ({
+                productCode: item.product_code,
+                title: item.title,
+                price: item.price,
+                quantity: item.quantity
+            }));
+            const totalPrice = cartTotalPrice;
+        
+            const data = {
+                firstName: formData.get('firstName'),
+                lastName: formData.get('lastName'),
+                username: formData.get('username'),
+                email: formData.get('email'),
+                address: formData.get('address'),
+                address2: formData.get('address2'),
+                country: formData.get('country'),
+                state: formData.get('state'),
+                zip: formData.get('zip'),
+                paymentMethod: selectedPaymentMethod,
+                paymentData: paymentData,
+                items: items,
+                totalPrice: totalPrice
+            };
+        
+            console.log('Captured Form Data:', data);
+        
+            // Initialize the checkout wizard
+            startCheckoutWizard(data);
+        });
+
+        // Function to format phone number to E.164 format
+        function formatPhoneNumber(phoneNumber) {
+            phoneNumber = phoneNumber.replace(/[^0-9]/g, '');
+            if (phoneNumber.startsWith('0')) {
+                phoneNumber = phoneNumber.replace(/^0/, '254');
+            } else if (!phoneNumber.startsWith('254')) {
+                phoneNumber = '254' + phoneNumber;
+            }
+            return phoneNumber;
+        }
+        
+       // Function to start the checkout wizard
+    function startCheckoutWizard(data) {
+        Swal.fire({
+            title: 'Confirm your details',
+            html: generateCheckoutHtml(data),
+            showCancelButton: true,
+            confirmButtonText: 'Continue',
+            cancelButtonText: 'Cancel',
+            preConfirm: () => new Promise((resolve) => resolve())
+        }).then((result) => {
+            if (result.isConfirmed) {
+                processPayment(data);
+            }
+        });
+    }
+
+    // Generate checkout HTML content
+    function generateCheckoutHtml(data) {
+        return `
+            <div style="text-align: left; font-family: Arial, sans-serif;">
+                <p><strong>Name:</strong> ${data.firstName} ${data.lastName} - <strong>Username:</strong> ${data.username}</p>
+                <p><strong>Email:</strong> ${data.email}</p>
+                <p><strong>Address:</strong> ${data.address}, ${data.address2} - <strong>Zip:</strong> ${data.zip}</p>
+                <p><strong>Country:</strong> ${data.country} - <strong>State:</strong> ${data.state}</p>
+                <p><strong>Payment Method:</strong> ${data.paymentData.paymentMethod}</p>
+                ${generatePaymentDetailsHtml(data.paymentData)}
+                <h4 style="text-align: center; color: #333; font-weight: bold; border-bottom: 1px solid #333; padding-bottom: 10px; margin-top: 20px;">Items:</h4>
+                <ul style="list-style-type: none; padding-left: 0;">
+                    ${data.items.map(item => `<li style="margin-bottom: 8px;">${item.quantity} x ${item.title} - KES ${(item.price ? Number(item.price).toFixed(2) : 0)}</li>`).join('')}
+                </ul>
+                <p style="font-weight: bold; color: #e74c3c; font-size: 1.2em;">Total Price: KES ${Number(data.totalPrice).toFixed(2)}</p>
+            </div>
+        `;
+    }
+
+    // Generate payment details HTML based on payment method
+    function generatePaymentDetailsHtml(paymentData) {
+        switch (paymentData.paymentMethod) {
+            case 'credit':
+                return `
+                    <p><strong>Name on Card:</strong> ${paymentData.ccName}</p>
+                    <p><strong>Credit Card Number:</strong> ${maskCreditCardNumber(paymentData.ccNumber)}</p>
+                    <p><strong>Expiration:</strong> ${paymentData.ccExpiration}</p>
+                    <p><strong>CVV:</strong> ${paymentData.ccCVV}</p>
+                `;
+            case 'M-pesa':
+                return `<p><strong>Phone Number:</strong> ${paymentData.mpesaPhoneNumber}</p>`;
+            case 'paypal':
+                return `<p><strong>Email Address:</strong> ${paymentData.paypalEmail}</p>`;
+            default:
+                return '';
+        }
+    }
+
+    // Mask credit card number except for the last four digits
+    function maskCreditCardNumber(ccNumber) {
+        return ccNumber.slice(0, -4).replace(/./g, '*') + ccNumber.slice(-4);
+    }
+
+    // Process payment
+    async function processPayment(data) {
+    Swal.fire({
+        title: `Processing Payment of : KES ${Number(data.totalPrice).toFixed(2)}`,
+        text: 'Please wait while we process your payment.',
+        allowOutsideClick: false,
+        allowEscapeKey: false,
+        didOpen: async () => {
+            Swal.showLoading();
+            try {
+                const response = await fetch('/checkout/pay', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ ...data, phoneNumber: data.paymentData.mpesaPhoneNumber })
+                });
+
+                const result = await response.json();
+                await handlePaymentResponse(result, data);
+            } catch (error) {
+                console.error('Error processing payment:', error);
+                Swal.fire({
+                    title: 'Error',
+                    text: 'An error occurred while processing your payment.',
+                    icon: 'error',
+                    showConfirmButton: true,
+                });
+            }
+        }
+    });
+}
+
+async function handlePaymentResponse(result, data) {
+    if (result.success) {
+        const paymentResult = await waitForPaymentResult(result.transactionId);
+        if (paymentResult.status === 'completed') {
+            Swal.fire({
+                title: 'Payment Successful',
+                text: 'Your payment has been processed successfully.',
+                icon: 'success',
+                showConfirmButton: false,
+                timer: 2000,
+                didClose: () => { checkout(data); }
+            });
+        } else {
+            Swal.fire({
+                title: 'Payment Failed',
+                text: 'Your payment was not successful.',
+                icon: 'error',
+                showConfirmButton: true,
+            });
+        }
+    } else {
+        Swal.fire({
+            title: 'Payment Failed',
+            text: 'Your payment request was not successful.',
+            icon: 'error',
+            showConfirmButton: true,
+        });
+    }
+}
+
+async function checkout(data) {
+    try {
+        // Send the checkout data to the server for processing
+        const response = await fetch('/process-checkout', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+        if (result.success) {
+            console.log('Checkout processed successfully');
+            Swal.fire({
+                title: 'Checkout Successful',
+                text: 'Your order has been placed successfully.',
+                icon: 'success',
+                showConfirmButton: false,
+                timer: 4000,
+                didClose: () => {
+                    location.reload();
+                }
+            });
+        } else {
+            console.error('Checkout processing failed');
+            Swal.fire({
+                title: 'Checkout Failed',
+                text: 'Your order could not be placed. Please try again later.',
+                icon: 'error',
+                showConfirmButton: true
+            });
+        }
+    } catch (error) {
+        console.error('Error processing checkout:', error);
+        alert('Network error');
+    }
+}
+
+function waitForPaymentResult(transactionId) {
+    return new Promise((resolve) => {
+        const intervalId = setInterval(async () => {
+            const response = await fetch(`/checkout/payment-status?transactionId=${transactionId}`);
+            if (response.ok) {
+                const result = await response.json();
+                if (result.status === 'completed' || result.status === 'failed') {
+                    clearInterval(intervalId);
+                    resolve(result);
+                }
+            }
+        }, 5000);
+    });
+}
+
+    // Update the checkout page content
+    const updateCheckoutPage = async () => {
+        try {
+            const response = await fetch('/checkout');
+            const data = await response.text();
+            document.querySelector('.checkout-container').innerHTML = data;
+        } catch (error) {
+            console.error('Error updating checkout page:', error);
+            alert('Network error');
+        }
+    };
+
+        // Update the total price whenever the quantity changes
+        document.querySelectorAll('#quantity-input').forEach(input => {
+            input.addEventListener('input', function() {
+                const itemElement = this.closest('li');
+                const productCode = itemElement.querySelector('.remove-item').getAttribute('data-product-code');
+                const quantity = this.value;
+        
+                fetch(`/update-cart/${productCode}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ quantity })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Update the total price on the page
+                        document.getElementById('total-price').textContent = 'KES ' + Number(data.totalPrice).toFixed(2);
+                    } else {
+                        alert('Failed to update cart');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Network error');
+                });
+            });
+        });
+        
+        document.querySelectorAll('.remove-item').forEach(button => {
+                button.addEventListener('click', function(event) {
+                    event.preventDefault();
+        
+                    const productCode = this.getAttribute('data-product-code');
+        
+                    swalWithBootstrapButtons.fire({
+                        title: "Are you sure?",
+                        text: "You won't be able to revert this!",
+                        icon: "warning",
+                        showCancelButton: true,
+                        confirmButtonText: "Yes, delete it!",
+                        cancelButtonText: "No, cancel!",
+                        reverseButtons: true
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            fetch(`/remove-from-cart/${productCode}`, {
+                                method: 'DELETE',
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                }
+                            })
+                            .then(response => response.json())
+                            .then(data => {
+                                if (data.success) {
+                                    // Remove the item from the page
+                                    this.closest('li').remove();
+        
+                                    // Update the total price and item count
+                                    let totalPrice = 0;
+                                    // let itemCount = 0;
+                                    document.querySelectorAll('#cart-items li').forEach(item => {
+                                        const itemPrice = parseFloat(item.dataset.price);
+                                        let quantityElement = item.querySelector('input[name="quantity"]');
+                                        const quantity = quantityElement ? parseInt(quantityElement.value) : null;
+        
+                                        totalPrice += itemPrice * quantityElement;
+                                        // itemCount++;
+                                    });
+                                    document.getElementById('total-price').textContent = 'KES ' + (totalPrice ? totalPrice.toFixed(2) : '0.00');
+        
+                                    // Update the item count
+                                    document.querySelector('.item-count').textContent = data.itemCount;
+        
+                                    swalWithBootstrapButtons.fire(
+                                        'Deleted!',
+                                        'Your item has been removed from the cart.',
+                                        'success'
+                                    );
+                                } else {
+                                    alert('Failed to remove item from cart');
+                                }
+                            })
+                            .catch(error => {
+                                console.error('Error:', error);
+                                alert('Network error');
+                            });
+                        } else if (result.dismiss === Swal.DismissReason.cancel) {
+                            swalWithBootstrapButtons.fire(
+                                'Cancelled',
+                                'Your item is safe :-)',
+                                'error'
+                            );
+                        }
+                    });
+        
+                    // Add space between buttons
+                    const cancelButton = document.querySelector('.swal2-cancel');
+                    const confirmButton = document.querySelector('.swal2-confirm');
+                    cancelButton.style.marginRight = '8px';
+                });
+            });
+        </script>
+         
+</body>
+
+</html>

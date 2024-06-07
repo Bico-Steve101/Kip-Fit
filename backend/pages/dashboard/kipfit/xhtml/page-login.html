@@ -19,21 +19,21 @@
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="/images//apple-touch-icon.png"
+      href="/images/apple-touch-icon.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="/images//favicon-32x32.png"
+      href="/images/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="/images//favicon-16x16.png"
+      href="/images/favicon-16x16.png"
     />
-    <link rel="manifest" href="/images//site.webmanifest" />
+    <link rel="manifest" href="/images/site.webmanifest" />
     <link
       rel="mask-icon"
       href="/images//safari-pinned-tab.svg"
@@ -123,6 +123,7 @@
                     </div>
                     <h4 class="text-center mb-4">Sign in your account</h4>
                     <form action="/login" method="post">
+                      <input type="hidden" id="redirectUrl" name="redirectUrl">
                       <div class="form-group">
                         <label class="mb-1 form-label">Email</label>
                         <input
@@ -202,6 +203,9 @@
     <script src="js/custom.min.js"></script>
     <script src="js/deznav-init.js"></script>
     <script>
+      document.getElementById('redirectUrl').value = sessionStorage.getItem('redirectUrl');
+    </script>
+    <script>
         const params = new URLSearchParams(window.location.search);
       
         // Get the message and type parameters
@@ -221,6 +225,6 @@
             }, 4000);
           }
         }
-      </script>      
+    </script>      
   </body>
 </html>

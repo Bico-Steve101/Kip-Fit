@@ -5,45 +5,54 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const jwt = require('jsonwebtoken');
-const csurf = require('csurf');
-const pool = require('./src/config'); // Using the pool directly
-const getUserInfo = require('./src/routes/user'); // Import the function
+const pool = require('./src/config'); 
+const getUserInfo = require('./src/routes/user'); 
+const moment = require('moment');
+const timestamp = moment().format('YYYYMMDDHHmmss');
+const axios = require('axios');
+
 
 const app = express();
-
-// Middleware setup
-app.use(express.json());
-app.use(cookieParser());
-app.use(session({secret: process.env.JWT_SECRET, saveUninitialized: true, resave: true}));
-app.use(express.urlencoded({ extended: true }));
-app.use(cors());
 
 // EJS setup
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-// CSRF protection setup
-const csrfProtection = csurf({ cookie: true });
-app.use(csrfProtection);
+app.use(express.static('./backend/static'));
+
+
+// Middleware setup
+app.use(express.json());
+app.use(cookieParser());
+app.use(session({
+    secret: process.env.JWT_SECRET, 
+    saveUninitialized: true, 
+    resave: true
+}));
+app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
 // Serve static files
-app.use(express.static('./backend/static'));
+app.use(express.static(path.join(__dirname, 'backend/static')));
 
 // User authentication for views
 app.use((req, res, next) => {
     res.locals.authenticated = req.cookies.accessToken ? true : false;
-    res.locals._csrf = req.csrfToken();// Add CSRF token to locals
     next();
 });
 
 // User authentication middleware
 app.use(async (req, res, next) => {
-    let userId;
     const accessToken = req.cookies.accessToken;
     if (accessToken) {
         try {
             const decodedToken = jwt.verify(accessToken, process.env.JWT_SECRET);
-            userId = decodedToken.userId;
+            const userId = decodedToken.userId;
+            const userInfo = await getUserInfo(userId);
+            if (userInfo) {
+                req.userInfo = userInfo;
+                res.locals.userInfo = userInfo;
+            }
         } catch (err) {
             if (err instanceof jwt.TokenExpiredError) {
                 res.clearCookie('accessToken');
@@ -52,13 +61,8 @@ app.use(async (req, res, next) => {
             }
         }
     }
-    const userInfo = userId ? await getUserInfo(userId) : null;
-    if (userInfo) {
-        req.userInfo = userInfo;
-    }
     next();
 });
-
 
 // Import routes
 const registerRoutes = require('./src/routes/register');
@@ -69,16 +73,22 @@ const logoutRoute = require('./src/routes/logout');
 const createProductRoutes = require('./src/routes/create_product');
 const productDetailRoutes = require('./src/routes/product-detail');
 const shopRoutes = require('./src/routes/shop');
+const cartRoutes = require('./src/routes/cart');
+const checkoutRoutes = require('./src/routes/checkout');
+
 
 // APIs
-app.post('/register', registerRoutes);
-app.post('/login', loginRoutes);
+app.use('/register', registerRoutes);
+app.use('/login', loginRoutes);
 app.use('/profile', profileRoutes);
 app.use('/', indexPageRoutes);
-app.use(logoutRoute);
-app.use(createProductRoutes);
+app.use('/logout', logoutRoute);
+app.use('/create-product', createProductRoutes);
 app.use(productDetailRoutes);
 app.use(shopRoutes);
+app.use(cartRoutes);
+app.use(checkoutRoutes);
+
 
 // Serve static files for pages
 // app.get('/', (req, res) => {
@@ -185,7 +195,7 @@ app.get('/main-profile', (req, res) => {
 
 
 //port connection
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 4000;
 
 app.listen(PORT, () => {
     console.log(`Server is running on port http://localhost:${PORT}`);

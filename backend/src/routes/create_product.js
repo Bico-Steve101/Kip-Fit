@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const router = express.Router();
 const multer = require('multer');
-const { getDb } = require('../config');
+const { pool } = require('../config');
 const path = require('path');
 
 // Configure multer for file uploads
@@ -55,7 +55,7 @@ router.post('/add_product', upload.fields([
       quantity,
     ];
 
-    const client = await getDb();
+    const client = await pool();
     await client.query(query, values);
     res.redirect('/');
   } catch (err) {

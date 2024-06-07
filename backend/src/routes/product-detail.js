@@ -1,23 +1,27 @@
 const express = require('express');
 const router = express.Router();
 const jwt = require('jsonwebtoken');
-const pool = require('../config'); 
+const { pool } = require('../config'); 
 const NodeCache = require('node-cache');
 
 const myCache = new NodeCache({ stdTTL: 600, checkperiod: 120 });
 
 // Function to retrieve a product by its UUID
 async function getProductByUUID(uuid) {
-    // First, try to retrieve the product from the cache
-    const cachedProduct = myCache.get(uuid);
-    if (cachedProduct) {
-        console.log('Retrieved from cache');
-        return cachedProduct;
-    }
-
     try {
+        const client = await pool.connect(); // Connect to the database
+
+        // First, try to retrieve the product from the cache
+        const cachedProduct = myCache.get(uuid);
+        if (cachedProduct) {
+            console.log('Retrieved from cache');
+            client.release(); // Release the client after using it
+            return cachedProduct;
+        }
+
         const query = 'SELECT * FROM products WHERE uuid = $1';
-        const result = await pool.query(query, [uuid]); // Use pool.query directly
+        const result = await client.query(query, [uuid]); // Execute the query
+
         if (result.rows.length > 0) {
             const product = result.rows[0];
             // Convert image fields to base64 strings and cache them
@@ -39,8 +43,10 @@ async function getProductByUUID(uuid) {
             // Cache the product before returning it
             myCache.set(uuid, product);
             console.log('Added to cache');
+            client.release(); // Release the client after using it
             return product;
         } else {
+            client.release(); // Release the client after using it
             return null;
         }
     } catch (error) {

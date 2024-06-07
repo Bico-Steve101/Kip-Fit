@@ -27,7 +27,9 @@
 	<link href="/vendor/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="/vendor/star-rating/star-rating-svg.css">
     <link href="/css/style_dashboard.css" rel="stylesheet">
-	<!-- <link href="../css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet"> -->
+
+	<!-- preload images -->
+	
 </head>
 
 <body>
@@ -185,7 +187,7 @@
 					<li><a class="ai-icon" href="javascript:void()" aria-expanded="false">
 			</a>
 					</li>
-				</ul>
+		 </ul>
 		<div class="add-menu-sidebar">
 		  <img src="/images/profile/gym-template.png" alt="" class="me-3" style="width: 4em; height: 4em;object-fit: fill;">
 		  <a href="/calendar" class="font-w500 mb-0">Create Workout Plan Now</a>
@@ -210,6 +212,9 @@
 						<li class="breadcrumb-item"><a href="javascript:void(0)">Shop</a></li>
 						<li class="breadcrumb-item active"><a href="javascript:void(0)">Product Details</a></li>
 					</ol>
+				</div>
+				<div id="notification" style="position: fixed; top: 20%; right: 5%; display: none; background: green; color: white; padding: 10px; border-radius: 5px;">
+					Product added to cart successfully!
 				</div>
 				<div class="row">
 					<div class="col-lg-12">
@@ -291,7 +296,8 @@
 													<a class="product-review" href="" data-bs-toggle="modal" data-bs-target="#reviewModal">Write a review?</a>
 												</div>
 												<div class="d-table mb-2">
-													<p class="price float-start d-block">KES <%= Number(product.price).toFixed(2) %></p>
+													<p id="unit-price" class="price float-start d-block">KES <%= Number(product.price).toFixed(2) %></p> <br>
+													<p id="total-price"></p>
 												</div>
 												<p class="text-black">Availability: <span class="item"><%= product.availability ? 'In stock' : 'Out of stock' %> <i class="fa fa-shopping-basket"></i></span></p>
 												<p class="text-black">Product code: <span class="item"><%= product.product_code %></span></p>
@@ -302,27 +308,28 @@
 													<% }); %>
 												</p>
 												<p class="text-content"><%= product.description %></p>
-												<div class="d-flex align-items-end flex-wrap mt-4">
+												<form action="/add-to-cart" method="post" class="add-to-cart-form shopping-cart d-flex align-items-end flex-wrap mt-4"  data-product-code="<%= product.product_code %>">
+													<input type="hidden" name="productCode" value="<%= product.product_code %>">
 													<div class="filtaring-area me-3">
-														<div class="size-filter">
-															<h4 class="m-b-15">Select size</h4>
-															<div class="btn-group mb-sm-0 mb-2" role="group" aria-label="Basic radio toggle button group">
-																<% ['XS', 'SM', 'MD', 'LG', 'XL'].forEach(size => { %>
-																<input type="radio" class="btn-check" name="btnradio" id="btnradio<%= size %>" <%= size === 'XS' ? 'checked' : '' %>>
-																<label class="btn btn-outline-primary mb-0" for="btnradio<%= size %>"><%= size %></label>
-																<% }); %>
-															</div>
-														</div>
+													<div class="size-filter">
+													<h4 class="m-b-15">Select size</h4>
+													<div class="btn-group mb-sm-0 mb-2" role="group" aria-label="Basic radio toggle button group">
+														<% ['XS', 'SM', 'MD', 'LG', 'XL'].forEach(size => { %>
+														<input type="radio" class="btn-check" name="size" id="btnradio<%= size %>" value="<%= size %>" <%= size === 'XS' ? 'checked' : '' %>>
+														<label class="btn btn-outline-primary mb-0" for="btnradio<%= size %>"><%= size %></label>
+														<% }); %>
+													</div>
+													</div>
 													</div>
 													<!--Quantity start-->
 													<div class="col-2 px-0 me-3">
-														<input type="number" name="num" class="form-control input-btn input-number" value="1">
+														<input id="quantity-input" type="number" name="quantity" class="form-control input-btn input-number" value="1">
 													</div>
 													<!--Quantity End-->
-													<div class="shopping-cart me-3">
-														<a class="btn btn-primary" href="/checkout"><i class="fa fa-shopping-basket me-2"></i>Add to cart</a>
-													</div>
-												</div>
+													<button type="submit" style="border: none; background: none;">
+														<a class="btn btn-primary"><i class="fa fa-shopping-basket me-2"></i>Add to cart</a>
+													</button>
+												</form>							
 											</div>
 										</div>
 									</div>
@@ -425,6 +432,30 @@
 	<script src="/vendor/star-rating/jquery.star-rating-svg.js"></script>
 	<script src="/js/custom.min.js"></script>
 	<script src="/js/deznav-init.js"></script>
+	<script src="/js/preload.js"></script>
+    <script src="/js/add-cart.js"></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+		const unitPriceElement = document.getElementById('unit-price');
+		const quantityInput = document.getElementById('quantity-input');
+		const totalPriceElement = document.getElementById('total-price');
+
+		// Parse the unit price from the text content of the unitPriceElement
+		const unitPrice = parseFloat(unitPriceElement.textContent.replace('KES ', ''));
+
+		const updateTotalPrice = () => {
+			const quantity = quantityInput.value;
+			const totalPrice = quantity * unitPrice;
+			totalPriceElement.textContent = 'Total Price: KES ' + totalPrice.toFixed(2);
+		};
+
+		quantityInput.addEventListener('input', updateTotalPrice);
+
+		// Update the total price initially
+		updateTotalPrice();
+	});
+
+	</script>
 </body>
 
 </html>

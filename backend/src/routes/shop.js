@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const NodeCache = require('node-cache');
 const jwt = require('jsonwebtoken');
-const pool = require('../config');
+const { pool } = require('../config');
 
 // Initialize cache with a TTL (time to live) of 300 seconds for products
 const productCache = new NodeCache({ stdTTL: 300 });
@@ -75,8 +75,7 @@ router.get('/shop', async (req, res) => {
             firstName,
             lastName,
             authenticated,
-            products,
-            csrfToken: req.csrfToken()
+            products
         });
     } catch (err) {
         console.error('An error occurred while rendering the shop page:', err);
@@ -86,7 +85,6 @@ router.get('/shop', async (req, res) => {
             lastName,
             authenticated: false,
             products: [],
-            csrfToken: req.csrfToken()
         });
     }
 });
