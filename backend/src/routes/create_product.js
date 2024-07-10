@@ -55,13 +55,16 @@ router.post('/add_product', upload.fields([
       quantity,
     ];
 
-    const client = await pool();
+    const client = await pool.connect(); // Use pool.connect() to get a client from the pool
     await client.query(query, values);
+    client.release(); // Release the client back to the pool when done
     res.redirect('/');
   } catch (err) {
     console.error(err);
     res.status(500).send('Server Error');
   }
 });
+
+module.exports = router;
 
 module.exports = router;

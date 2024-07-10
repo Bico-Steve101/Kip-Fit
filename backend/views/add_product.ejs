@@ -1,0 +1,86 @@
+<!-- add_product.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Product</title>
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1>Add Product</h1>
+    <!-- Display any server-side validation or error messages here -->
+    <% if (typeof errorMessage !== 'undefined') { %>
+      <div class="alert alert-danger" role="alert">
+        <%= errorMessage %>
+      </div>
+    <% } %>
+    <form action="/add_product" method="POST" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" class="form-control" id="title" name="title" required>
+      </div>
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input type="number" class="form-control" id="price" name="price" required>
+      </div>
+      <div class="form-group">
+        <label for="reviews">Reviews</label>
+        <input type="number" class="form-control" id="reviews" name="reviews" required>
+      </div>
+      <div class="form-group">
+        <label for="star_rating">Star Rating</label>
+        <input type="number" step="0.1" class="form-control" id="star_rating" name="star_rating" required>
+      </div>
+      <div class="form-group">
+        <label for="size">Size</label>
+        <input type="text" class="form-control" id="size" name="size">
+      </div>
+      <div class="form-group">
+        <label for="quantity">Quantity</label>
+        <input type="number" class="form-control" id="quantity" name="quantity" required>
+      </div>
+      <div class="form-group">
+        <label for="brand">Brand</label>
+        <input type="text" class="form-control" id="brand" name="brand" required>
+      </div>
+      <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="availability" name="availability">
+        <label class="form-check-label" for="availability">Available</label>
+      </div>
+      <div class="form-group">
+        <label for="tags">Tags (comma-separated)</label>
+        <input type="text" class="form-control" id="tags" name="tags">
+      </div>
+      <div class="form-group">
+        <label for="image_one">Image One</label>
+        <input type="file" class="form-control-file" id="image_one" name="image_one" accept="image/*" required>
+      </div>
+      <div class="form-group">
+        <label for="image_two">Image Two</label>
+        <input type="file" class="form-control-file" id="image_two" name="image_two" accept="image/*">
+      </div>
+      <div class="form-group">
+        <label for="image_three">Image Three</label>
+        <input type="file" class="form-control-file" id="image_three" name="image_three" accept="image/*">
+      </div>
+      <div class="form-group">
+        <label for="image_four">Image Four</label>
+        <input type="file" class="form-control-file" id="image_four" name="image_four" accept="image/*">
+      </div>
+      <div class="form-group">
+        <label for="image_five">Image Five</label>
+        <input type="file" class="form-control-file" id="image_five" name="image_five" accept="image/*">
+      </div>
+      <button type="submit" class="btn btn-primary">Add Product</button>
+    </form>
+  </div>
+  <!-- Include Bootstrap JS and any other scripts if needed -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>

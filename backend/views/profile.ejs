@@ -1,0 +1,748 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <meta http-equiv="Cache-Control" content="max-age=3600, must-revalidate">
+
+    <title>Kip•Fit - Power • Motion • Transformation</title>
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/static/images/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/static/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/static/images/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/images//site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="/images/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#000101" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/css/bootstrap.css" />
+    <link href="/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/css/style_dashboard.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet" />
+    <link href="/css/responsive.css" rel="stylesheet" />
+
+    <!-- Favicon icon -->
+    <link
+      href="/vendor/bootstrap-select/css/bootstrap-select.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- preload images -->
+  </head>
+
+<body>
+
+
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
+    </div>
+
+    <div id="main-wrapper">
+<!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header">
+            <a href="/" class="brand-logo">
+              <img class="logo-abbr" src="/images/logo-kipfit.png" alt="" />
+              <img class="logo-compact" src="/images/logo-text (2).png" alt="" />
+              <img class="brand-title" src="/images/logo-text (2).png" alt="" />
+            </a>
+    
+            <div class="nav-control">
+              <div class="hamburger">
+                <span class="line"></span><span class="line"></span
+                ><span class="line"></span>
+              </div>
+            </div>
+          </div>
+          <!--**********************************
+              Nav header end
+          ***********************************-->
+    
+          <!--**********************************
+              Header start
+          ***********************************-->
+          <header class="header">
+            <div class="header-content">
+              <nav class="navbar navbar-expand">
+                <div class="collapse navbar-collapse justify-content-between">
+                  <div class="header-left">
+                    <div class="dashboard_bar">Profile</div>
+                  </div>
+                  <ul class="navbar-nav header-right">
+                    <li class="nav-item">
+                      <form>
+                        <div
+                          class="input-group search-area d-lg-inline-flex d-none me-3"
+                        >
+                          <span class="input-group-text" id="header-search">
+                            <button class="bg-transparent border-0">
+                              <i class="flaticon-381-search-2"></i>
+                            </button>
+                          </span>
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Search here"
+                            aria-label="Username"
+                            aria-describedby="header-search"
+                          />
+                        </div>
+                      </form>
+                    </li>
+                    <li class="nav-item dropdown header-profile">
+                      <a
+                        class="nav-link"
+                        href="/profile"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                      >
+                        <img src="/images/avatar.jpg" width="20" alt="" />
+                        <div class="header-info">
+                          <span class="text-black"
+                            >
+                            <% if(username !== 'Guest') { %>
+                              <strong><%= firstName %> <%= lastName %></strong>
+                            <% } else { %>
+                              <h5>Guest</h5>
+                            <% } %>
+                            </span
+                          >
+                          <p class="fs-12 mb-0">App Admin</p>
+                        </div>
+                      </a>
+                      <div class="dropdown-menu dropdown-menu-end">
+                        <a href="/profile" class="dropdown-item ai-icon">
+                          <svg
+                            id="icon-user1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="text-primary"
+                            width="18"
+                            height="18"
+                            viewbox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          >
+                            <path
+                              d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
+                            ></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                          </svg>
+                          <span class="ms-2">Profile </span>
+                        </a>
+                        <% if (authenticated) { %>
+                          <a href="/logout" class="dropdown-item ai-icon">
+                            <svg
+                              id="icon-logout"
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="text-danger"
+                              width="18"
+                              height="18"
+                              viewbox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            >
+                              <path
+                                d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"
+                              ></path>
+                              <polyline points="16 17 21 12 16 7"></polyline>
+                              <line x1="21" y1="12" x2="9" y2="12"></line>
+                            </svg>
+                            <span class="ms-2">Logout </span>
+                          </a>                    
+                        <% } else { %>
+                          <a href="/login" class="dropdown-item ai-icon">
+                            <svg
+                              id="icon-logout"
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="text-danger"
+                              width="18"
+                              height="18"
+                              viewbox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            >
+                              <path
+                                d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"
+                              ></path>
+                              <polyline points="16 17 21 12 16 7"></polyline>
+                              <line x1="21" y1="12" x2="9" y2="12"></line>
+                            </svg>
+                            <span class="ms-2">Login </span>
+                          </a>                    
+                        <% } %>
+                      </div>
+                    </li>
+                    <li class="nav-item dropdown notification_dropdown">
+                      <a
+                        class="nav-link bell dz-theme-mode"
+                        href="javascript:void(0);"
+                      >
+                        <i id="icon-light" class="fas fa-sun"></i>
+                        <i id="icon-dark" class="fas fa-moon"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </header>
+          <!--**********************************
+              Header end ti-comment-alt
+          ***********************************-->
+          <!--**********************************
+                Sidebar start
+            ***********************************-->
+          <div class="deznav">
+            <div class="deznav-scroll">
+              <ul class="metismenu" id="menu">
+                <li>
+                  <a class="ai-icon" href="/" aria-expanded="false">
+                    <i class="fa fa-home"></i>
+                    <span class="nav-text">Home</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="ai-icon" href="/profile" aria-expanded="false">
+                    <i class="fa fa-user"></i>
+                    <span class="nav-text">Profile</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="ai-icon" href="/shop" aria-expanded="false">
+                    <i class="fa fa-cart-arrow-down"></i>
+                    <span class="nav-text"
+                      >Shop<span class="badge badge-danger badge-xs ms-1"
+                        >NEW</span
+                      ></span
+                    >
+                  </a>
+                </li>
+                <li>
+                  <a class="ai-icon" href="/main-index" aria-expanded="false">
+                    <i class="fa fa-video-camera"></i>
+                    <span class="nav-text"
+                      >Videos<span class="badge badge-danger badge-xs ms-1"
+                        >NEW</span
+                      ></span
+                    >
+                  </a>
+                </li>
+                <li>
+                  <a class="ai-icon" href="/checkout" aria-expanded="false">
+                    <i class="fa fa-check-square"></i>
+                    <span class="nav-text">Checkout</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="ai-icon" href="/orders" aria-expanded="false">
+                    <i class="fa fa-credit-card-alt"></i>
+                    <span class="nav-text">Checkout Status</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="ai-icon" href="/food-menu" aria-expanded="false">
+                    <i class="fa fa-cutlery"></i>
+                    <span class="nav-text">Food-Menu</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="ai-icon" href="/calendar" aria-expanded="false">
+                    <i class="fa fa-calendar"></i>
+                    <span class="nav-text">Calendar</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/main-profile" class="ai-icon" aria-expanded="false">
+                    <i class="fa fa-file-video"></i>
+                    <span class="nav-text">Video Profile</span>
+                  </a>
+                </li>
+                <!-- <li><a class=" ai-icon" href="javascript:void()" aria-expanded="false">
+              </a>
+                      </li> -->
+                <li>
+                  <a class="ai-icon" href="javascript:void()" aria-expanded="false">
+                  </a>
+                </li>
+                <li>
+                  <a class="ai-icon" href="javascript:void()" aria-expanded="false">
+                  </a>
+                </li>
+              </ul>
+              <div class="add-menu-sidebar">
+                <img
+                  src="/images/profile/gym-template.png"
+                  alt=""
+                  class="me-3"
+                  style="width: 4em; height: 4em; object-fit: fill"
+                />
+                <a href="/calendar" class="font-w500 mb-0"
+                  >Create Workout Plan Now</a
+                >
+              </div>
+              <div class="copyright mb-n1">
+                <p>
+                  <strong
+                    >Kip•Fit <br />
+                    Power•Motion•Transformation</strong
+                  >
+                  © 2024 All Rights Reserved
+                </p>
+                <p>Made with <span class="heart"></span> by S.M.B</p>
+              </div>
+            </div>
+          </div>
+          <!--**********************************
+              Sidebar end
+          ***********************************-->
+    </div>
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body default-height" style=" margin-left: -0.007rem;">
+            <div class="container-fluid">
+                <div class="page-titles">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">App</a></li>
+                        <li class="breadcrumb-item active"><a href="javascript:void(0)">Profile</a></li>
+                    </ol>
+                </div>
+                <!-- row -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="profile card card-body px-3 pt-3 pb-0">
+                            <div class="profile-head">
+                                <div class="photo-content">
+                                    <% if (coverImage) { %>
+                                        <img src="data:image/jpeg;base64,<%= coverImage %>" class="cover-photo" alt="Cover Photo">
+                                        <% } else { %>
+                                            <div class="cover-photo"></div>
+                                        <% } %>
+                                </div>
+                                <div class="profile-info">
+                                    <div class="profile-photo">
+                                        <% if (avatar) { %>
+                                            <img src="data:image/jpeg;base64,<%= avatar %>" class="img-fluid rounded-circle" alt="Profile Photo">
+                                        <% } else { %>
+                                            <img src="/images/avatar.jpg" class="img-fluid rounded-circle" alt="Default Avatar">
+                                        <% } %>     
+                                    </div>
+                                    <div class="profile-details">
+                                        <div class="profile-name px-3 pt-2">
+                                            <h4 class="text-primary mb-0"><%= firstName %> <%= lastName %></h4>
+                                            <p>Software Developer</p>
+                                        </div>
+                                        <div class="profile-email px-2 pt-2">
+                                            <h4 class="text-muted mb-0"><%= email %></h4>
+                                            <p>Email</p>
+                                        </div>
+                                        <div class="dropdown ms-auto">
+                                            <a href="#" class="btn btn-primary light sharp" data-bs-toggle="dropdown"
+                                                aria-expanded="true"><svg xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink" width="18px"
+                                                    height="18px" viewbox="0 0 24 24" version="1.1">
+                                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                        <rect x="0" y="0" width="24" height="24"></rect>
+                                                        <circle fill="#000000" cx="5" cy="12" r="2"></circle>
+                                                        <circle fill="#000000" cx="12" cy="12" r="2"></circle>
+                                                        <circle fill="#000000" cx="19" cy="12" r="2"></circle>
+                                                    </g>
+                                                </svg></a>
+                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                <li class="dropdown-item"><a href="javascript:void(0);"><i
+                                                            class="fa fa-user-circle text-primary me-2"></i> View
+                                                        profile</a></li>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-4">
+                        <div class="card h-auto">
+                            <div class="card-body">
+                                <div class="profile-statistics mb-5">
+                                    <div class="text-center">
+                                        <div class="mt-4">
+                                            <a href="javascript:void()" class="btn btn-primary mb-1"
+                                                data-bs-toggle="modal" data-bs-target="#sendMessageModal">Add
+                                                Highlight</a>
+                                        </div>
+                                    </div>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="sendMessageModal">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title">Add HighLight</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form class="comment-form" id="highlightForm" action="/profile/highlight" method="POST" enctype="multipart/form-data">
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <div class="form-group">
+                                                                    <input type="text" name="title" id="title" class="form-control" placeholder="Enter the title">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <textarea rows="8" class="form-control" name="content" id="content"  placeholder="HighLight"></textarea>
+                                                                </div>
+                                                                <div class="mb-2">
+                                                                    <label class="btn btn-primary light me-1 px-3 mb-2">
+                                                                        <i class="fa fa-camera"></i>
+                                                                        <input type="file" class="custom-file-input" name="image" style="display: none;">
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-12">
+                                                                <div class="form-group mb-0">
+                                                                    <input type="submit" value="Post Highlight" class="submit btn btn-primary" name="submit">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="min-height: 0.1rem; max-height: 55rem; overflow-y: scroll;" class="profile-blog-container" id="highlightsContainer">
+                                    <% highlights.forEach(highlight => { %>
+                                    <div class="profile-blog mb-5">
+                                        <h4 class="text-primary d-inline"><%= highlight.title %></h4>
+                                        <a href="javascript:void()" class="pull-right f-s-16">More</a>
+                                        <% if (highlight.image) { %>
+                                        <img src="data:image/jpeg;base64,<%= highlight.image.toString('base64') %>" alt="" class="img-fluid mt-4 mb-4 rounded w-100" style="height: 10em; object-fit: fill;">
+                                        <% } %>
+                                        <h4><a href="post-details.html" class="text-black"><%= highlight.title %></a></h4>
+                                        <p class="mb-0"><%= highlight.content %></p>
+                                    </div>
+                                    <% }); %>
+                                </div>
+                                <div class="profile-news">
+                                    <h4 class="text-primary d-inline">Our Latest Posts</h4>
+                                    <div class="media pt-3 pb-3">
+                                        <img src="/images/profile/gym-template.png" alt="image" class="me-3 rounded"
+                                            width="75">
+                                        <div class="media-body">
+                                            <h5 class="m-b-5"><a href="post-details.html" class="text-black">Transform
+                                                    Yourself, New Video.</a></h5>
+                                            <p class="mb-0 line-para-height fs-15">I shared this on my fb wall a few
+                                                months back, and I thought.</p>
+                                        </div>
+                                    </div>
+                                    <div class="media pt-3 pb-3">
+                                        <img src="/images/profile/gym-template.png" alt="image" class="me-3 rounded"
+                                            width="75">
+                                        <div class="media-body">
+                                            <h5 class="m-b-5"><a href="post-details.html" class="text-black">Be
+                                                    Disciplined, Ignite Potential, Achieve.</a></h5>
+                                            <p class="mb-0 line-para-height fs-15">I shared this on my twitter wall a
+                                                few months back, and I thought.</p>
+                                        </div>
+                                    </div>
+                                    <div class="media pt-3 ">
+                                        <img src="/images/profile/gym-template.png" alt="image" class="me-3 rounded"
+                                            width="75">
+                                        <div class="media-body">
+                                            <h5 class="m-b-5"><a href="post-details.html" class="text-black">Strength,
+                                                    Endurance, Progress"</a></h5>
+                                            <p class="mb-0 line-para-height fs-15">I shared this on my insta wall a few
+                                                months back, and I thought.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-n3 h-auto">
+                            <div class="widget-stat card">
+                                <div class="card-body p-4">
+                                    <div class="media ai-icon">
+                                        <span class="me-3 bgl-warning text-warning">
+                                            <svg id="icon-orders" xmlns="http://www.w3.org/2000/svg" width="30"
+                                                height="30" viewbox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                class="feather feather-file-text">
+                                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z">
+                                                </path>
+                                                <polyline points="14 2 14 8 20 8"></polyline>
+                                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                                <polyline points="10 9 9 9 8 9"></polyline>
+                                            </svg>
+                                        </span>
+                                        <div class="media-body">
+                                            <p class="mb-1">Gym</p>
+                                            <h4 class="mb-0">2570</h4>
+                                            <span class="badge badge-warning">+24 Days</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-8">
+                        <div class="card h-auto">
+                            <div class="card-body">
+                                <div class="profile-tab">
+                                    <div class="custom-tab-1">
+                                        <ul class="nav nav-tabs">
+                                            <li class="nav-item"><a href="#my-posts" data-bs-toggle="tab"
+                                                    class="nav-link active show">Posts</a>
+                                            </li>
+                                            <li class="nav-item"><a href="#profile-settings" data-bs-toggle="tab"
+                                                    class="nav-link">Setting</a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content">
+                                            <div id="my-posts" class="tab-pane fade active show">
+                                                <div class="my-post-content pt-3">
+                                                    <div class="my-post-content pt-3">
+                                                        <div class="post-input">
+                                                            <h3>Create a Post</h3>
+                                                            <form id="postForm" action="/profile/post" method="POST" enctype="multipart/form-data">
+                                                                <div class="form-group">
+                                                                    <input type="text" name="title" id="title" class="form-control" placeholder="Enter the title">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <textarea name="content" id="content" cols="30" rows="5" class="form-control bg-transparent" placeholder="Please type what you want...."></textarea>
+                                                                </div>
+                                                                <input type="hidden" name="socialLinks" id="socialLinks">
+                                                                <a href="javascript:void(0)" class="btn btn-primary light px-3" data-bs-toggle="modal" data-bs-target="#linkModal"><i class="fa fa-link"></i> </a>
+                                                                <!-- Modal -->
+                                                                <div class="modal fade" id="linkModal">
+                                                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <h5 class="modal-title">Social Links</h5>
+                                                                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                                                            </div>
+                                                                            <div class="modal-body">
+                                                                                <a class="btn-social facebook" href="javascript:void(0)" onclick="addSocialLink('facebook')"><i class="fab fa-facebook-f"></i></a>
+                                                                                <a class="btn-social google-plus" href="javascript:void(0)" onclick="addSocialLink('google-plus')"><i class="fab fa-google-plus-g"></i></a>
+                                                                                <a class="btn-social linkedin" href="javascript:void(0)" onclick="addSocialLink('linkedin')"><i class="fab fa-linkedin-in"></i></a>
+                                                                                <a class="btn-social instagram" href="javascript:void(0)" onclick="addSocialLink('instagram')"><i class="fab fa-instagram"></i></a>
+                                                                                <a class="btn-social twitter" href="javascript:void(0)" onclick="addSocialLink('twitter')"><i class="fab fa-twitter"></i></a>
+                                                                                <a class="btn-social youtube" href="javascript:void(0)" onclick="addSocialLink('youtube')"><i class="fab fa-youtube"></i></a>
+                                                                                <a class="btn-social whatsapp" href="javascript:void(0)" onclick="addSocialLink('whatsapp')"><i class="fab fa-whatsapp"></i></a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <a href="javascript:void(0)" class="btn btn-primary light me-1 px-3" data-bs-toggle="modal" data-bs-target="#cameraModal"><i class="fa fa-camera"></i> </a>
+                                                                <!-- Modal -->
+                                                                <div class="modal fade" id="cameraModal">
+                                                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <h5 class="modal-title">Upload images</h5>
+                                                                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                                                            </div>
+                                                                            <div class="modal-body">
+                                                                                <div class="input-group mb-3 flex-nowrap">
+                                                                                    <span class="input-group-text rounded-sm">Upload</span>
+                                                                                    <div class="form-file border-left-end overflow-hidden">
+                                                                                        <input type="file" name="image" id="image" class="form-file-input form-control">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <button type="submit" onclick="submitPost()" class="btn btn-primary mb-1">Post</button>
+                                                            </form>
+                                                        </div>
+                                                        <div style="min-height: 9.5rem; max-height: 81.6rem; overflow-y: scroll;">
+                                                            <% if (posts.length > 0) { %>
+                                                                <% posts.forEach(post => { %>
+                                                                    <div class="profile-uoloaded-post border-bottom-1 pb-5">
+                                                                        <% if (post.image) { %>
+                                                                            <img src="data:image/jpeg;base64,<%= post.image.toString('base64') %>" alt="Post Image" class="img-fluid rounded">
+                                                                        <% } %>
+                                                                        <a class="post-title" href="post-details.html">
+                                                                            <h3 class="text-black"><%= post.title %></h3>
+                                                                        </a>
+                                                                        <p><%= post.content %></p>
+                                                                        <button class="btn btn-primary me-2"><span class="me-2"><i class="fa fa-heart"></i></span>Like</button>
+                                                                        <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#replyModal"><span class="me-2"><i class="fa fa-reply"></i></span>Reply</button>
+                                                                    </div>
+                                                                <% }) %>
+                                                            <% } else { %>
+                                                                <style>
+                                                                    .icon {
+                                                                        font-size: 3rem; /* Adjust the icon size */
+                                                                        animation: flickerAnimation 1s infinite; /* Flicker animation */
+                                                                    }
+                                                    
+                                                                    @keyframes flickerAnimation {
+                                                                        0% { opacity: 0.8; }
+                                                                        50% { opacity: 1; }
+                                                                        100% { opacity: 0.8; }
+                                                                    }
+                                                                </style>
+                                                    
+                                                                <div class="d-flex flex-column align-items-center">
+                                                                    <i class="fa-regular fa-folder-open icon mb-3"></i>
+                                                                    <h3 class="text-center">No Posts Yet.</h3>
+                                                                </div>
+                                                            <% } %>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="profile-settings" class="tab-pane fade">
+                                                <div class="pt-3">
+                                                    <div class="settings-form">
+                                                        <h4 class="text-primary">Profile Setting</h4>
+                                                        <% if (message) { %>
+                                                            <div id="messageBox" class="alert alert-<%= message.type %>"><%= message.text %></div>
+                                                        <% } %>
+                                                        <form id="profileForm" enctype="multipart/form-data">
+                                                            <div class="row">
+                                                                <div class="form-group col-md-6">
+                                                                    <label>Email</label>
+                                                                    <input type="email" name="email" placeholder="Email" class="form-control" value="<%= email %>">
+                                                                </div>
+                                                                <div class="form-group col-md-6">
+                                                                    <label>Password</label>
+                                                                    <input type="password" name="password" placeholder="Password" class="form-control">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="form-group col-md-4">
+                                                                    <label>First Name</label>
+                                                                    <input type="text" name="firstName" class="form-control" value="<%= firstName %>">
+                                                                </div>
+                                                                <div class="form-group col-md-4">
+                                                                    <label>Last Name</label>
+                                                                    <input type="text" name="lastName" class="form-control" value="<%= lastName %>">
+                                                                </div>
+                                                                <div class="form-group col-md-4">
+                                                                    <label>Username</label>
+                                                                    <input type="text" name="username" class="form-control" value="<%= username %>">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Cover Image</label>
+                                                                <input type="file" name="coverImage" class="form-control">
+                                                                <% if (coverImage) { %>
+                                                                    <img src="data:image/jpeg;base64,<%= coverImage %>" class="img-fluid rounded mt-2 h-25" alt="Cover Image">
+                                                                <% } %>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Avatar</label>
+                                                                <input type="file" name="avatar" class="form-control">
+                                                                <% if (avatar) { %>
+                                                                    <img src="data:image/jpeg;base64,<%= avatar %>" class="img-fluid rounded-circle mt-2 h-25 w-25" alt="User Avatar">
+                                                                <% } %>
+                                                            </div>
+                                                            <button class="btn align-content-center btn-primary" type="button" id="updateButton">Update</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="replyModal">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title">Post Reply</h5>
+                                                    <button type="button" class="btn-close"
+                                                        data-bs-dismiss="modal"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form>
+                                                        <textarea class="form-control" rows="4">Message</textarea>
+                                                    </form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger light"
+                                                        data-bs-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-primary">Reply</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="copyright">
+                <p>
+                    &copy; <span id="displayYear"></span> All Rights Reserved By
+                    <a href="/">Kip•Fit</a>
+                </p>
+            </div>
+        </footer>
+    </div>
+    <script src="https:/cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/js/custom.js"></script>
+
+    <script src="/vendor/global/global.min.js"></script>
+    <script src="/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
+    <script src="/js/custom.min.js"></script>
+    <script src="/js/deznav-init.js"></script>
+    <script src="/js/preload.js"></script>
+    <script src="/js/profile.js"></script>
+    <include id="includedContent"></include> 
+</body>
+
+</html>

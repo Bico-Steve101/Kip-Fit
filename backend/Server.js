@@ -5,11 +5,13 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const jwt = require('jsonwebtoken');
-const pool = require('./src/config'); 
-const getUserInfo = require('./src/routes/user'); 
+const pool = require('./src/config');
+const getUserInfo = require('./src/routes/user');
 const moment = require('moment');
 const timestamp = moment().format('YYYYMMDDHHmmss');
 const axios = require('axios');
+const flash = require('connect-flash');
+
 
 
 const app = express();
@@ -20,17 +22,17 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.static('./backend/static'));
 
-
 // Middleware setup
 app.use(express.json());
 app.use(cookieParser());
 app.use(session({
-    secret: process.env.JWT_SECRET, 
-    saveUninitialized: true, 
+    secret: process.env.JWT_SECRET,
+    saveUninitialized: true,
     resave: true
 }));
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
+app.use(flash());
 
 // Serve static files
 app.use(express.static(path.join(__dirname, 'backend/static')));
@@ -75,32 +77,31 @@ const productDetailRoutes = require('./src/routes/product-detail');
 const shopRoutes = require('./src/routes/shop');
 const cartRoutes = require('./src/routes/cart');
 const checkoutRoutes = require('./src/routes/checkout');
+const ordersRoutes = require('./src/routes/orders');
+const invoiceRoutes = require('./src/routes/invoice');
+const foodMenuRoutes = require('./src/routes/food-menu');
+
 
 
 // APIs
 app.use('/register', registerRoutes);
 app.use('/login', loginRoutes);
-app.use('/profile', profileRoutes);
+app.use(profileRoutes);
 app.use('/', indexPageRoutes);
 app.use('/logout', logoutRoute);
-app.use('/create-product', createProductRoutes);
+app.use(createProductRoutes);
 app.use(productDetailRoutes);
 app.use(shopRoutes);
 app.use(cartRoutes);
 app.use(checkoutRoutes);
+app.use(ordersRoutes);
+app.use(invoiceRoutes);
+app.use(foodMenuRoutes);
 
-
-// Serve static files for pages
-// app.get('/', (req, res) => {
-//     res.sendFile(path.join(__dirname, '/pages/dashboard/kipfit/index.ejs'));
-// });
 
 
 app.get('/calendar', (req, res) => {
     res.sendFile(path.join(__dirname, '/pages/dashboard/kipfit/xhtml/app-calender.html'));
-});
-app.get('/profile', (req, res) => {
-    res.sendFile(path.join(__dirname, '/pages/dashboard/kipfit/xhtml/app-profile.html'));
 });
 app.get('/checkout', (req, res) => {
     res.sendFile(path.join(__dirname, '/pages/dashboard/kipfit/xhtml/ecom-checkout.html'));
@@ -108,23 +109,11 @@ app.get('/checkout', (req, res) => {
 app.get('/customer', (req, res) => {
     res.sendFile(path.join(__dirname, '/pages/dashboard/kipfit/xhtml/ecom-customer.html'));
 });
-app.get('/invoice', (req, res) => {
-    res.sendFile(path.join(__dirname, '/pages/dashboard/kipfit/xhtml/ecom-invoice.html'));
-});
-// app.get('/product-detail', (req, res) => {
-//     res.sendFile(path.join(__dirname, '/pages/dashboard/kipfit/xhtml/ecom-product-detail.html'));
-// });
 app.get('/add-products', (req, res) => {
     res.sendFile(path.join(__dirname, '/pages/dashboard/kipfit/main/add-product.html'));
 });
 app.get('/product-grid', (req, res) => {
     res.sendFile(path.join(__dirname, '/pages/dashboard/kipfit/xhtml/ecom-product-grid.html'));
-});
-app.get('/product-order', (req, res) => {
-    res.sendFile(path.join(__dirname, '/pages/dashboard/kipfit/xhtml/ecom-product-order.html'));
-});
-app.get('/food-menu', (req, res) => {
-    res.sendFile(path.join(__dirname, '/pages/dashboard/kipfit/xhtml/food-menu.html'));
 });
 app.get('/forgot-password', (req, res) => {
     res.sendFile(path.join(__dirname, '/pages/dashboard/kipfit/xhtml/page-forgot-password.html'));

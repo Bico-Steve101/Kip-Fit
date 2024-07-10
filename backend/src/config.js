@@ -1,7 +1,9 @@
 require('dotenv').config();
 const { Pool } = require('pg');
+const paypal = require('@paypal/checkout-server-sdk');
 
-// Connection details
+
+// PostgreSQL database connection details
 const pool = new Pool({
   user: process.env.DB_USERNAME,
   host: process.env.DB_HOST || 'localhost',
@@ -16,11 +18,22 @@ const pool = new Pool({
 const mpesaConfig = {
   consumerKey: process.env.MPESA_CONSUMER_KEY,
   consumerSecret: process.env.MPESA_CONSUMER_SECRET,
-  environment: process.env.MPESA_ENVIRONMENT, // 'sandbox' or 'production'
+  environment: process.env.MPESA_ENVIRONMENT,
   lipaNaMpesaOnlineShortCode: process.env.MPESA_SHORTCODE,
   lipaNaMpesaOnlinePasskey: process.env.MPESA_PASSKEY,
 };
 
+// PayPal API configurations
+const paypalConfig = {
+  clientId: process.env.PAYPAL_CLIENT_ID,
+  clientSecret: process.env.PAYPAL_CLIENT_SECRET,
+  environment: process.env.PAYPAL_ENVIRONMENT,
+};
 
-// Export the pool and M-Pesa config
-module.exports = { pool, mpesaConfig };
+// Stripe API configurations
+const stripeConfig = {
+  secretKey: process.env.STRIPE_SECRET_KEY,
+};
+
+// Export all configurations
+module.exports = { pool, mpesaConfig, paypalConfig, stripeConfig };

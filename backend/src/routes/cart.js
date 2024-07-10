@@ -2,7 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const jwt = require('jsonwebtoken');
-const { pool } = require('../config'); // Assuming you have a pool configured for PostgreSQL
+const { pool } = require('../config'); 
 
 // Middleware to check if the user is authenticated
 function isAuthenticated(req, res, next) {

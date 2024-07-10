@@ -1,0 +1,10 @@
+build/
+coverage
+jest.config.js
+.eslintrc.js
+coconfig.?s
+src/generated
+node_modules
+migrations/
+.yarn/
+**/*.k6.js

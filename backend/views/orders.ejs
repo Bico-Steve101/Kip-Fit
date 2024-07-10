@@ -1,0 +1,408 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Title -->
+	<title>Kip•Fit  - Power • Motion • Transformation</title>
+
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="SteveRebrand">
+	<meta name="robots" content="">
+	<link rel="apple-touch-icon" sizes="180x180" href="/images//apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images//favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images//favicon-16x16.png">
+    <link rel="manifest" href="/images//site.webmanifest">
+    <link rel="mask-icon" href="/images//safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+	<meta name="format-detection" content="telephone=no">
+
+	<!-- Mobile Specific -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Favicon icon -->
+	<link href="/vendor/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="/css/style_dashboard.css" rel="stylesheet">
+	<link href="../css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+</head>	
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+     <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header">
+            <a href="/" class="brand-logo">
+                <img class="logo-abbr" src="/images/logo-kipfit.png" alt="">
+                <img class="logo-compact" src="/images/logo-text (2).png" alt="">
+                <img class="brand-title" src="/images/logo-text (2).png" alt="">
+            </a>
+  
+            <div class="nav-control">
+                <div class="hamburger">
+                    <span class="line"></span><span class="line"></span><span class="line"></span>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+    
+        <!--**********************************
+            Header start
+        ***********************************-->
+          <header class="header">
+            <div class="header-content">
+                <nav class="navbar navbar-expand">
+                    <div class="collapse navbar-collapse justify-content-between">
+                        <div class="header-left">
+                            <div class="dashboard_bar">
+                            Home Page
+                            </div>
+                        </div>
+                          <ul class="navbar-nav header-right">
+                        <li class="nav-item">
+                          <form>
+                            <div class="input-group search-area d-lg-inline-flex d-none me-3">
+                              <span class="input-group-text" id="header-search">
+                                <button class="bg-transparent border-0">
+                                  <i class="flaticon-381-search-2"></i>
+                                </button>
+                              </span>
+                              <input type="text" class="form-control" placeholder="Search here" aria-label="Username" aria-describedby="header-search">
+                            </div>
+                          </form>
+                        </li>
+                            <li class="nav-item dropdown header-profile">
+                                <a class="nav-link" href="/profile" role="button" data-bs-toggle="dropdown">
+                                    <img src="/images/avatar.jpg" width="20" alt="">
+                  <div class="header-info">
+                    <span class="text-black"><strong>Bico Steve</strong></span>
+                    <p class="fs-12 mb-0">App Admin</p>
+                  </div>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                    <a href="/profile" class="dropdown-item ai-icon">
+                                        <svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" class="text-primary" width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                        <span class="ms-2">Profile </span>
+                                    </a>
+                                    <a href="/profile" class="dropdown-item ai-icon">
+                                        <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger" width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                                        <span class="ms-2">Logout </span>
+                                    </a>
+                                </div>
+                            </li>
+              <li class="nav-item dropdown notification_dropdown">
+                                <a class="nav-link bell dz-theme-mode" href="javascript:void(0);">
+                  <i id="icon-light" class="fas fa-sun"></i>
+                                    <i id="icon-dark" class="fas fa-moon"></i>
+                                </a>
+              </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+        <!--**********************************
+              Sidebar start
+          ***********************************-->
+          <div class="deznav">
+            <div class="deznav-scroll">
+         <ul class="metismenu" id="menu">
+                    <li><a class=" ai-icon" href="/" aria-expanded="false">
+              <i class="fa fa-home"></i>
+              <span class="nav-text">Home</span>
+            </a>
+                    </li>
+          <li><a class=" ai-icon" href="/profile" aria-expanded="false">
+              <i class="fa fa-user"></i>
+              <span class="nav-text">Profile</span>
+            </a>
+                    </li>
+                    <li><a class=" ai-icon" href="/product-grid" aria-expanded="false">
+              <i class="fa fa-cart-arrow-down"></i>
+              <span class="nav-text">Shop<span class="badge badge-danger badge-xs ms-1">NEW</span></span>
+            </a>
+                    </li>
+          <li><a class="ai-icon" href="/main-index" aria-expanded="false">
+              <i class="fa fa-video-camera"></i>
+              <span class="nav-text">Videos<span class="badge badge-danger badge-xs ms-1">NEW</span></span>
+            </a>
+                    </li>
+                    <li><a class=" ai-icon" href="/checkout" aria-expanded="false">
+              <i class="fa fa-check-square"></i>
+              <span class="nav-text">Checkout</span>
+            </a>
+                    </li>
+                    <li><a class=" ai-icon" href="/product-order" aria-expanded="false">
+                      <i class="fa fa-credit-card-alt"></i>
+                      <span class="nav-text">Checkout Status</span>
+                    </a>
+                    </li>
+                    <li><a class="ai-icon" href="/food-menu" aria-expanded="false">
+              <i class="fa fa-cutlery"></i>
+              <span class="nav-text">Food-Menu</span>
+            </a>
+                    </li>
+                    <li><a class="ai-icon" href="/calendar" aria-expanded="false">
+              <i class="fa fa-calendar"></i>
+              <span class="nav-text">Calendar</span>
+            </a>
+                    </li>
+                    <li><a href="/main-profile" class="ai-icon" aria-expanded="false">
+              <i class="fa fa-file-video"></i>
+              <span class="nav-text">Video Profile</span>
+            </a>
+          </li>
+                    <!-- <li><a class=" ai-icon" href="javascript:void()" aria-expanded="false">
+            </a>
+                    </li> -->
+                    <li><a class=" ai-icon" href="javascript:void()" aria-expanded="false">
+            </a>
+                    </li>
+                    <li><a class="ai-icon" href="javascript:void()" aria-expanded="false">
+            </a>
+                    </li>
+                </ul>
+        <div class="add-menu-sidebar">
+          <img src="/images/profile/gym-template.png" alt="" class="me-3" style="width: 4em; height: 4em;object-fit: fill;">
+          <a href="/calendar" class="font-w500 mb-0">Create Workout Plan Now</a>
+        </div>
+        <div class="copyright mb-n1">
+          <p><strong>Kip•Fit <br> Power•Motion•Transformation</strong> © 2024 All Rights Reserved</p>
+          <p>Made with <span class="heart"></span> by S.M.B</p>
+        </div>
+      </div>
+        </div>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body default-height" style=" margin-left: -0.007rem;">
+            <div class="container-fluid">
+                <div class="page-titles">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="javascript:void(0)">Shop</a></li>
+						<li class="breadcrumb-item active"><a href="javascript:void(0)">Product Order</a></li>
+					</ol>
+
+                    <button class="float-end btn btn-primary" id="download-pdf">
+                        <a href="/invoice" class="btn-primary">
+                            View Invoice
+                        </a>
+                    </button>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card overflow-hidden">
+                            <div class="card-body py-0 px-3">
+                                <div class="table-responsive">
+                                    <table class="table table-sm mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th class="align-middle">
+                                                    <div class="form-check custom-checkbox">
+														<input type="checkbox" class="form-check-input" id="checkAll">
+														<label class="form-check-label d-block" for="checkAll"></label>
+													</div>
+                                                </th>
+                                                <th class="align-middle">Order</th>
+                                                <th class="align-middle pe-7">Date</th>
+                                                <th class="align-middle" style="min-width: 12.5rem;">Deliver to</th>
+                                                <th class="align-middle text-end">Status</th>
+                                                <th class="align-middle text-end">Amount</th>
+                                                <th class="align-middle text-end">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="orders">
+                                            <% orders.forEach(order => { %>
+                                                <tr class="btn-reveal-trigger" id="order-row-<%= order.order_id %>">
+                                                    <td class="py-2">
+                                                        <div class="form-check custom-checkbox checkbox-success">
+                                                            <input type="checkbox" class="form-check-input" id="checkbox<%= order.order_id %>">
+                                                            <label class="form-check-label" for="checkbox<%= order.order_id %>"></label>
+                                                        </div>
+                                                    </td>
+                                                    <td class="py-2">
+                                                        <a href="#">
+                                                            <strong class="text-primary">#<%= order.order_id %></strong></a> by <strong class="text-primary"><%= order.first_name %> <%= order.last_name %></strong><br><a href="mailto:<%= order.email %>"><%= order.email %></a></td>
+                                                    <td class="py-2"><%= new Date(order.created_at).toLocaleDateString() %></td>
+                                                    <td class="py-2"><%= order.address %>, <%= order.address2 %>, <%= order.country %>, <%= order.state %> <%= order.zip %></td>
+                                                    <td class="py-2 text-end" id="status-cell-<%= order.order_id %>">
+                                                        <span class="badge badge-<%= order.status == 'Completed' ? 'success' : order.status == 'Processing' ? 'primary' : order.status == 'On Hold' ? 'secondary' : 'warning' %> badge-sm light">
+                                                            <%= order.status %><span class="ms-1 fa <%= order.status == 'Completed' ? 'fa-check' : order.status == 'Processing' ? 'fa-redo' : order.status == 'On Hold' ? 'fa-ban' : 'fas fa-stream' %>"></span>
+                                                        </span>
+                                                    </td>
+                                                    <td class="py-2 text-end">KES <%= order.total_price %></td>
+                                                    <td class="py-2 text-end">
+                                                        <div class="dropdown text-sans-serif">
+                                                            <button class="btn btn-primary tp-btn-light sharp" type="button" id="order-dropdown-<%= order.order_id %>" data-bs-toggle="dropdown" data-boundary="viewport" aria-haspopup="true" aria-expanded="false">
+                                                                <span>
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewbox="0 0 24 24" version="1.1">
+                                                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                                            <rect x="0" y="0" width="24" height="24"></rect>
+                                                                            <circle fill="#000000" cx="5" cy="12" r="2"></circle>
+                                                                            <circle fill="#000000" cx="12" cy="12" r="2"></circle>
+                                                                            <circle fill="#000000" cx="19" cy="12" r="2"></circle>
+                                                                        </g>
+                                                                    </svg>
+                                                                </span>
+                                                            </button>
+                                                            <div class="dropdown-menu dropdown-menu-end border py-0" aria-labelledby="order-dropdown-<%= order.order_id %>">
+                                                                <div class="py-2">
+                                                                    <a class="dropdown-item" href="javascript:void(0);" onclick="updateOrderStatus(<%= order.order_id %>, 'Completed')">Completed</a>
+                                                                    <a class="dropdown-item" href="javascript:void(0);" onclick="updateOrderStatus(<%= order.order_id %>, 'Processing')">Processing</a>
+                                                                    <a class="dropdown-item" href="javascript:void(0);" onclick="updateOrderStatus(<%= order.order_id %>, 'On Hold')">On Hold</a>
+                                                                    <a class="dropdown-item" href="javascript:void(0);" onclick="updateOrderStatus(<%= order.order_id %>, 'Pending')">Pending</a>
+                                                                    <div class="dropdown-divider"></div>
+                                                                    <a class="dropdown-item text-danger" href="javascript:void(0);" onclick="deleteOrder(<%= order.order_id %>)">Delete</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            <% }) %>
+                                        </tbody>                                        
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+            </div>
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+
+
+        <!--**********************************
+            Footer start
+        ***********************************-->
+		<footer class="footer">
+            <div class="copyright">
+                  <p>
+					&copy; <span id="displayYear"></span> All Rights Reserved By
+            		<a href="/">Kip•Fit</a>
+				</p>
+            </div>
+        </footer>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button start
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button end
+        ***********************************-->
+
+
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+	<script src="/vendor/global/global.min.js"></script>
+	<script src="/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
+	<script src="/js/custom.min.js"></script>
+	<script src="/js/deznav-init.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        async function updateOrderStatus(orderId, status) {
+            try {
+                const response = await fetch(`/orders/${orderId}/status`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ status }),
+                });
+                const result = await response.json();
+                if (result.success) {
+                    const statusCell = document.getElementById(`status-cell-${orderId}`);
+                    statusCell.innerHTML = `
+                        <span class="badge badge-${status === 'Completed' ? 'success' : status === 'Processing' ? 'primary' : status === 'On Hold' ? 'secondary' : 'warning'} badge-sm light">
+                            ${status}<span class="ms-1 fa ${status === 'Completed' ? 'fa-check' : status === 'Processing' ? 'fa-redo' : status === 'On Hold' ? 'fa-ban' : 'fas fa-stream'}"></span>
+                        </span>
+                    `;
+                } else {
+                    alert(result.message);
+                }
+            } catch (error) {
+                console.error('Error updating order status:', error);
+            }
+        }
+    
+        async function deleteOrder(orderId) {
+            try {
+                // Show SweetAlert confirmation dialog
+                const confirmDelete = await Swal.fire({
+                    title: 'Are you sure?',
+                    text: `You are about to delete order #${orderId}`,
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#3085d6',
+                    confirmButtonText: 'Delete',
+                    cancelButtonText: 'Cancel'
+                });
+    
+                // If the user confirms deletion, proceed with the request
+                if (confirmDelete.isConfirmed) {
+                    const response = await fetch(`/orders/${orderId}`, {
+                        method: 'DELETE',
+                    });
+                    const result = await response.json();
+                    if (result.success) {
+                        // Remove the corresponding table row
+                        const orderRow = document.getElementById(`order-row-${orderId}`);
+                        orderRow.remove();
+                        // Show success message
+                        Swal.fire('Deleted!', `Order #${orderId} has been deleted.`, 'success');
+                    } else {
+                        alert(result.message);
+                    }
+                }
+            } catch (error) {
+                console.error('Error deleting order:', error);
+            }
+        }
+    </script>
+    
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+var {
+  _optionalChain
+} = require('@sentry/utils');
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+const prismaInstrumentation = require('@prisma/instrumentation');
+const core = require('@sentry/core');
+const instrument = require('../../otel/instrument.js');
+
+const INTEGRATION_NAME = 'Prisma';
+
+const instrumentPrisma = instrument.generateInstrumentOnce(INTEGRATION_NAME, () => {
+  const EsmInteropPrismaInstrumentation =
+    // @ts-expect-error We need to do the following for interop reasons
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    _optionalChain([prismaInstrumentation, 'access', _ => _.default, 'optionalAccess', _2 => _2.PrismaInstrumentation]) || prismaInstrumentation.PrismaInstrumentation;
+
+  return new EsmInteropPrismaInstrumentation({});
+});
+
+const _prismaIntegration = (() => {
+  return {
+    name: INTEGRATION_NAME,
+    setupOnce() {
+      instrumentPrisma();
+    },
+
+    setup(client) {
+      client.on('spanStart', span => {
+        const spanJSON = core.spanToJSON(span);
+        if (_optionalChain([spanJSON, 'access', _3 => _3.description, 'optionalAccess', _4 => _4.startsWith, 'call', _5 => _5('prisma:')])) {
+          span.setAttribute(core.SEMANTIC_ATTRIBUTE_SENTRY_ORIGIN, 'auto.db.otel.prisma');
+        }
+
+        if (spanJSON.description === 'prisma:engine:db_query') {
+          span.setAttribute('db.system', 'prisma');
+        }
+      });
+    },
+  };
+}) ;
+
+/**
+ * Prisma integration
+ *
+ * Capture tracing data for prisma.
+ * Note: This requieres to set:
+ * previewFeatures = ["tracing"]
+ * For the prisma client.
+ * See https://www.prisma.io/docs/concepts/components/prisma-client/opentelemetry-tracing for more details.
+ */
+const prismaIntegration = core.defineIntegration(_prismaIntegration);
+
+exports.instrumentPrisma = instrumentPrisma;
+exports.prismaIntegration = prismaIntegration;
+//# sourceMappingURL=prisma.js.map
