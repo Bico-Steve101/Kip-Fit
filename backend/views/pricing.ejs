@@ -443,34 +443,35 @@
           <div class="col-12">
             <div class="plans plans--mt0">
               <div class="table-responsive">
-                <table class="plans__table">
-                  <thead>
-                    <tr>
-                      <th></th>
-                      <th>
-                        <div class="plans__head">
-                          <b>REGULAR</b>
-                          <p>200 Ksh</p>
-                          <span>/ month</span>
-                        </div>
-                      </th>
-                      <th>
-                        <div class="plans__head">
-                          <b>PREMIUM</b>
-                          <p>300 Ksh</p>
-                          <span>/ month</span>
-                        </div>
-                      </th>
-                      <th>
-                        <div class="plans__head">
-                          <b>PREMIUM + Custom</b>
-                          <p>400 Ksh</p>
-                          <span>/ month</span>
-                        </div>
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
+                <form action="/main-pricing" method="POST">
+                  <table class="plans__table">
+                      <thead>
+                          <tr>
+                              <th></th>
+                              <th>
+                                  <div class="plans__head">
+                                      <b>REGULAR</b>
+                                      <p>200 Ksh</p>
+                                      <span>/ month</span>
+                                  </div>
+                              </th>
+                              <th>
+                                  <div class="plans__head">
+                                      <b>PREMIUM</b>
+                                      <p>300 Ksh</p>
+                                      <span>/ month</span>
+                                  </div>
+                              </th>
+                              <th>
+                                  <div class="plans__head">
+                                      <b>PREMIUM + Custom</b>
+                                      <p>400 Ksh</p>
+                                      <span>/ month</span>
+                                  </div>
+                              </th>
+                          </tr>
+                      </thead>
+                      <tbody>
                     <tr>
                       <td>
                         <span class="plans__title">Part of KipFit groups</span>
@@ -920,30 +921,21 @@
                     </tr>
                     <tr>
                       <td></td>
-                      <td>
-                        <button class="plans__btn" type="button">
-                          Select plan
-                        </button>
-                      </td>
-                      <td>
-                        <button class="plans__btn" type="button">
-                          Select plan
-                        </button>
-                      </td>
-                      <td>
-                        <button class="plans__btn" type="button">
-                          Select plan
-                        </button>
-                      </td>
-                    </tr>
+                      <td><button class="plans__btn" type="submit" name="plan" value="REGULAR">Select plan</button></td>
+                      <td><button class="plans__btn" type="submit" name="plan" value="PREMIUM">Select plan</button></td>
+                      <td><button class="plans__btn" type="submit" name="plan" value="PREMIUM_CUSTOM">Select plan</button></td>
+                  </tr>
                   </tbody>
                 </table>
+                      
+              </form>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    
     <!-- end plan -->
 
     <!-- partners -->
@@ -1208,6 +1200,32 @@
     <!-- end footer -->
 
     <!-- JS -->
+    <script>
+      $(document).ready(function() {
+          $('button.plans__btn').on('click', function(event) {
+              event.preventDefault();
+              const selectedPlan = $(this).val();
+              Swal.fire({
+                  title: 'Are you sure?',
+                  text: `You are about to select the ${selectedPlan} plan.`,
+                  icon: 'warning',
+                  showCancelButton: true,
+                  confirmButtonText: 'Yes, select it!',
+                  cancelButtonText: 'No, cancel!',
+              }).then((result) => {
+                  if (result.isConfirmed) {
+                      Swal.fire(
+                          'Selected!',
+                          `You have selected the ${selectedPlan} plan.`,
+                          'success'
+                      ).then(() => {
+                          $(this).closest('form').submit();
+                      });
+                  }
+              });
+          });
+      });
+  </script>
     <script src="js/main/jquery-3.5.1.min.js"></script>
     <script src="js/main/bootstrap.bundle.min.js"></script>
     <script src="js/main/owl.carousel.min.js"></script>

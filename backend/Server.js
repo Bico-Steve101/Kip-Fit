@@ -11,6 +11,8 @@ const moment = require('moment');
 const timestamp = moment().format('YYYYMMDDHHmmss');
 const axios = require('axios');
 const flash = require('connect-flash');
+const router = express.Router();
+
 
 
 
@@ -166,12 +168,10 @@ app.get('/main-contacts', (req, res) => {
 app.get('/main-details', (req, res) => {
     res.sendFile(path.join(__dirname, '/pages/dashboard/kipfit/main/details.html'));
 });
-app.get('/main-index', (req, res) => {
-    res.sendFile(path.join(__dirname, '/pages/dashboard/kipfit/main/index.html'));
-});
-app.get('/main-pricing', (req, res) => {
-    res.sendFile(path.join(__dirname, '/pages/dashboard/kipfit/main/pricing.html'));
-});
+
+//app.get('/main-pricing', (req, res) => {
+   // res.sendFile(path.join(__dirname, '/pages/dashboard/kipfit/main/pricing.ejs'));
+//});
 app.get('/main-live', (req, res) => {
     res.sendFile(path.join(__dirname, '/pages/dashboard/kipfit/main/live.html'));
 });
@@ -180,6 +180,33 @@ app.get('/main-privacy', (req, res) => {
 });
 app.get('/main-profile', (req, res) => {
     res.sendFile(path.join(__dirname, '/pages/dashboard/kipfit/main/profile.html'));
+});
+
+app.use('/', router);
+
+router.get('/main-pricing', (req, res) => {
+    res.render("pricing.ejs");
+});
+router.get('/checkout', (req, res)=>{
+    const selectedPlan = req.session.selectedPlan;
+
+    // Example items and totalPrice for demonstration
+    const items = [
+        { name: 'Item 1', price: 100 },
+        { name: 'Item 2', price: 200 }
+    ];
+    const totalPrice = 300;
+
+    res.render('checkout', { plan: selectedPlan, items: items, totalPrice: totalPrice });
+});
+app.post('/main-pricing', (req, res) => {
+    const selectedPlan = req.body.plan;
+
+    // You can store the selected plan in the session or pass it directly to the checkout page
+    req.session.selectedPlan = selectedPlan;
+
+    // Redirect to the checkout page
+    res.redirect('/checkout');
 });
 
 
